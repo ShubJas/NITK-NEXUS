@@ -627,6 +627,8 @@ const CourseTracker = () => {
                 </div>
               </div>
             </div>
+
+
             <div
               className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16"
               style={{ order: 0 }}
@@ -800,6 +802,9 @@ const CourseTracker = () => {
                 </div>
               </div>
             </div>
+
+
+            
           </div>
         </main>
         <footer className="bg-gradient-to-b from-custom/10 to-white py-12">
