@@ -27,7 +27,7 @@ const getCourseByCode = async (req, res) => {
   }
 };
 
-const getAllCourse = async (req, res) => {
+const getAllCourses = async (req, res) => {
   try {
     const courses = await courseModel.find({});
     return res.status(200).json({
@@ -44,4 +44,4 @@ const getAllCourse = async (req, res) => {
   }
 };
 
-module.exports = { getCourseByCode, getAllCourse };
+module.exports = { getCourseByCode, getAllCourses };
