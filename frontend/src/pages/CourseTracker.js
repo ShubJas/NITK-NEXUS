@@ -8,11 +8,11 @@ const CourseTracker = () => {
 
   const getStudentCourses = async () => {
     try {
-      const rollNo = "2021MECH001";
+      const rollNo = "ABC123";
       const { data } = await axios.get(
         `http://localhost:8000/api/v1/students/${rollNo}/courses`
       );
-      setCourses(data?.courses);
+      setCourses(data?.data.courses);
     } catch (err) {
       console.log("Error fetching Courses: ", err.message);
     }
@@ -299,22 +299,18 @@ const CourseTracker = () => {
                     circumference -
                     circumference * (course.courseProgress / 100);
 
+                  console.log(course);
                   return (
                     <div
                       key={index}
-                      onClick={() =>
-                        navigate(
-                          "/" +
-                            course.courseId.toLowerCase().replace(/\s/g, "-")
-                        )
-                      }
+                      onClick={() => navigate(`/courses/${course.courseCode}`)}
                       className="border border-gray-200 rounded-lg p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.8)]
                          bg-gradient-to-br from-green-50 to-gray-50 hover:scale-105 
                          transition-all duration-300 cursor-pointer"
                     >
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="font-medium">
-                          {course.courseId}: {course.courseName}
+                          {course.courseCode}: {course.courseName}
                         </h3>
                         <span className="text-sm text-gray-500">
                           {course.courseCredits} Credits

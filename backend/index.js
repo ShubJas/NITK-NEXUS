@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const studentRoutes = require("./routes/studentRoutes");
+const courseRoutes = require("./routes/courseRoutes");
 const connectDb = require("./config/db");
 dotenv.config();
 const PORT = process.env.PORT || 8000;
@@ -21,6 +22,7 @@ app.use(
 
 //Routes
 app.use("/api/v1/students", studentRoutes);
+app.use("/api/v1/courses", courseRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World");

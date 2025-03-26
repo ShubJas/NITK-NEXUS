@@ -3,7 +3,7 @@ const router = express.Router();
 const {
   getCourseByCode,
   getAllCourses,
-} = require("../controllers/StudentController");
+} = require("../controllers/CourseController");
 
 // Define the route to get a student's courses by their ID
 // GET /api/students/:id/courses

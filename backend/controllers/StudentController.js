@@ -1,42 +1,55 @@
-// controllers/studentController.js
 const studentModel = require("../models/StudentModel");
+const courseModel = require("../models/CourseModel");
 
 const getStudentCourses = async (req, res) => {
   try {
-    // 1. Destructure the "id" from req.params
-    const { roolNo } = req.params;
+    const { rollNo } = req.params; // Fixed typo here
 
-    // 2. Find the student by _id
-    const student = await studentModel.findOne({ roolNo });
+    // Populate the course details from the Course collection
+    const student = await studentModel.findOne({ rollNo }).populate({
+      path: "courses.course",
+      select: "courseCode title description creditHours",
+    });
+
     if (!student) {
       return res.status(404).json({
-        message: "Student not found",
         success: false,
+        message: "Student not found",
       });
     }
 
-    // 3. Map over the student's courses to create a custom array
-    const courses = student.courses.map((course) => {
+    // Format the response
+    const courses = student.courses.map((courseEnrollment) => {
+      const course = courseEnrollment.course;
       return {
-        courseId: course.courseId,
-        courseName: course.courseName,
-        courseProgress: course.courseProgress,
-        courseDescription: course.courseDescription,
-        courseCredits: course.courseCredits,
+        courseId: course._id,
+        courseCode: course.courseCode,
+        courseName: course.title,
+        courseProgress: courseEnrollment.progress,
+        courseDescription: course.description,
+        courseCredits: course.creditHours,
+        grade: courseEnrollment.grade,
+        enrolledAt: courseEnrollment.enrolledAt,
       };
     });
 
-    // 4. Send the response
     return res.status(200).json({
-      message: "Student Courses fetched successfully",
       success: true,
-      courses: courses,
+      message: "Student courses fetched successfully",
+      data: {
+        studentName: student.name,
+        rollNo: student.rollNo,
+        totalCredits: student.totalCredits,
+        cgpa: student.cgpa,
+        courses,
+      },
     });
   } catch (err) {
-    console.error("Error fetching Courses from db:", err.message);
+    console.error("Error fetching student courses:", err);
     return res.status(500).json({
-      message: "Server Error",
       success: false,
+      message: "Server error",
+      error: err.message,
     });
   }
 };
