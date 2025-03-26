@@ -1,6 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+
+
 
 const HigherStudies = () => {
+
+  const [activeTab, setActiveTab] = useState('all');
+  const [showMoreCS, setShowMoreCS] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [regionFilter, setRegionFilter] = useState('');
+  const [programFilter, setProgramFilter] = useState('');
+  const [filteredUniversities, setFilteredUniversities] = useState([]);
+  
+  // Sample data - you would replace with your actual data
+  const csUniversities = [
+    { id: 1, name: 'MIT - Research Labs', url: 'https://www.csail.mit.edu/', rank: '#1' },
+    { id: 2, name: 'Stanford - AI Research', url: 'https://ai.stanford.edu/', rank: '#2' },
+    { id: 3, name: 'CMU - Robotics Institute', url: 'https://www.ri.cmu.edu/', rank: '#3' },
+  ];
+  
+  const businessUniversities = [
+    { id: 4, name: 'Harvard Business School', url: 'https://www.hbs.edu/', rank: '#1' },
+    { id: 5, name: 'Wharton School', url: 'https://www.wharton.upenn.edu/', rank: '#2' },
+    { id: 6, name: 'INSEAD', url: 'https://www.insead.edu/', rank: '#3' },
+  ];
+  
+  const engineeringUniversities = [
+    { id: 7, name: 'ETH Zurich', url: 'https://ethz.ch/', rank: '#1' },
+    { id: 8, name: 'Imperial College London', url: 'https://www.imperial.ac.uk/', rank: '#2' },
+    { id: 9, name: 'UC Berkeley', url: 'https://www.berkeley.edu/', rank: '#3' },
+  ];
+  
+  const moreCSUniversities = [
+    { id: 10, name: 'University of Washington', url: 'https://www.washington.edu/' },
+    { id: 11, name: 'University of Toronto', url: 'https://www.utoronto.ca/' },
+  ];
+  
+  const handleSaveUniversity = (university) => {
+    // Implement save to favorites functionality
+    console.log('Saved university:', university);
+    // You might want to add a toast notification here
+  };
+  
+  const handleSearch = () => {
+    // Implement search functionality
+    // This is a simplified version - you would need to implement actual filtering
+    const results = [...csUniversities, ...businessUniversities, ...engineeringUniversities];
+    setFilteredUniversities(results);
+  };
+  
+
   return (
     <div>
       <div>
@@ -519,97 +567,290 @@ const HigherStudies = () => {
           </section>
           <section className="py-12 bg-gray-50">
             <section className="py-12 bg-white">
-              <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      <i className="fas fa-calendar-alt text-blue-500 mr-2" />
-                      Upcoming Webinars
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="p-4 bg-gray-50 rounded">
-                        <h4 className="font-medium">SOP Writing Workshop</h4>
-                        <p className="text-sm text-gray-500">
-                          Dec 15, 2023 • 2:00 PM
-                        </p>
-                        <a href="https://www.eventbrite.com/" className="mt-2 text-blue-500 hover:text-blue-700 text-sm">
-                          Register Now
-                        </a>
-                      </div>
-                      <div className="p-4 bg-gray-50 rounded">
-                        <h4 className="font-medium">Meet Stanford Alumni</h4>
-                        <p className="text-sm text-gray-500">
-                          Dec 18, 2023 • 3:30 PM
-                        </p>
-                        <a href="https://www.eventbrite.com/" className="mt-2 text-blue-500 hover:text-blue-700 text-sm">
-                          Register Now
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      <i className="fas fa-user-graduate text-blue-500 mr-2" />
-                      Connect with Alumni
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="flex items-center space-x-4">
-                        <img
-                          src="https://ai-public.creatie.ai/gen_page/avatar1.png"
-                          className="w-12 h-12 rounded-full"
-                        />
-                        <div>
-                          <h4 className="font-medium">Sarah Chen</h4>
-                          <p className="text-sm text-gray-500">
-                            Stanford University '22
-                          </p>
-                          <a href="https://www.linkedin.com/" className="text-blue-500 hover:text-blue-700 text-sm">
-                            Connect
-                          </a>
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-4">
-                        <img
-                          src="https://ai-public.creatie.ai/gen_page/avatar2.png"
-                          className="w-12 h-12 rounded-full"
-                        />
-                        <div>
-                          <h4 className="font-medium">John Smith</h4>
-                          <p className="text-sm text-gray-500">MIT '21</p>
-                          <a href="https://www.linkedin.com/" className="text-blue-500 hover:text-blue-700 text-sm">
-                            Connect
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">
-                      <i className="fas fa-lightbulb text-blue-500 mr-2" />
-                      Personalized Recommendations
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="p-4 bg-gray-50 rounded">
-                        <h4 className="font-medium">Based on your profile</h4>
-                        <ul className="mt-2 space-y-2">
-                          <li className="flex items-center">
-                            <i className="fas fa-university text-blue-500 mr-2" />
-                            <a href="https://www.cmu.edu/" className="hover:underline">Carnegie Mellon University</a>
-                          </li>
-                          <li className="flex items-center">
-                            <i className="fas fa-book text-blue-500 mr-2" />
-                            <a href="https://www.magoosh.com/gre/" className="hover:underline">Advanced GRE Quant Course</a>
-                          </li>
-                          <li className="flex items-center">
-                            <i className="fas fa-file-alt text-blue-500 mr-2" />
-                            <a href="https://www.ets.org/gre/" className="hover:underline">SOP Template: CS Major</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="lg:text-center mb-12">
+    <h2 className="text-3xl font-bold text-gray-900">
+      Top Universities
+    </h2>
+    <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+      Explore top universities worldwide and find your perfect fit.
+    </p>
+    
+    {/* University Filter Tabs */}
+    <div className="flex justify-center mt-8 mb-6">
+      <div className="inline-flex rounded-md shadow-sm">
+        <button 
+          className="px-4 py-2 text-sm font-medium rounded-l-lg bg-blue-500 text-white"
+          onClick={() => setActiveTab('all')}
+        >
+          All Universities
+        </button>
+        <button 
+          className="px-4 py-2 text-sm font-medium bg-gray-100 hover:bg-gray-200"
+          onClick={() => setActiveTab('cs')}
+        >
+          Computer Science
+        </button>
+        <button 
+          className="px-4 py-2 text-sm font-medium bg-gray-100 hover:bg-gray-200"
+          onClick={() => setActiveTab('engineering')}
+        >
+          Engineering
+        </button>
+        <button 
+          className="px-4 py-2 text-sm font-medium bg-gray-100 hover:bg-gray-200"
+          onClick={() => setActiveTab('business')}
+        >
+          Business
+        </button>
+        <button 
+          className="px-4 py-2 text-sm font-medium rounded-r-lg bg-gray-100 hover:bg-gray-200"
+          onClick={() => setActiveTab('sciences')}
+        >
+          Sciences
+        </button>
+      </div>
+    </div>
+
+    {/* University Cards Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+      {/* Computer Science Universities */}
+      {(activeTab === 'all' || activeTab === 'cs') && (
+        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <div className="flex items-center mb-4">
+            <div className="bg-blue-100 p-3 rounded-full mr-4">
+              <i className="fas fa-laptop-code text-blue-500 text-xl"></i>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900">
+              Top Computer Science Programs
+            </h3>
+          </div>
+          <ul className="space-y-3">
+            {csUniversities.map((uni) => (
+              <li key={uni.id} className="flex items-center group">
+                <span className="mr-2 text-gray-400 group-hover:text-blue-500">🌍</span>
+                <a
+                  href={uni.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-700 flex items-center"
+                >
+                  {uni.name}
+                  <span className="ml-2 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">
+                    {uni.rank}
+                  </span>
+                </a>
+                <button 
+                  className="ml-auto text-gray-400 hover:text-blue-500"
+                  onClick={() => handleSaveUniversity(uni)}
+                  title="Save to favorites"
+                >
+                  <i className="far fa-bookmark"></i>
+                </button>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-4 pt-4 border-t border-gray-100">
+            <button 
+              className="text-sm text-blue-500 hover:text-blue-700 flex items-center"
+              onClick={() => setShowMoreCS(!showMoreCS)}
+            >
+              {showMoreCS ? 'Show less' : 'Show more options'}
+              <i className={`fas fa-chevron-${showMoreCS ? 'up' : 'down'} ml-2`}></i>
+            </button>
+            {showMoreCS && (
+              <ul className="mt-2 space-y-2">
+                {moreCSUniversities.map((uni) => (
+                  <li key={uni.id} className="flex items-center text-sm">
+                    <a
+                      href={uni.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-blue-500"
+                    >
+                      {uni.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Business Universities */}
+      {(activeTab === 'all' || activeTab === 'business') && (
+        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <div className="flex items-center mb-4">
+            <div className="bg-blue-100 p-3 rounded-full mr-4">
+              <i className="fas fa-chart-line text-blue-500 text-xl"></i>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900">
+              Top Business Schools
+            </h3>
+          </div>
+          <ul className="space-y-3">
+            {businessUniversities.map((uni) => (
+              <li key={uni.id} className="flex items-center group">
+                <span className="mr-2 text-gray-400 group-hover:text-blue-500">🌍</span>
+                <a
+                  href={uni.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-700 flex items-center"
+                >
+                  {uni.name}
+                  <span className="ml-2 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">
+                    {uni.rank}
+                  </span>
+                </a>
+                <button 
+                  className="ml-auto text-gray-400 hover:text-blue-500"
+                  onClick={() => handleSaveUniversity(uni)}
+                  title="Save to favorites"
+                >
+                  <i className="far fa-bookmark"></i>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Engineering Universities */}
+      {(activeTab === 'all' || activeTab === 'engineering') && (
+        <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+          <div className="flex items-center mb-4">
+            <div className="bg-blue-100 p-3 rounded-full mr-4">
+              <i className="fas fa-cogs text-blue-500 text-xl"></i>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900">
+              Top Engineering Schools
+            </h3>
+          </div>
+          <ul className="space-y-3">
+            {engineeringUniversities.map((uni) => (
+              <li key={uni.id} className="flex items-center group">
+                <span className="mr-2 text-gray-400 group-hover:text-blue-500">🌍</span>
+                <a
+                  href={uni.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-700 flex items-center"
+                >
+                  {uni.name}
+                  <span className="ml-2 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">
+                    {uni.rank}
+                  </span>
+                </a>
+                <button 
+                  className="ml-auto text-gray-400 hover:text-blue-500"
+                  onClick={() => handleSaveUniversity(uni)}
+                  title="Save to favorites"
+                >
+                  <i className="far fa-bookmark"></i>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+
+    {/* Interactive University Map Search */}
+    <div className="relative mt-12">
+      <div className="bg-white p-6 rounded-lg shadow-lg mb-4">
+        <h3 className="text-lg font-medium text-gray-900 mb-4">
+          Find Your Dream University
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Search
+            </label>
+            <input
+              type="text"
+              placeholder="University name or location..."
+              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Region
+            </label>
+            <select 
+              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              value={regionFilter}
+              onChange={(e) => setRegionFilter(e.target.value)}
+            >
+              <option value="">All Regions</option>
+              <option value="north-america">North America</option>
+              <option value="europe">Europe</option>
+              <option value="asia">Asia</option>
+              <option value="australia">Australia</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Program
+            </label>
+            <select 
+              className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              value={programFilter}
+              onChange={(e) => setProgramFilter(e.target.value)}
+            >
+              <option value="">All Programs</option>
+              <option value="computer-science">Computer Science</option>
+              <option value="engineering">Engineering</option>
+              <option value="business">Business</option>
+              <option value="sciences">Sciences</option>
+            </select>
+          </div>
+        </div>
+        <button 
+          className="mt-4 !rounded-button bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700"
+          onClick={handleSearch}
+        >
+          Search Universities
+        </button>
+      </div>
+
+      <div className="relative bg-gray-100 rounded-lg overflow-hidden h-96">
+        {/* Map visualization would go here */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center p-6 bg-white bg-opacity-90 rounded-lg shadow">
+            <h4 className="text-lg font-medium text-gray-900 mb-2">
+              University Map
+            </h4>
+            <p className="text-gray-600 mb-4">
+              {filteredUniversities.length} universities match your criteria
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {filteredUniversities.slice(0, 5).map(uni => (
+                <a 
+                  key={uni.id}
+                  href={uni.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200"
+                >
+                  {uni.name}
+                </a>
+              ))}
+              {filteredUniversities.length > 5 && (
+                <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                  +{filteredUniversities.length - 5} more
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
             </section>
             <section className="py-12 bg-white">
               <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
