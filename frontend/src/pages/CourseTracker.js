@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 const months = [
   "January",
   "February",
@@ -19,7 +18,6 @@ const months = [
 
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-
 function getDaysInMonth(year, month) {
   return new Date(year, month + 1, 0).getDate();
 }
@@ -30,9 +28,9 @@ function getStartDay(year, month) {
 
 const CourseTracker = () => {
   const navigate = useNavigate();
+  const [courses, setCourses] = useState([]);
 
   const [currentDate, setCurrentDate] = React.useState(new Date());
-  
 
   const today = new Date();
 
@@ -77,7 +75,6 @@ const CourseTracker = () => {
         event.date.getFullYear() === currentDate.getFullYear()
     );
   };
-
 
   const handlePrevMonth = () => {
     const prevMonth = new Date(
@@ -130,15 +127,6 @@ const CourseTracker = () => {
 
   const days = getDaysInMonth(currentDate);
 
-=======
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
-const CourseTracker = () => {
-  const navigate = useNavigate();
-  const [courses, setCourses] = useState([]);
-
   const getStudentCourses = async () => {
     try {
       const rollNo = "ABC123";
@@ -153,7 +141,6 @@ const CourseTracker = () => {
   useEffect(() => {
     getStudentCourses();
   }, []);
->>>>>>> 22e66c29aefc54270329768d7cfeff61c0a47413
   return (
     <div>
       <div>
@@ -743,5 +730,4 @@ const CourseTracker = () => {
     </div>
   );
 };
-
 export default CourseTracker;
