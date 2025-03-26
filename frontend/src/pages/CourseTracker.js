@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 const CourseTracker = () => {
   const navigate = useNavigate();
+  const [courses, setCourses] = useState([]);
+
+  const getStudentCourses = async () => {
+    try {
+      const rollNo = "2021MECH001";
+      const { data } = await axios.get(
+        `http://localhost:8000/api/v1/students/${rollNo}/courses`
+      );
+      setCourses(data?.courses);
+    } catch (err) {
+      console.log("Error fetching Courses: ", err.message);
+    }
+  };
+  useEffect(() => {
+    getStudentCourses();
+  }, []);
   return (
     <div>
       <div>
@@ -274,358 +292,72 @@ const CourseTracker = () => {
                 Current Semester Subjects
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 mb-6">
-                <div
-                  onClick={() => navigate("/data-structure")}
-                  className="border border-gray-200 rounded-lg p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.8)] bg-gradient-to-br from-green-50 to-gray-50 hover:scale-105 transition-all duration-300 cursor-pointer"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-medium">CS201: Data Structures</h3>
-                    <span className="text-sm text-gray-500">4 Credits</span>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Learn about fundamental data structures and their
-                    implementations
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <i className="fas fa-clock mr-2" />
-                      <span>Progress: 75%</span>
-                    </div>
-                    <div className="relative w-16 h-16">
-                      <svg className="transform -rotate-90 w-16 h-16">
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#eee"
-                          strokeWidth={4}
-                          fill="none"
-                        />
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#007BFF"
-                          strokeWidth={4}
-                          fill="none"
-                          strokeDasharray="175.9"
-                          strokeDashoffset={44}
-                          className="transition-all duration-1000 shadow-glow"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-gray-200 rounded-lg p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.8)] bg-gradient-to-br from-blue-50 to-gray-50 hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-medium">MA202: Linear Algebra</h3>
-                    <span className="text-sm text-gray-500">3 Credits</span>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Study vectors, matrices and linear transformations
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <i className="fas fa-clock mr-2" />
-                      <span>Progress: 60%</span>
-                    </div>
-                    <div className="relative w-16 h-16">
-                      <svg className="transform -rotate-90 w-16 h-16">
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#eee"
-                          strokeWidth={4}
-                          fill="none"
-                        />
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#007BFF"
-                          strokeWidth={4}
-                          fill="none"
-                          strokeDasharray="175.9"
-                          strokeDashoffset="70.36"
-                          className="transition-all duration-1000 shadow-glow"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-gray-200 rounded-lg p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.8)] bg-gradient-to-br from-purple-50 to-gray-50 hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-medium">PH201: Engineering Physics</h3>
-                    <span className="text-sm text-gray-500">4 Credits</span>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Explore physics concepts in engineering context
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <i className="fas fa-clock mr-2" />
-                      <span>Progress: 80%</span>
-                    </div>
-                    <div className="relative w-16 h-16">
-                      <svg className="transform -rotate-90 w-16 h-16">
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#eee"
-                          strokeWidth={4}
-                          fill="none"
-                        />
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#007BFF"
-                          strokeWidth={4}
-                          fill="none"
-                          strokeDasharray="175.9"
-                          strokeDashoffset="35.18"
-                          className="transition-all duration-1000 shadow-glow"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-gray-200 rounded-lg p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.8)] bg-gradient-to-br from-red-50 to-gray-50 hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-medium">EC201: Digital Electronics</h3>
-                    <span className="text-sm text-gray-500">4 Credits</span>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Study digital circuits and boolean algebra
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <i className="fas fa-clock mr-2" />
-                      <span>Progress: 65%</span>
-                    </div>
-                    <div className="relative w-16 h-16">
-                      <svg className="transform -rotate-90 w-16 h-16">
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#eee"
-                          strokeWidth={4}
-                          fill="none"
-                        />
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#007BFF"
-                          strokeWidth={4}
-                          fill="none"
-                          strokeDasharray="175.9"
-                          strokeDashoffset="61.565"
-                          className="transition-all duration-1000 shadow-glow"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-gray-200 rounded-lg p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.8)] bg-gradient-to-br from-yellow-50 to-gray-50 hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-medium">
-                      ME201: Engineering Mechanics
-                    </h3>
-                    <span className="text-sm text-gray-500">3 Credits</span>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Learn fundamental principles of mechanics
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <i className="fas fa-clock mr-2" />
-                      <span>Progress: 70%</span>
-                    </div>
-                    <div className="relative w-16 h-16">
-                      <svg className="transform -rotate-90 w-16 h-16">
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#eee"
-                          strokeWidth={4}
-                          fill="none"
-                        />
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#007BFF"
-                          strokeWidth={4}
-                          fill="none"
-                          strokeDasharray="175.9"
-                          strokeDashoffset="52.77"
-                          className="transition-all duration-1000 shadow-glow"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-gray-200 rounded-lg p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.8)] bg-gradient-to-br from-indigo-50 to-gray-50 hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-medium">CH201: Chemistry</h3>
-                    <span className="text-sm text-gray-500">4 Credits</span>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Study basic chemistry concepts for engineers
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <i className="fas fa-clock mr-2" />
-                      <span>Progress: 55%</span>
-                    </div>
-                    <div className="relative w-16 h-16">
-                      <svg className="transform -rotate-90 w-16 h-16">
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#eee"
-                          strokeWidth={4}
-                          fill="none"
-                        />
-                        <circle
-                          cx={32}
-                          cy={32}
-                          r={28}
-                          stroke="#007BFF"
-                          strokeWidth={4}
-                          fill="none"
-                          strokeDasharray="175.9"
-                          strokeDashoffset="79.155"
-                          className="transition-all duration-1000 shadow-glow"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
-                style={{ order: 1 }}
-              >
-                <h3 className="text-lg font-semibold mb-4 flex items-center">
-                  💬 Community Forum
-                </h3>
-                <div className="mb-4">
-                  <p className="text-gray-600 mb-2">
-                    Join the discussion with your peers:
-                  </p>
-                  <div className="flex items-center space-x-2">
-                    <div className="flex -space-x-2">
-                      <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 relative">
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full" />
+                {courses.map((course, index) => {
+                  // Example progress circle calculation
+                  const circumference = 175.9;
+                  const offset =
+                    circumference -
+                    circumference * (course.courseProgress / 100);
+
+                  return (
+                    <div
+                      key={index}
+                      onClick={() =>
+                        navigate(
+                          "/" +
+                            course.courseId.toLowerCase().replace(/\s/g, "-")
+                        )
+                      }
+                      className="border border-gray-200 rounded-lg p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.8)]
+                         bg-gradient-to-br from-green-50 to-gray-50 hover:scale-105 
+                         transition-all duration-300 cursor-pointer"
+                    >
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="font-medium">
+                          {course.courseId}: {course.courseName}
+                        </h3>
+                        <span className="text-sm text-gray-500">
+                          {course.courseCredits} Credits
+                        </span>
                       </div>
-                      <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 relative">
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full" />
-                      </div>
-                      <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 relative">
-                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-gray-400 border-2 border-white rounded-full" />
-                      </div>
-                      <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-sm font-medium text-gray-600">
-                        +5
-                      </div>
-                    </div>
-                    <span className="text-green-500 font-medium ml-2">
-                      8 active discussions
-                    </span>
-                  </div>
-                </div>
-                <button className="w-full bg-blue-500 text-white rounded-lg py-3 px-4 font-medium hover:bg-opacity-90 transition-all transform hover:scale-105 animate-pulse hover:animate-none">
-                  Enter Forum
-                </button>
-              </div>
-              <div
-                id="subjectModal"
-                className="fixed inset-0 bg-black bg-opacity-50 z-50 hidden"
-              >
-                <div className="bg-white rounded-lg max-w-4xl mx-auto mt-20 p-8 relative max-h-[80vh] overflow-y-auto">
-                  <button
-                    id="closeModal"
-                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors duration-300"
-                  >
-                    <i className="fas fa-times text-xl" />
-                  </button>
-                  <div className="flex items-center mb-8">
-                    <i className="fas fa-book-open text-4xl text-custom mr-4" />
-                    <h2 className="text-3xl font-bold text-gray-900" />
-                  </div>
-                  <div className="border-b border-gray-200 mb-6">
-                    <div className="flex space-x-6">
-                      <button className="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-custom transition-colors duration-300 active">
-                        Overview
-                      </button>
-                      <button className="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-custom transition-colors duration-300">
-                        Study Materials
-                      </button>
-                      <button className="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-custom transition-colors duration-300">
-                        Practice Tests
-                      </button>
-                    </div>
-                  </div>
-                  <div className="tab-content">
-                    <div className="tab-pane active">
-                      <p className="text-gray-600 mb-6" />
-                      <div className="bg-gray-100 rounded-full h-4 mb-8">
-                        <div
-                          className="bg-custom h-4 rounded-full transition-all duration-1000"
-                          style={{ width: "0%" }}
-                        />
-                      </div>
-                    </div>
-                    <div className="tab-pane hidden">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-4 bg-gray-50 rounded-lg hover:scale-105 transition-transform cursor-pointer">
-                          <h3 className="font-semibold mb-2">
-                            📚 Lecture Notes
-                          </h3>
-                          <p className="text-sm text-gray-600">
-                            Comprehensive chapter-wise notes
-                          </p>
+                      <p className="text-gray-600 text-sm mb-4">
+                        {/* If you have a description field, use it here */}
+                        {course.courseDescription || "No description provided."}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center text-sm text-gray-500">
+                          <i className="fas fa-clock mr-2" />
+                          <span>Progress: {course.courseProgress}%</span>
                         </div>
-                        <div className="p-4 bg-gray-50 rounded-lg hover:scale-105 transition-transform cursor-pointer">
-                          <h3 className="font-semibold mb-2">
-                            📖 Reference Books
-                          </h3>
-                          <p className="text-sm text-gray-600">
-                            Recommended textbooks and references
-                          </p>
-                        </div>
-                        <div className="p-4 bg-gray-50 rounded-lg hover:scale-105 transition-transform cursor-pointer">
-                          <h3 className="font-semibold mb-2">
-                            🎥 Video Tutorials
-                          </h3>
-                          <p className="text-sm text-gray-600">
-                            Visual learning resources
-                          </p>
+                        <div className="relative w-16 h-16">
+                          <svg className="transform -rotate-90 w-16 h-16">
+                            <circle
+                              cx={32}
+                              cy={32}
+                              r={28}
+                              stroke="#eee"
+                              strokeWidth={4}
+                              fill="none"
+                            />
+                            <circle
+                              cx={32}
+                              cy={32}
+                              r={28}
+                              stroke="#007BFF"
+                              strokeWidth={4}
+                              fill="none"
+                              strokeDasharray={circumference}
+                              strokeDashoffset={offset}
+                              className="transition-all duration-1000 shadow-glow"
+                            />
+                          </svg>
                         </div>
                       </div>
                     </div>
-                    <div className="tab-pane hidden">
-                      <div className="space-y-4">
-                        <button className="w-full py-3 px-4 bg-custom text-white rounded-lg hover:animate-shake transition-all">
-                          Mock Test 1
-                        </button>
-                        <button className="w-full py-3 px-4 bg-custom text-white rounded-lg hover:animate-shake transition-all">
-                          Mock Test 2
-                        </button>
-                        <button className="w-full py-3 px-4 bg-custom text-white rounded-lg hover:animate-shake transition-all">
-                          Mock Test 3
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
+              {/* ... Your Community Forum code, modal, etc. can go here ... */}
             </div>
             <div
               className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16"
