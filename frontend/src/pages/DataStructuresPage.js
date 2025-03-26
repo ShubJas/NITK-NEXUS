@@ -1,0 +1,821 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+// Custom Card Components
+const Card = ({ children, className = "" }) => (
+  <div className={`bg-white rounded-lg shadow ${className}`}>{children}</div>
+);
+
+const DataStructuresPage = () => {
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    function updateCountdown() {
+      const midtermDate = new Date("2025-02-25T10:00:00");
+      const finalDate = new Date("2025-02-26T14:00:00");
+      const now = new Date();
+      const midtermDays = Math.ceil(
+        (midtermDate - now) / (1000 * 60 * 60 * 24)
+      );
+      const finalDays = Math.ceil((finalDate - now) / (1000 * 60 * 60 * 24));
+
+      const midtermEl = document.getElementById("midterm-countdown");
+      const finalEl = document.getElementById("final-countdown");
+      if (midtermEl) midtermEl.textContent = midtermDays + " days remaining";
+      if (finalEl) finalEl.textContent = finalDays + " days remaining";
+    }
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000 * 60 * 60);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>CS201: Data Structures - NITK Nexus</title>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        rel="stylesheet"
+      />
+      <link
+        href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css"
+        rel="stylesheet"
+      />
+      <nav className="bg-white shadow">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex">
+              <div className="flex-shrink-0 flex items-center">
+                <img
+                  className="h-8 w-auto"
+                  src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png"
+                  alt="NITK Nexus"
+                />
+              </div>
+              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <a
+                  href="#"
+                  className="border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                >
+                  Courses
+                </a>
+                <a
+                  href="#"
+                  className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                >
+                  Calendar
+                </a>
+                <a
+                  href="#"
+                  className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                >
+                  Resources
+                </a>
+                <a
+                  href="#"
+                  className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                >
+                  Forum
+                </a>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <button
+                type="button"
+                className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none"
+              >
+                <i className="fas fa-bell text-xl" />
+              </button>
+              <div className="ml-3 relative">
+                <div className="flex items-center">
+                  <img
+                    className="h-8 w-8 rounded-full"
+                    src="https://creatie.ai/ai/api/search-image?query=A professional headshot of a young student with a natural smile, clean background&width=100&height=100&orientation=squarish&flag=ac9c5fb6-215e-4267-9535-79d2cfd62df6&flag=807e5f5d-934b-4ab9-8f91-d32e16d6e9a8&flag=81f1c8d4-3343-4e43-ae46-3d640a0a49dc&flag=8bb503b7-5b50-466c-99c7-4d23c00f88f2&flag=f830acf7-c3cb-4c36-b6d9-ede967023427&flag=f02bc46d-47a7-4da9-af38-88dfb278238e&flag=69f5c03c-97cf-4f83-a3da-ce11f28c3462&flag=aef60a2b-60a9-4842-9f31-9a69e6d72c84&flag=de96c0a7-0719-4cbe-a277-3dc5cd2bf3a3&flag=1ba6ce94-0bc8-4dd9-823f-fa689db5d1ff&flag=56bc6ac9-6818-4022-9c1c-eab42426dbb1&flag=ff5a1995-5145-4ccd-adc3-f830ab9fd3be&flag=c9e1ab8d-bfb6-43c3-b208-ea4606eca6c5&flag=23ae5286-4396-4054-ad1e-705d30d672bb&flag=5f38f011-b82c-4d70-a4bb-281f680dbad6&flag=40e303f0-ed6b-40dd-b756-1fb1be814103"
+                    alt
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="bg-white rounded-lg shadow overflow-hidden">
+          <div className="px-8 py-6 bg-blue-500 bg-opacity-10">
+            <div className="flex justify-between items-start">
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">
+                  CS201: Data Structures
+                </h1>
+                <div className="mt-2 flex items-center text-sm text-gray-600">
+                  <i className="fas fa-calendar-alt mr-2" />
+                  <span>3rd Semester (June - September 2024)</span>
+                  <span className="mx-2">•</span>
+                  <i className="fas fa-university mr-2" />
+                  <span>Department of Computer Science</span>
+                </div>
+              </div>
+              <div className="flex space-x-4">
+                <button className="!rounded-button border border-blue-500 text-blue-500 px-4 py-2 flex items-center">
+                  <i className="fas fa-download mr-2" />
+                  Syllabus
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+            <div>
+              <h2 className="text-xl font-semibold mb-4">Course Overview</h2>
+              <div className="prose max-w-none">
+                <p>
+                  This course provides a comprehensive introduction to
+                  fundamental data structures and their implementations in
+                  programming. Students will learn about arrays, linked lists,
+                  stacks, queues, trees, and graphs, along with their
+                  applications in solving real-world problems.
+                </p>
+                <h3 className="text-lg font-medium mt-6 mb-3">Prerequisites</h3>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>CS101: Introduction to Programming</li>
+                  <li>Basic knowledge of C++ or Java</li>
+                  <li>Discrete Mathematics</li>
+                </ul>
+                <h3 className="text-lg font-medium mt-6 mb-3">
+                  Learning Outcomes
+                </h3>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Understand and implement fundamental data structures</li>
+                  <li>Analyze algorithm complexity and performance</li>
+                  <li>Apply appropriate data structures to solve problems</li>
+                  <li>Develop efficient programming solutions</li>
+                </ul>
+                <h3 className="text-lg font-medium mt-6 mb-3">
+                  Required Textbooks
+                </h3>
+                <div className="space-y-2">
+                  <a
+                    href="#"
+                    className="flex items-center text-sm text-blue-500 hover:underline"
+                  >
+                    <i className="fas fa-book mr-2" />
+                    Data Structures and Algorithms by Alfred V. Aho (E-book
+                    available)
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center text-sm text-blue-500 hover:underline"
+                  >
+                    <i className="fas fa-book mr-2" />
+                    Introduction to Algorithms by Cormen (E-book available)
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center text-sm text-blue-500 hover:underline"
+                  >
+                    <i className="fas fa-book mr-2" />
+                    Cracking the Coding Interview by Gayle Laakmann (E-book
+                    available)
+                  </a>
+                </div>
+                <div className="mt-6">
+                  <h3 className="text-lg font-medium mb-3">Study Tips</h3>
+                  <div className="space-y-2">
+                    <div className="border border-gray-200 rounded-lg">
+                      <button
+                        className="w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+                        onclick='this.parentElement.classList.toggle("open"); this.querySelector("i").classList.toggle("rotate-180")'
+                      >
+                        <span className="font-medium">
+                          Tip 1: Focus on Problem-Solving
+                        </span>
+                        <i className="fas fa-chevron-down transition-transform duration-200" />
+                      </button>
+                      <div className="px-4 py-3 border-t border-gray-200 hidden">
+                        <p className="text-gray-600">
+                          Start with simple problems and gradually increase
+                          difficulty. Break down complex problems into smaller,
+                          manageable parts. Practice implementing solutions in
+                          multiple ways.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="border border-gray-200 rounded-lg">
+                      <button
+                        className="w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+                        onclick='this.parentElement.classList.toggle("open"); this.querySelector("i").classList.toggle("rotate-180")'
+                      >
+                        <span className="font-medium">
+                          Tip 2: Practice Leetcode Questions
+                        </span>
+                        <i className="fas fa-chevron-down transition-transform duration-200" />
+                      </button>
+                      <div className="px-4 py-3 border-t border-gray-200 hidden">
+                        <p className="text-gray-600">
+                          Solve at least 2-3 LeetCode problems daily. Focus on
+                          array, linked list, tree, and graph problems. Join
+                          weekly contests to improve problem-solving speed.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="border border-gray-200 rounded-lg">
+                      <button
+                        className="w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+                        onclick='this.parentElement.classList.toggle("open"); this.querySelector("i").classList.toggle("rotate-180")'
+                      >
+                        <span className="font-medium">
+                          Tip 3: Visualize Data Structures
+                        </span>
+                        <i className="fas fa-chevron-down transition-transform duration-200" />
+                      </button>
+                      <div className="px-4 py-3 border-t border-gray-200 hidden">
+                        <p className="text-gray-600">
+                          Use tools like visualgo.net to understand how data
+                          structures work. Draw diagrams to represent data
+                          structure operations. Create your own visual examples.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold mb-4">Course Details</h2>
+              <div className="bg-gray-50 rounded-lg p-6">
+                <div className="mb-6">
+                  <h3 className="text-sm font-medium text-gray-500 mb-3">
+                    Course Progress
+                  </h3>
+                  <div className="flex items-center">
+                    <div className="relative w-20 h-20 mr-4">
+                      <svg
+                        className="w-20 h-20  transform -rotate-90"
+                        viewBox="0 0 36 36"
+                      >
+                        <path
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke="#edf2f7"
+                          strokeWidth="{2}"
+                        />
+                        <path
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke="var(--color-custom)"
+                          strokeWidth="{2}"
+                          strokeDasharray="45, 100"
+                        />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-lg font-semibold text-blue-500">
+                          45%
+                        </span>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-medium">Overall Completion</p>
+                      <p className="text-sm text-gray-500 mt-1">
+                        Track your progress through assignments, labs, and
+                        videos
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="text-sm font-medium text-gray-500">
+                      Credit Hours
+                    </h3>
+                    <p className="mt-1 text-lg font-medium">4 Credits</p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-gray-500">
+                      Class Schedule
+                    </h3>
+                    <p className="mt-1 text-lg font-medium">MWF 10:00-11:20</p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-gray-500">
+                      Location
+                    </h3>
+                    <p className="mt-1 text-lg font-medium">CSE Building 401</p>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-gray-500">
+                      Semester
+                    </h3>
+                    <p className="mt-1 text-lg font-medium">3rd Semester</p>
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <div className="mt-6">
+                    <h3 className="text-sm font-medium text-gray-500 mb-3">
+                      Upcoming Exams
+                    </h3>
+                    <div className="space-y-4">
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <div className="flex justify-between items-center mb-2">
+                          <h4 className="font-medium">Mid-Semester Exam</h4>
+                          <span
+                            className="text-sm text-red-600"
+                            id="midterm-countdown"
+                          >
+                            10 days remaining
+                          </span>
+                        </div>
+                        <p className="text-sm text-gray-500">
+                          Date: November 15, 2024
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          Time: 10:00 AM - 1:00 PM
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          Venue: CSE Building 401
+                        </p>
+                      </div>
+                      <div className="bg-white p-4 rounded-lg border border-gray-200">
+                        <div className="flex justify-between items-center mb-2">
+                          <h4 className="font-medium">End-Semester Exam</h4>
+                          <span
+                            className="text-sm text-gray-600"
+                            id="final-countdown"
+                          >
+                            45 days remaining
+                          </span>
+                        </div>
+                        <p className="text-sm text-gray-500">
+                          Date: December 20, 2024
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          Time: 2:00 PM - 5:00 PM
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          Venue: CSE Building 401
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="text-sm font-medium text-gray-500 mb-3">
+                    Assessment Breakdown
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">Assignments (6)</span>
+                      <span className="text-sm font-medium">30%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-blue-500 rounded-full h-2"
+                        style={{ width: "30%" }}
+                      />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">Mid-term Exam</span>
+                      <span className="text-sm font-medium">30%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-blue-500 rounded-full h-2"
+                        style={{ width: "30%" }}
+                      />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">Final Exam</span>
+                      <span className="text-sm font-medium">40%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-blue-500 rounded-full h-2"
+                        style={{ width: "40%" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-200 px-8 py-8">
+            <h2 className="text-xl font-semibold mb-6">Course Instructor</h2>
+            <div className="flex items-start space-x-6">
+              <img
+                className="h-24 w-24 rounded-lg object-cover"
+                src="https://creatie.ai/ai/api/search-image?query=A professional headshot of a middle-aged professor wearing glasses and a formal shirt, looking friendly and approachable, clean background&width=200&height=200&orientation=squarish&flag=49392231-cde7-4d1a-a76a-dc23dda718d7&flag=1477d64e-9f33-45ac-af3d-5f94aa5240b6&flag=90e96ee3-2664-4a78-949b-fc49c9ce6cdc&flag=81d957f7-3127-4850-ae25-72ba9531e882&flag=f5fc9063-19b9-4e65-ac28-7b394b5a5b19&flag=ef13a299-545c-413a-9843-d4b5c0e6dcdc&flag=b7ffc84f-9f37-4159-b58f-5b5667c0570e&flag=5afe90ed-598f-4ec3-9016-ba359f43b708&flag=db118092-fa5f-404b-bd31-fe151f3dbd35&flag=d2dc070d-fa44-4e55-9ee2-6f42ad144a3b&flag=ce720416-f381-40cd-a8c7-375455ac2f26&flag=49978b80-a1e3-4f99-aa69-274de701f324&flag=d824a65e-7277-4e6f-a6d7-6afcd5a373dd&flag=6425f21a-1e0c-4ce4-a210-b2a24dc5759c&flag=adb6f53a-1b2b-4285-9198-600aeabfa575&flag=1d1f3f97-ca71-4eb1-8c28-0fbcc07c479d"
+                alt="Professor"
+              />
+              <div>
+                <h3 className="text-lg font-medium">Dr. Sarah Johnson</h3>
+                <p className="text-sm text-gray-500">
+                  Associate Professor, Department of Computer Science
+                </p>
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-center text-sm">
+                    <i className="fas fa-envelope w-5 text-gray-400" />
+                    <span>sarah.johnson@nitk.edu</span>
+                  </div>
+                  <div className="flex items-center text-sm">
+                    <i className="fas fa-phone w-5 text-gray-400" />
+                    <span>+91 (824) 247-4000</span>
+                  </div>
+                  <div className="flex items-center text-sm">
+                    <i className="fas fa-clock w-5 text-gray-400" />
+                    <span>Office Hours: Mon &amp; Wed 2:00-4:00 PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-200 px-8 py-8">
+            <h2 className="text-xl font-semibold mb-6">Weekly Schedule</h2>
+            <div className="space-y-6">
+              <div className="relative">
+                <div
+                  className="absolute inset-0 flex items-center"
+                  aria-hidden="true"
+                >
+                  <div className="w-full border-t border-gray-200" />
+                </div>
+                <div className="relative flex justify-start">
+                  <span className="pr-3 bg-white text-sm font-medium text-gray-500">
+                    Current Week
+                  </span>
+                </div>
+              </div>
+              <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                <div className="px-6 py-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-medium">
+                      Week 6: Binary Trees and Binary Search Trees
+                    </h3>
+                    <span className="px-3 py-1 text-sm rounded-full bg-blue-500 bg-opacity-10 text-blue-500">
+                      In Progress
+                    </span>
+                  </div>
+                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-500">
+                        Topics Covered
+                      </h4>
+                      <ul className="mt-2 space-y-2 text-sm">
+                        <li className="flex items-center">
+                          <i className="fas fa-check-circle text-green-500 mr-2" />
+                          Binary Tree Implementation
+                        </li>
+                        <li className="flex items-center">
+                          <i className="fas fa-check-circle text-green-500 mr-2" />
+                          Tree Traversal Algorithms
+                        </li>
+                        <li className="flex items-center">
+                          <i className="far fa-circle text-gray-400 mr-2" />
+                          Binary Search Tree Operations
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-gray-500">
+                        Resources
+                      </h4>
+                      <div className="mt-2 space-y-2">
+                        <a
+                          href="#"
+                          className="flex items-center text-sm text-blue-500 hover:underline"
+                        >
+                          <i className="fas fa-file-pdf mr-2" />
+                          Lecture Notes - Binary Trees
+                        </a>
+                        <a
+                          href="#"
+                          className="flex items-center text-sm text-blue-500 hover:underline"
+                        >
+                          <i className="fas fa-play-circle mr-2" />
+                          Video Tutorial - Tree Traversal
+                        </a>
+                        <a
+                          href="#"
+                          className="flex items-center text-sm text-blue-500 hover:underline"
+                        >
+                          <i className="fas fa-code mr-2" />
+                          Practice Problems Set
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-200 px-8 py-8">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-semibold">Assignments</h2>
+              <button className="!rounded-button bg-blue-500 text-white px-4 py-2 text-sm">
+                View All Assignments
+              </button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-medium">Assignment 4</h3>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Linked List Implementation
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      className="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300 mr-2"
+                    />
+                    <span className="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">
+                      Due Soon
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <i className="fas fa-calendar-alt mr-2" />
+                    Due Oct 15, 2024
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 mt-1">
+                    <i className="fas fa-users mr-2" />
+                    Individual Assignment
+                  </div>
+                </div>
+                <button className="!rounded-button w-full mt-4 border border-blue-500 text-blue-500 px-4 py-2 text-sm">
+                  Start Assignment
+                </button>
+              </div>
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-medium">Assignment 3</h3>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Stack and Queue Problems
+                    </p>
+                  </div>
+                  <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">
+                    Submitted
+                  </span>
+                </div>
+                <div className="mt-4">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <i className="fas fa-calendar-alt mr-2" />
+                    Submitted Oct 1, 2024
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 mt-1">
+                    <i className="fas fa-check-circle mr-2 text-green-500" />
+                    Grade: 92/100
+                  </div>
+                </div>
+                <button className="!rounded-button w-full mt-4 border border-gray-200 text-gray-700 px-4 py-2 text-sm">
+                  View Submission
+                </button>
+              </div>
+              <div className="bg-white rounded-lg border border-gray-200 p-6">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="font-medium">Assignment 2</h3>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Array Operations
+                    </p>
+                  </div>
+                  <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">
+                    Graded
+                  </span>
+                </div>
+                <div className="mt-4">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <i className="fas fa-calendar-alt mr-2" />
+                    Submitted Sep 15, 2024
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500 mt-1">
+                    <i className="fas fa-check-circle mr-2 text-green-500" />
+                    Grade: 95/100
+                  </div>
+                </div>
+                <button className="!rounded-button w-full mt-4 border border-gray-200 text-gray-700 px-4 py-2 text-sm">
+                  View Feedback
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-200 px-8 py-8">
+            <h2 className="text-xl font-semibold mb-6">Course Resources</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+              <div className="bg-white rounded-lg border border-gray-200 p-6 col-span-full">
+                <h3 className="font-medium mb-4">
+                  CS201 Data Structures Tutorials
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {[
+                    {
+                      title: "Introduction to Data Structures",
+                      duration: "Part 1 • 45:20",
+                      img: "https://img.youtube.com/vi/0bHoB32fuj0/maxresdefault.jpg",
+                      link: "https://www.youtube.com/watch?v=0bHoB32fuj0",
+                    },
+                    {
+                      title: "Arrays and Linked Lists",
+                      duration: "Part 2 • 52:15",
+                      img: "https://img.youtube.com/vi/B31LgI4Y4DQ/maxresdefault.jpg",
+                      link: "https://www.youtube.com/watch?v=B31LgI4Y4DQ",
+                    },
+                    {
+                      title: "Stacks and Queues",
+                      duration: "Part 3 • 48:30",
+                      img: "https://i.ytimg.com/vi/tqQ5fTamIN4/hqdefault.jpg",
+                      link: "https://youtu.be/tqQ5fTamIN4?si=In0j1tNhC-OkZh_t",
+                    },
+                  ].map((video, index) => (
+                    <div
+                      key={index}
+                      className="relative rounded-lg overflow-hidden"
+                    >
+                      <a
+                        href={video.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={video.img}
+                          alt="Tutorial thumbnail"
+                          className="w-full h-48 object-cover"
+                        />
+                      </a>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+                        <h4 className="text-white font-medium">
+                          {video.title}
+                        </h4>
+                        <p className="text-gray-200 text-sm">
+                          {video.duration}
+                        </p>
+                      </div>
+                      <div className="absolute top-2 right-2">
+                        <input
+                          type="checkbox"
+                          className="form-checkbox h-4 w-4 text-blue-500 rounded border-gray-300"
+                          title="Mark as completed"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex justify-between items-center mt-4">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <i className="fas fa-play-circle mr-2" />
+                    5/200 videos completed
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-48 bg-gray-200 rounded-full h-2 mr-4">
+                      <div
+                        className="bg-blue-500 rounded-full h-2"
+                        style={{ width: "2.5%" }}
+                      />
+                    </div>
+                    <a
+                      href="https://www.youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:underline text-sm"
+                    >
+                      View Full Playlist
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer className="bg-gradient-to-b from-blue-50 to-white border-t border-gray-200 mt-12">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+              <img
+                className="h-12"
+                src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png"
+                alt="NITK Nexus"
+              />
+              <p className="mt-4 text-sm text-gray-600 leading-relaxed">
+                Your comprehensive learning platform designed by NITK students,
+                for NITK students.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-medium">Quick Links</h3>
+              <ul className="mt-4 space-y-2 text-sm text-gray-500">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-medium">Resources</h3>
+              <ul className="mt-4 space-y-2 text-sm text-gray-500">
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+                  >
+                    Study Materials
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+                  >
+                    Career Guide
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+                  >
+                    FAQ
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-medium">Connect with Us</h3>
+              <ul className="mt-4 space-y-2 text-sm text-gray-500">
+                <li className="flex space-x-4">
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
+                  >
+                    <i className="fab fa-linkedin text-xl" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200 ml-4"
+                  >
+                    <i className="fab fa-twitter text-xl" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200 ml-4"
+                  >
+                    <i className="fab fa-instagram text-xl" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200 ml-4"
+                  >
+                    <i className="fab fa-youtube text-xl" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-blue-500 transition-colors duration-200 ml-4"
+                  >
+                    <i className="fab fa-github text-xl" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-200 text-sm text-gray-600 text-center font-medium">
+            <div className="flex justify-center space-x-4 mb-8">
+              <button className="px-6 py-3 text-white font-medium rounded-lg bg-gradient-to-r from-custom to-blue-600 hover:from-blue-600 hover:to-custom transition-all duration-200 shadow-lg hover:shadow-xl">
+                <i className="fas fa-arrow-left mr-2" />
+                Back to Semester
+              </button>
+              <button className="px-6 py-3 text-white font-medium rounded-lg bg-gradient-to-r from-custom to-blue-600 hover:from-blue-600 hover:to-custom transition-all duration-200 shadow-lg hover:shadow-xl">
+                <i className="fas fa-chart-line mr-2" />
+                Track My Progress
+              </button>
+            </div>
+            <p>© 2025 NITK Nexus | Built by NITK Students for NITK Students</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default DataStructuresPage;
