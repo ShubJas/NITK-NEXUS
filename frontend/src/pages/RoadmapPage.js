@@ -59,7 +59,7 @@ const RoadmapPage = () => {
                 </div>
               </div>
               <div className="flex items-center">
-                <button className="!rounded-button bg-blue-500 text-white px-4 py-2 text-sm font-medium">
+                <button className="!rounded-md bg-blue-500 text-white px-4 py-2 text-sm font-medium">
                   Get Started
                 </button>
               </div>
@@ -77,16 +77,11 @@ const RoadmapPage = () => {
                   Your one-stop destination for comprehensive placement
                   preparation resources and guidance.
                 </p>
-                <div className="mt-8 flex justify-center">
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <button
-                      className="!rounded-button w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-gray-700 bg-blue-500 hover:bg-blue-500/90 md:py-4 md:text-lg md:px-10 transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none shadow-lg hover:shadow-2xl"
-                      onclick="document.getElementById('id-35').scrollIntoView({behavior: 'smooth', block: 'start'})"
-                    >
-                      Start Learning
-                    </button>
-                  </div>
-                </div>
+                <div class="mt-8 flex justify-center">
+                        <div class="mt-3 sm:mt-0 sm:ml-3">
+                            <button class="!rounded-md w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white bg-blue-500 hover:bg-blue-500/90 md:py-4 md:text-lg md:px-10 transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none shadow-lg hover:shadow-2xl" onclick="document.getElementById('id-35').scrollIntoView({behavior: 'smooth', block: 'start'})">Start Learning <i class="fas fa-rocket ml-2 animate-bounce"></i></button>
+                        </div>
+                    </div>
               </div>
             </div>
           </div>
@@ -123,7 +118,7 @@ const RoadmapPage = () => {
                       </div>
                     </div>
                     <a href="https://www.indiabix.com/logical-reasoning/questions-and-answers/">
-                      <button className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
                         Explore Learning Path{" "}
                         <i className="fas fa-arrow-right ml-2" />
                       </button>
@@ -132,9 +127,15 @@ const RoadmapPage = () => {
                     <div className="mt-4 text-sm text-gray-500">
                       <strong>Recommended:</strong>
                       <ul className="list-disc pl-4 mt-2">
-                        <li>R.S. Aggarwal - Quantitative Aptitude</li>
-                        <li>PrepInsta Playlist</li>
-                        <li>IndiaBix, GeeksforGeeks</li>
+                        <li>
+                          <a href="https://eltsindia.com/StudyMaterialFiles/ea007acc-bc55-4e17-8470-0d9e85313252quantitative-aptitude-for-competitive-examinations-by-rs-aggarwal-reprint-2017.pdf" className="text-blue-500 hover:underline">R.S. Aggarwal - Quantitative Aptitude</a>
+                        </li>
+                        <li>
+                          <a href="https://prepinsta.com/learn-aptitude/" className="text-blue-500 hover:underline">PrepInsta</a>
+                        </li>
+                        <li>
+                          <a href="https://www.indiabix.com/" className="text-blue-500 hover:underline">IndiaBix</a>, <a href="https://www.geeksforgeeks.org/aptitude-gq/" className="text-blue-500 hover:underline">GeeksforGeeks</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -167,20 +168,38 @@ const RoadmapPage = () => {
                         Study Resources:
                       </strong>
                       <ul className="list-disc pl-4 mt-2 text-sm text-gray-500">
-                        <li>Programming Languages: C, C++, Java, Python</li>
-                        <li>GeeksforGeeks, LeetCode</li>
-                        <li>CodeWithHarry (Java), CS Dojo (Python)</li>
-                        <li>DSA: CLRS Book, Striver's Sheet</li>
-                        <li>DBMS: SQL fundamentals</li>
+                        <li>
+                          Programming Languages: 
+                          <a href="https://www.learn-c.org/" className="text-blue-500 hover:underline"> C</a>, 
+                          <a href="https://www.learncpp.com/" className="text-blue-500 hover:underline"> C++</a>, 
+                          <a href="https://www.codecademy.com/learn/learn-java" className="text-blue-500 hover:underline"> Java</a>, 
+                          <a href="https://www.python.org/about/gettingstarted/" className="text-blue-500 hover:underline"> Python</a>
+                        </li>
+                        <li>
+                          <a href="https://www.geeksforgeeks.org/" className="text-blue-500 hover:underline">GeeksforGeeks</a>, 
+                          <a href="https://leetcode.com/" className="text-blue-500 hover:underline">LeetCode</a>
+                        </li>
+                        <li>
+                          <a href="https://www.youtube.com/playlist?list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q" className="text-blue-500 hover:underline">CodeWithHarry (Java)</a>, 
+                          <a href="https://www.youtube.com/playlist?list=PLBZBJbE_rGRWeh5mIBhD-hhDwSEDxogDg" className="text-blue-500 hover:underline">CS Dojo (Python)</a>
+                        </li>
+                        <li>
+                          DSA: 
+                          <a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844" className="text-blue-500 hover:underline">CLRS Book</a>, 
+                          <a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/" className="text-blue-500 hover:underline">Striver's Sheet</a>
+                        </li>
+                        <li>
+                          DBMS: 
+                          <a href="https://www.w3schools.com/sql/" className="text-blue-500 hover:underline">SQL fundamentals</a>
+                        </li>
                       </ul>
                     </div>
-                    <button
-                      className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md"
-                      onClick={() => navigate("/data-structure")}
-                    >
-                      Explore Learning Path{" "}
-                      <i className="fas fa-arrow-right ml-2" />
-                    </button>
+                    <a href="https://www.geeksforgeeks.org/data-structures/">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        Explore Learning Path{" "}
+                        <i className="fas fa-arrow-right ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -198,7 +217,7 @@ const RoadmapPage = () => {
                             <li>
                               Communication Skills{" "}
                               <a
-                                href="#"
+                                href="https://www.coursera.org/learn/communication-skills"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Coursera)
@@ -207,7 +226,7 @@ const RoadmapPage = () => {
                             <li>
                               Leadership &amp; Team Building{" "}
                               <a
-                                href="#"
+                                href="https://www.linkedin.com/learning/developing-your-team-members"
                                 className="text-blue-500 hover:underline"
                               >
                                 (LinkedIn Learning)
@@ -216,21 +235,25 @@ const RoadmapPage = () => {
                             <li>
                               Public Speaking{" "}
                               <a
-                                href="#"
+                                href="https://www.toastmasters.org/"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Toastmasters)
                               </a>
                             </li>
-                            <li>Email Writing &amp; Business Communication</li>
+                            <li>
+                              <a href="https://www.coursera.org/learn/business-writing" className="text-blue-500 hover:underline">Email Writing &amp; Business Communication</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                      Explore Learning Path{" "}
-                      <i className="fas fa-arrow-right ml-2" />
-                    </button>
+                    <a href="https://www.coursera.org/courses?query=soft%20skills">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        Explore Learning Path{" "}
+                        <i className="fas fa-arrow-right ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -245,11 +268,13 @@ const RoadmapPage = () => {
                         </h3>
                         <div className="mt-3">
                           <ul className="list-disc pl-4 text-sm text-gray-600">
-                            <li>Common HR Questions &amp; Answers</li>
+                            <li>
+                              <a href="https://www.themuse.com/advice/31-common-interview-questions-and-answers" className="text-blue-500 hover:underline">Common HR Questions &amp; Answers</a>
+                            </li>
                             <li>
                               Technical Interview Practice{" "}
                               <a
-                                href="#"
+                                href="https://www.interviewbit.com/technical-interview-questions/"
                                 className="text-blue-500 hover:underline"
                               >
                                 (InterviewBit)
@@ -258,22 +283,28 @@ const RoadmapPage = () => {
                             <li>
                               Mock Interviews{" "}
                               <a
-                                href="#"
+                                href="https://www.pramp.com/"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Pramp)
                               </a>
                             </li>
-                            <li>Resume Building Tips</li>
-                            <li>Body Language &amp; Interview Etiquette</li>
+                            <li>
+                              <a href="https://zety.com/blog/resume-tips" className="text-blue-500 hover:underline">Resume Building Tips</a>
+                            </li>
+                            <li>
+                              <a href="https://www.thebalancecareers.com/body-language-during-job-interview-2061340" className="text-blue-500 hover:underline">Body Language &amp; Interview Etiquette</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                      Explore Learning Path{" "}
-                      <i className="fas fa-arrow-right ml-2" />
-                    </button>
+                    <a href="https://www.interviewbit.com/practice/">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        Explore Learning Path{" "}
+                        <i className="fas fa-arrow-right ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -291,7 +322,7 @@ const RoadmapPage = () => {
                             <li>
                               Operating Systems{" "}
                               <a
-                                href="#"
+                                href="https://www.coursera.org/learn/os-power-user"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Stanford CS144)
@@ -300,7 +331,7 @@ const RoadmapPage = () => {
                             <li>
                               Computer Networks{" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PLBlnK6fEyqRgMCUAG0XRw78UA8qnv6jEx"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Gate Smashers)
@@ -309,7 +340,7 @@ const RoadmapPage = () => {
                             <li>
                               DBMS{" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PLdo5W4Nhv31b33kF46f9aFjoJPOkdlsRc"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Jenny's Lectures)
@@ -319,9 +350,11 @@ const RoadmapPage = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                      Access Resources <i className="fas fa-arrow-right ml-2" />
-                    </button>
+                    <a href="https://www.geeksforgeeks.org/computer-science-projects/">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        Access Resources <i className="fas fa-arrow-right ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -339,7 +372,7 @@ const RoadmapPage = () => {
                             <li>
                               High Level Design{" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Gaurav Sen)
@@ -348,7 +381,7 @@ const RoadmapPage = () => {
                             <li>
                               Low Level Design{" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PL564gOx0bCLqTolRIHIsR2JPv11w8LESW"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Sudip Ghosh)
@@ -357,7 +390,7 @@ const RoadmapPage = () => {
                             <li>
                               Design Patterns{" "}
                               <a
-                                href="#"
+                                href="https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Head First)
@@ -367,9 +400,11 @@ const RoadmapPage = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-6 w-full bg-gray-50 px-6 py-3 border border-gray-300 text-base font-medium text-gray-700 hover:bg-blue-500 hover:text-black hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                      Start Learning <i className="fas fa-arrow-right ml-2" />
-                    </button>
+                    <a href="https://www.educative.io/courses/grokking-the-system-design-interview">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-6 py-3 border border-gray-300 text-base font-medium text-gray-700 hover:bg-blue-500 hover:text-black hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        Start Learning <i className="fas fa-arrow-right ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -387,7 +422,7 @@ const RoadmapPage = () => {
                             <li>
                               Frontend (React){" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Codevolution)
@@ -396,7 +431,7 @@ const RoadmapPage = () => {
                             <li>
                               Backend (Node.js){" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Net Ninja)
@@ -405,7 +440,7 @@ const RoadmapPage = () => {
                             <li>
                               Full Stack Projects{" "}
                               <a
-                                href="#"
+                                href="https://www.freecodecamp.org/learn/back-end-development-and-apis/"
                                 className="text-blue-500 hover:underline"
                               >
                                 (FreeCodeCamp)
@@ -415,9 +450,11 @@ const RoadmapPage = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                      View Roadmap <i className="fas fa-arrow-right ml-2" />
-                    </button>
+                    <a href="https://roadmap.sh/frontend">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        View Roadmap <i className="fas fa-arrow-right ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -435,7 +472,7 @@ const RoadmapPage = () => {
                             <li>
                               Basic ML{" "}
                               <a
-                                href="#"
+                                href="https://www.coursera.org/learn/machine-learning"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Andrew NG)
@@ -444,7 +481,7 @@ const RoadmapPage = () => {
                             <li>
                               Deep Learning{" "}
                               <a
-                                href="#"
+                                href="https://www.coursera.org/specializations/deep-learning"
                                 className="text-blue-500 hover:underline"
                               >
                                 (DeepLearning.AI)
@@ -453,7 +490,7 @@ const RoadmapPage = () => {
                             <li>
                               ML Projects{" "}
                               <a
-                                href="#"
+                                href="https://www.kaggle.com/learn/intro-to-machine-learning"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Kaggle)
@@ -463,9 +500,11 @@ const RoadmapPage = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                      Explore Path <i className="fas fa-arrow-right ml-2" />
-                    </button>
+                    <a href="https://www.coursera.org/learn/machine-learning">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        Explore Path <i className="fas fa-arrow-right ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -483,7 +522,7 @@ const RoadmapPage = () => {
                             <li>
                               Android (Kotlin){" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PLQkwcJG4YTCQHC1NA7ygR5eYq5Q94o6vI"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Philipp Lackner)
@@ -492,7 +531,7 @@ const RoadmapPage = () => {
                             <li>
                               iOS (Swift){" "}
                               <a
-                                href="#"
+                                href="https://www.hackingwithswift.com/100"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Paul Hudson)
@@ -501,7 +540,7 @@ const RoadmapPage = () => {
                             <li>
                               React Native{" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Maximilian)
@@ -511,9 +550,11 @@ const RoadmapPage = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                      Start Building <i className="fas fa-arrow-right ml-2" />
-                    </button>
+                    <a href="https://developer.android.com/courses">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        Start Building <i className="fas fa-arrow-right ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -531,7 +572,7 @@ const RoadmapPage = () => {
                             <li>
                               DSA by Striver{" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz"
                                 className="text-blue-500 hover:underline"
                               >
                                 (YouTube)
@@ -540,7 +581,7 @@ const RoadmapPage = () => {
                             <li>
                               System Design{" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Gaurav Sen)
@@ -549,7 +590,7 @@ const RoadmapPage = () => {
                             <li>
                               DBMS Complete{" "}
                               <a
-                                href="#"
+                                href="https://www.youtube.com/playlist?list=PLBlnK6fEyqRgJU3EsOYDTW7m6SUmW6kII"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Gate Smashers)
@@ -559,9 +600,11 @@ const RoadmapPage = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                      View Playlists <i className="fas fa-play ml-2" />
-                    </button>
+                    <a href="https://www.youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        View Playlists <i className="fas fa-play ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow-lg rounded-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
@@ -579,7 +622,7 @@ const RoadmapPage = () => {
                             <li>
                               LeetCode Premium{" "}
                               <a
-                                href="#"
+                                href="https://leetcode.com/interview/"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Mock Interviews)
@@ -588,7 +631,7 @@ const RoadmapPage = () => {
                             <li>
                               InterviewBit{" "}
                               <a
-                                href="#"
+                                href="https://www.interviewbit.com/practice/"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Practice)
@@ -597,7 +640,7 @@ const RoadmapPage = () => {
                             <li>
                               Pramp{" "}
                               <a
-                                href="#"
+                                href="https://www.pramp.com/"
                                 className="text-blue-500 hover:underline"
                               >
                                 (Peer Interviews)
@@ -607,10 +650,12 @@ const RoadmapPage = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                      Start Practice{" "}
-                      <i className="fas fa-external-link-alt ml-2" />
-                    </button>
+                    <a href="https://leetcode.com/interview/">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                        Start Practice{" "}
+                        <i className="fas fa-external-link-alt ml-2" />
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -639,7 +684,7 @@ const RoadmapPage = () => {
                     </div>
                     <div className="mt-4 space-y-2">
                       <a
-                        href="#"
+                        href="https://leetcode.com/explore/featured/card/30-day-leetcoding-challenge/"
                         className="block px-4 py-2 bg-gray-50 rounded-md hover:bg-gray-100 text-gray-700 transform hover:scale-105 transition-all mb-3"
                       >
                         <i className="fas fa-play-circle mr-2 text-blue-500" />
@@ -651,10 +696,10 @@ const RoadmapPage = () => {
                         </span>
                       </a>
                       <a
-                        href="#"
+                        href="https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/"
                         className="block px-4 py-2 bg-gray-50 rounded-md hover:bg-gray-100 text-gray-700 transform hover:scale-105 transition-all"
                       >
-                        <i className="fas fa-book-reader mr-2 text-blue-500" />
+                                                <i className="fas fa-book-reader mr-2 text-blue-500" />
                         Striver's SDE Sheet
                         <span className="float-right">
                           <button className="text-sm bg-green-500 text-white px-2 py-1 rounded-md hover:bg-green-600">
@@ -663,7 +708,7 @@ const RoadmapPage = () => {
                         </span>
                       </a>
                       <a
-                        href="#"
+                        href="https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming/"
                         className="block px-4 py-2 bg-gray-50 rounded-md hover:bg-gray-100 text-gray-700 transform hover:scale-105 transition-all"
                       >
                         <i className="fas fa-chart-line mr-2 text-blue-500" />
@@ -687,7 +732,7 @@ const RoadmapPage = () => {
                         </div>
                       </a>
                       <a
-                        href="#"
+                        href="https://www.codechef.com/LEARNDSA"
                         className="block px-4 py-2 bg-gray-50 rounded-md hover:bg-gray-100 text-gray-700 transform hover:scale-105 transition-all"
                       >
                         <i className="fas fa-users mr-2 text-blue-500" />
@@ -705,14 +750,18 @@ const RoadmapPage = () => {
                     <ul className="space-y-2">
                       <li className="flex items-center">
                         <i className="fas fa-arrow-right text-blue-500 mr-2" />
-                        Dynamic Programming
+                        <a href="https://www.geeksforgeeks.org/dynamic-programming/" className="hover:underline">
+                          Dynamic Programming
+                        </a>
                         <button className="ml-auto text-sm bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-blue-600">
                           Start
                         </button>
                       </li>
                       <li className="flex items-center">
                         <i className="fas fa-arrow-right text-blue-500 mr-2" />
-                        Graph Algorithms
+                        <a href="https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/" className="hover:underline">
+                          Graph Algorithms
+                        </a>
                         <button className="ml-auto text-sm bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-blue-600">
                           Start
                         </button>
@@ -726,43 +775,43 @@ const RoadmapPage = () => {
                     <h4 className="text-xl font-bold">Interactive Tutorials</h4>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    <div className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    <a href="https://www.learnpython.org/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
                       <i className="fab fa-python text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Python</p>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    </a>
+                    <a href="https://www.learnjavaonline.org/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
                       <i className="fab fa-java text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Java</p>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    </a>
+                    <a href="https://www.learn-js.org/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
                       <i className="fab fa-js text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">JavaScript</p>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    </a>
+                    <a href="https://www.sql-practice.com/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
                       <i className="fas fa-database text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">SQL</p>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    </a>
+                    <a href="https://www.learn-cpp.org/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
                       <i className="fab fa-cpp text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">C++</p>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    </a>
+                    <a href="https://doc.rust-lang.org/stable/rust-by-example/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
                       <i className="fab fa-rust text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Rust</p>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    </a>
+                    <a href="https://www.hackingwithswift.com/learn" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
                       <i className="fab fa-swift text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Swift</p>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    </a>
+                    <a href="https://gobyexample.com/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
                       <i className="fab fa-golang text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Go</p>
-                    </div>
+                    </a>
                   </div>
-                  <button className="w-full bg-blue-500 !text-white py-2 rounded-md hover:bg-blue-500/90">
+                  <a href="https://www.codecademy.com/catalog" className="w-full bg-blue-500 !text-white py-2 rounded-md hover:bg-blue-500/90 flex justify-center items-center">
                     Start Learning
                     <i className="fas fa-rocket ml-2 animate-bounce" />
-                  </button>
+                  </a>
                 </div>
                 <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center mb-4">
@@ -777,21 +826,21 @@ const RoadmapPage = () => {
                       <div className="space-y-2">
                         <div className="flex justify-between items-center">
                           <span>System Design Workshop</span>
-                          <button className="text-blue-500 hover:underline">
+                          <a href="https://www.youtube.com/live/Un9zn1NqSHw?feature=share" className="text-blue-500 hover:underline">
                             Join
-                          </button>
+                          </a>
                         </div>
                         <div className="flex justify-between items-center">
                           <span>Code Review Session</span>
-                          <button className="text-blue-500 hover:underline">
+                          <a href="https://www.youtube.com/live/0kafYiWEVpU?feature=share" className="text-blue-500 hover:underline">
                             Join
-                          </button>
+                          </a>
                         </div>
                         <div className="flex justify-between items-center">
                           <span>Algorithm Masterclass</span>
-                          <button className="text-blue-500 hover:underline">
+                          <a href="https://www.youtube.com/live/6pLL2fEUJXw?feature=share" className="text-blue-500 hover:underline">
                             Join
-                          </button>
+                          </a>
                         </div>
                       </div>
                       <div className="mt-4">
@@ -816,9 +865,9 @@ const RoadmapPage = () => {
                               </button>
                             </div>
                           </div>
-                          <button className="w-full mt-2 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90">
+                          <a href="https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/" className="w-full mt-2 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 flex justify-center">
                             Submit Answer
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -827,9 +876,9 @@ const RoadmapPage = () => {
                         <i className="fas fa-graduation-cap mr-2" />
                         <span>Interactive Tutorials</span>
                       </div>
-                      <button className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 transform hover:scale-105 transition-all">
+                      <a href="https://www.freecodecamp.org/learn/" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 transform hover:scale-105 transition-all flex justify-center">
                         Start Learning
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -844,21 +893,27 @@ const RoadmapPage = () => {
                       <ul className="space-y-2">
                         <li className="flex justify-between items-center">
                           <span>Algorithm Battle</span>
-                          <span className="text-green-500">Active</span>
+                          <a href="https://codeforces.com/contests" className="text-green-500">
+                            Active
+                          </a>
                         </li>
                         <li className="flex justify-between items-center">
                           <span>Code Sprint</span>
-                          <span className="text-yellow-500">In 2h</span>
+                          <a href="https://www.codechef.com/contests" className="text-yellow-500">
+                            In 2h
+                          </a>
                         </li>
                         <li className="flex justify-between items-center">
                           <span>Team Challenge</span>
-                          <span className="text-blue-500">Tomorrow</span>
+                          <a href="https://codingcompetitions.withgoogle.com/codejam" className="text-blue-500">
+                            Tomorrow
+                          </a>
                         </li>
                       </ul>
                     </div>
-                    <button className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 transform hover:scale-105 transition-all">
+                    <a href="https://leetcode.com/contest/" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 transform hover:scale-105 transition-all flex justify-center">
                       Join Contest
-                    </button>
+                    </a>
                     <div className="mt-4 text-sm text-gray-500">
                       🏆 Weekly Prizes for Top Performers
                     </div>
@@ -936,9 +991,9 @@ const RoadmapPage = () => {
                     </p>
                   </div>
                   <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-                    <button className="!rounded-button flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-blue-500 bg-white hover:bg-gray-50">
+                    <a href="https://discord.gg/learnprogramming" className="!rounded-md flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-blue-500 bg-white hover:bg-gray-50">
                       Join Now
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -955,7 +1010,7 @@ const RoadmapPage = () => {
                 <ul role="list" className="mt-4 space-y-3">
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
                     >
                       Home
@@ -963,7 +1018,7 @@ const RoadmapPage = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/about"
                       className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
                     >
                       About Us
@@ -971,7 +1026,7 @@ const RoadmapPage = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/contact"
                       className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
                     >
                       Contact
@@ -986,7 +1041,7 @@ const RoadmapPage = () => {
                 <ul role="list" className="mt-4 space-y-4">
                   <li>
                     <a
-                      href="#"
+                      href="/resources"
                       className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
                     >
                       Study Materials
@@ -994,7 +1049,7 @@ const RoadmapPage = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/career-guide"
                       className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
                     >
                       Career Guide
@@ -1002,7 +1057,7 @@ const RoadmapPage = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/faq"
                       className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
                     >
                       FAQ
@@ -1015,13 +1070,13 @@ const RoadmapPage = () => {
                   Connect with Us
                 </h3>
                 <div className="flex space-x-8 mt-6">
-                  <a href="#" className="text-gray-400 hover:text-gray-500">
+                  <a href="https://www.linkedin.com/" className="text-gray-400 hover:text-gray-500">
                     <i className="fab fa-linkedin text-2xl text-gray-400 hover:text-blue-500 transition-colors duration-300" />
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-gray-500">
+                  <a href="https://twitter.com/" className="text-gray-400 hover:text-gray-500">
                     <i className="fab fa-twitter text-2xl text-gray-400 hover:text-blue-500 transition-colors duration-300" />
                   </a>
-                  <a href="#" className="text-gray-400 hover:text-gray-500">
+                  <a href="https://www.instagram.com/" className="text-gray-400 hover:text-gray-500">
                     <i className="fab fa-instagram text-2xl text-gray-400 hover:text-blue-500 transition-colors duration-300" />
                   </a>
                 </div>

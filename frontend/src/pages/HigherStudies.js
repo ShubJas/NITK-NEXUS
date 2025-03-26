@@ -36,19 +36,19 @@ const HigherStudies = () => {
                     Home
                   </a>
                   <a
-                    href="#"
+                    href="#exams"
                     className="text-gray-500 hover:text-blue-500 px-1 inline-flex items-center h-full text-sm font-medium"
                   >
                     Exams
                   </a>
                   <a
-                    href="#"
+                    href="#universities"
                     className="text-gray-500 hover:text-blue-500 px-1 inline-flex items-center h-full text-sm font-medium"
                   >
                     Universities
                   </a>
                   <a
-                    href="#"
+                    href="#resources"
                     className="text-gray-500 hover:text-blue-500 px-1 inline-flex items-center h-full text-sm font-medium"
                   >
                     Resources
@@ -56,9 +56,9 @@ const HigherStudies = () => {
                 </div>
               </div>
               <div className="flex items-center">
-                <button className="!rounded-button bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                <a href="/login" className="!rounded-button bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
                   Sign In
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -94,35 +94,24 @@ const HigherStudies = () => {
                     </div>
                     <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-6 justify-center items-center">
                       <div className="relative group">
-                        <button className="!rounded-button w-64 flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <a href="#exams" className="!rounded-button w-64 flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                           <i className="fas fa-rocket mr-2" /> Start Your
                           Journey
-                        </button>
+                        </a>
                       </div>
                       <div className="relative group">
-                        <button className="!rounded-button w-64 flex items-center justify-center px-8 py-4 border-2 border-blue-500 text-lg font-medium text-blue-500 bg-white hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm">
+                        <a href="#resources" className="!rounded-button w-64 flex items-center justify-center px-8 py-4 border-2 border-blue-500 text-lg font-medium text-blue-500 bg-white hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm">
                           <i className="fas fa-book-reader mr-2" /> Explore
                           Resources
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  className="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full"
-                  style={{ display: "none" }}
-                >
-                  <img
-                    className="absolute inset-0 w-full h-full object-cover"
-                    src="https://creatie.ai/ai/api/search-image?query=A 3D vector-style image with a clean, solid background color showing diverse students studying together in a modern educational setting, with floating educational icons and digital elements around them, creating an inspiring and forward-looking atmosphere&width=800&height=600&orientation=landscape&removebg=true&flag=1d857c50-d453-4f14-88eb-c84fbbf26b30&flag=627f2c98-5f1d-4b13-bc8c-7273f68ad117&flag=71174ca6-eeb2-4cfb-8694-07097632fe74&flag=7eb49149-dcdb-4716-906c-8bc4962a2972&flag=051767da-a5e2-4eb2-b29a-f8cedea5b290&flag=e9ee507d-e03f-471d-b188-ff4197ce6117&flag=24f6c4a0-318c-4e52-b3f1-d6061a60e56f&flag=2812f1f5-4241-4c8e-b442-bb77ba8727ef&flag=fb6e5f7d-b24c-456c-aac9-e8ed1262ee9c&flag=0f87da4c-1b6c-4ce5-903c-ded01ea866fd&flag=41861b42-a7e3-4c67-9f70-4ea872f6a160&flag=6401ea95-acab-4982-8d0e-17d82087ea76&flag=0a6574b5-46a3-4f5b-9001-2af72b4c7b24&flag=2205263d-48e0-47bc-b165-04543d9b7b1e&flag=aef56bcd-5ac8-4cd9-91e6-7ffb148f8b83&flag=03111bf2-15b2-4fc1-a7fd-2bf433ee4041&flag=5005695d-f394-4add-ab3a-1ce38bb9f1c4&flag=3e1764c9-a11d-4b4b-bbf7-73f818343c72"
-                    alt="Students studying"
-                    style={{ display: "none" }}
-                  />
-                </div>
               </div>
             </div>
           </section>
-          <section className="py-12 bg-gray-50">
+          <section id="exams" className="py-12 bg-gray-50">
             <section className="py-8 bg-white border-b">
               <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0 md:space-x-6">
@@ -201,21 +190,21 @@ const HigherStudies = () => {
                     </div>
                     <div className="mt-4 space-y-2">
                       <a
-                        href="#"
+                        href="https://www.youtube.com/watch?v=Ex-3Vlb9IrE&ab_channel=BharatinGermany%21"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
-                        <i className="fas fa-file-pdf mr-2" /> Download GRE
-                        3-Month Study Plan (PDF)
+                        <i className="fas fa-file-pdf mr-2" /> GRE
+                        3-Month Study Plan
                       </a>
                       <a
-                        href="#"
+                        href="https://www.youtube.com/watch?v=E_GSkiaMnx4&list=PL0BE1A07536688372&ab_channel=MagooshTestPrepforGRE"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
                         <i className="fab fa-youtube mr-2" /> Magoosh GRE
                         Playlist
                       </a>
                       <a
-                        href="https://www.youtube.com/playlist?list=example"
+                        href="https://www.youtube.com/watch?v=E_GSkiaMnx4&list=PL0BE1A07536688372&ab_channel=MagooshTestPrepforGRE"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
                         <i className="fab fa-youtube mr-2" /> GRE Vocab YouTube
@@ -246,9 +235,9 @@ const HigherStudies = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                    <a href="https://www.ets.org/gre" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
                       Learn More
-                    </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow rounded-lg">
@@ -278,21 +267,21 @@ const HigherStudies = () => {
                     </div>
                     <div className="mt-4 space-y-2">
                       <a
-                        href="#"
+                        href="https://gate.iitk.ac.in/"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
                         <i className="fas fa-file-pdf mr-2" /> Download GATE CSE
                         Study Plan (PDF)
                       </a>
                       <a
-                        href="#"
+                        href="https://www.youtube.com/c/GateAcademy"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
                         <i className="fab fa-youtube mr-2" /> GATE Academy
                         YouTube Channel
                       </a>
                       <a
-                        href="https://www.youtube.com/playlist?list=example"
+                        href="https://nptel.ac.in/courses/106105151"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
                         <i className="fab fa-youtube mr-2" /> NPTEL Operating
@@ -323,9 +312,9 @@ const HigherStudies = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                    <a href="https://gate.iitk.ac.in/" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
                       Learn More
-                    </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow rounded-lg">
@@ -355,21 +344,21 @@ const HigherStudies = () => {
                     </div>
                     <div className="mt-4 space-y-2">
                       <a
-                        href="#"
+                        href="https://www.ets.org/toefl/test-takers/ibt/prepare/"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
                         <i className="fas fa-file-pdf mr-2" /> Download TOEFL
                         Strategy Guide (PDF)
                       </a>
                       <a
-                        href="#"
+                        href="https://www.youtube.com/c/TOEFLtv"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
                         <i className="fab fa-youtube mr-2" /> ETS Official TOEFL
                         Playlist
                       </a>
                       <a
-                        href="https://www.youtube.com/playlist?list=example"
+                        href="https://www.youtube.com/watch?v=E_GSkiaMnx4&list=PL0BE1A07536688372&ab_channel=MagooshTestPrepforGRE"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
                         <i className="fab fa-youtube mr-2" /> TOEFL Writing
@@ -400,15 +389,15 @@ const HigherStudies = () => {
                         </div>
                       </div>
                     </div>
-                    <button className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                    <a href="https://www.ets.org/toefl" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
                       Learn More
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <section className="py-12 bg-white">
+          <section id="universities" className="py-12 bg-white">
             <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="lg:text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900">
@@ -426,7 +415,7 @@ const HigherStudies = () => {
                       <li className="flex items-center">
                         <span className="mr-2">🌍</span>
                         <a
-                          href="#"
+                          href="https://www.csail.mit.edu/"
                           className="text-blue-500 hover:text-blue-700"
                         >
                           MIT - Research Labs
@@ -435,7 +424,7 @@ const HigherStudies = () => {
                       <li className="flex items-center">
                         <span className="mr-2">🌍</span>
                         <a
-                          href="#"
+                          href="https://ai.stanford.edu/"
                           className="text-blue-500 hover:text-blue-700"
                         >
                           Stanford - AI Research
@@ -444,7 +433,7 @@ const HigherStudies = () => {
                       <li className="flex items-center">
                         <span className="mr-2">🌍</span>
                         <a
-                          href="#"
+                          href="https://www.ri.cmu.edu/"
                           className="text-blue-500 hover:text-blue-700"
                         >
                           CMU - Robotics Institute
@@ -460,7 +449,7 @@ const HigherStudies = () => {
                       <li className="flex items-center">
                         <span className="mr-2">🌍</span>
                         <a
-                          href="#"
+                          href="https://www.hbs.edu/"
                           className="text-blue-500 hover:text-blue-700"
                         >
                           Harvard Business School
@@ -469,7 +458,7 @@ const HigherStudies = () => {
                       <li className="flex items-center">
                         <span className="mr-2">🌍</span>
                         <a
-                          href="#"
+                          href="https://www.wharton.upenn.edu/"
                           className="text-blue-500 hover:text-blue-700"
                         >
                           Wharton School
@@ -478,7 +467,7 @@ const HigherStudies = () => {
                       <li className="flex items-center">
                         <span className="mr-2">🌍</span>
                         <a
-                          href="#"
+                          href="https://www.insead.edu/"
                           className="text-blue-500 hover:text-blue-700"
                         >
                           INSEAD
@@ -520,9 +509,9 @@ const HigherStudies = () => {
                       <option>Business</option>
                       <option>Sciences</option>
                     </select>
-                    <button className="!rounded-button w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                    <a href="https://www.topuniversities.com/university-rankings" className="!rounded-button w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
                       Search Universities
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -543,18 +532,18 @@ const HigherStudies = () => {
                         <p className="text-sm text-gray-500">
                           Dec 15, 2023 • 2:00 PM
                         </p>
-                        <button className="mt-2 text-blue-500 hover:text-blue-700 text-sm">
+                        <a href="https://www.eventbrite.com/" className="mt-2 text-blue-500 hover:text-blue-700 text-sm">
                           Register Now
-                        </button>
+                        </a>
                       </div>
                       <div className="p-4 bg-gray-50 rounded">
                         <h4 className="font-medium">Meet Stanford Alumni</h4>
                         <p className="text-sm text-gray-500">
                           Dec 18, 2023 • 3:30 PM
                         </p>
-                        <button className="mt-2 text-blue-500 hover:text-blue-700 text-sm">
+                        <a href="https://www.eventbrite.com/" className="mt-2 text-blue-500 hover:text-blue-700 text-sm">
                           Register Now
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -574,9 +563,9 @@ const HigherStudies = () => {
                           <p className="text-sm text-gray-500">
                             Stanford University '22
                           </p>
-                          <button className="text-blue-500 hover:text-blue-700 text-sm">
+                          <a href="https://www.linkedin.com/" className="text-blue-500 hover:text-blue-700 text-sm">
                             Connect
-                          </button>
+                          </a>
                         </div>
                       </div>
                       <div className="flex items-center space-x-4">
@@ -587,9 +576,9 @@ const HigherStudies = () => {
                         <div>
                           <h4 className="font-medium">John Smith</h4>
                           <p className="text-sm text-gray-500">MIT '21</p>
-                          <button className="text-blue-500 hover:text-blue-700 text-sm">
+                          <a href="https://www.linkedin.com/" className="text-blue-500 hover:text-blue-700 text-sm">
                             Connect
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -605,15 +594,15 @@ const HigherStudies = () => {
                         <ul className="mt-2 space-y-2">
                           <li className="flex items-center">
                             <i className="fas fa-university text-blue-500 mr-2" />
-                            Carnegie Mellon University
+                            <a href="https://www.cmu.edu/" className="hover:underline">Carnegie Mellon University</a>
                           </li>
                           <li className="flex items-center">
                             <i className="fas fa-book text-blue-500 mr-2" />
-                            Advanced GRE Quant Course
+                            <a href="https://www.magoosh.com/gre/" className="hover:underline">Advanced GRE Quant Course</a>
                           </li>
                           <li className="flex items-center">
                             <i className="fas fa-file-alt text-blue-500 mr-2" />
-                            SOP Template: CS Major
+                            <a href="https://www.ets.org/gre/" className="hover:underline">SOP Template: CS Major</a>
                           </li>
                         </ul>
                       </div>
@@ -642,7 +631,7 @@ const HigherStudies = () => {
                       <li className="flex items-center">
                         <span className="mr-2">💰</span>
                         <a
-                          href="#"
+                          href="https://foreign.fulbrightonline.org/"
                           className="text-blue-500 hover:text-blue-700"
                         >
                           Fulbright Scholarship (US)
@@ -651,7 +640,7 @@ const HigherStudies = () => {
                       <li className="flex items-center">
                         <span className="mr-2">💰</span>
                         <a
-                          href="#"
+                          href="https://www.daad.de/en/"
                           className="text-blue-500 hover:text-blue-700"
                         >
                           DAAD Scholarship (Germany)
@@ -660,7 +649,7 @@ const HigherStudies = () => {
                       <li className="flex items-center">
                         <span className="mr-2">💰</span>
                         <a
-                          href="#"
+                          href="https://www.chevening.org/"
                           className="text-blue-500 hover:text-blue-700"
                         >
                           Chevening Scholarship (UK)
@@ -678,7 +667,7 @@ const HigherStudies = () => {
                         that stands out.
                       </p>
                       <a
-                        href="#"
+                        href="https://www.ets.org/gre/revised_general/prepare/sop/"
                         className="flex items-center text-blue-500 hover:text-blue-700"
                       >
                         <i className="fas fa-file-pdf mr-2" />
@@ -689,7 +678,7 @@ const HigherStudies = () => {
                 </div>
               </div>
             </section>
-            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="resources" className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="lg:text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900">
                   Study Resources
@@ -710,9 +699,9 @@ const HigherStudies = () => {
                     <p className="mt-2 text-sm text-gray-500">
                       Comprehensive guides for all major exams
                     </p>
-                    <button className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                    <a href="https://www.ets.org/gre/revised_general/prepare/" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
                       Access Guides
-                    </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow rounded-lg">
@@ -726,9 +715,9 @@ const HigherStudies = () => {
                     <p className="mt-2 text-sm text-gray-500">
                       Curated video content from experts
                     </p>
-                    <button className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                    <a href="https://www.youtube.com/c/TOEFLtv" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
                       Watch Videos
-                    </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow rounded-lg">
@@ -742,9 +731,9 @@ const HigherStudies = () => {
                     <p className="mt-2 text-sm text-gray-500">
                       Mock tests and practice questions
                     </p>
-                    <button className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                    <a href="https://www.ets.org/gre/revised_general/prepare/" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
                       Start Practice
-                    </button>
+                    </a>
                   </div>
                 </div>
                 <div className="bg-white overflow-hidden shadow rounded-lg">
@@ -758,9 +747,9 @@ const HigherStudies = () => {
                     <p className="mt-2 text-sm text-gray-500">
                       Join peer study groups
                     </p>
-                    <button className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                    <a href="https://www.reddit.com/r/GRE/" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
                       Join Groups
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -796,7 +785,7 @@ const HigherStudies = () => {
                             </div>
                             <div className="w-full bg-gray-200 rounded-full h-2">
                               <div
-                                className="bg-green-500 h-2 rounded-full"
+                                                                className="bg-green-500 h-2 rounded-full"
                                 style={{ width: "100%" }}
                               />
                             </div>
@@ -862,7 +851,9 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            Complete Topic Reviews
+                            <a href="https://www.ets.org/gre/revised_general/prepare/" className="hover:underline">
+                              Complete Topic Reviews
+                            </a>
                           </span>
                         </div>
                         <div className="flex items-center">
@@ -871,7 +862,9 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            Practice Tests
+                            <a href="https://www.ets.org/gre/revised_general/prepare/practice_tests/" className="hover:underline">
+                              Practice Tests
+                            </a>
                           </span>
                         </div>
                         <div className="flex items-center">
@@ -880,7 +873,9 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            Mock Exams
+                            <a href="https://www.ets.org/gre/revised_general/prepare/practice_tests/" className="hover:underline">
+                              Mock Exams
+                            </a>
                           </span>
                         </div>
                         <div className="flex items-center">
@@ -889,35 +884,9 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            Vocabulary Building
-                          </span>
-                        </div>
-                        <div className="flex items-center">
-                          <input
-                            type="checkbox"
-                            defaultChecked
-                            className="h-4 w-4 text-blue-500 border-gray-300 rounded"
-                          />
-                          <span className="ml-2 text-sm text-gray-700">
-                            Video Lectures
-                          </span>
-                        </div>
-                        <div className="flex items-center">
-                          <input
-                            type="checkbox"
-                            className="h-4 w-4 text-blue-500 border-gray-300 rounded"
-                          />
-                          <span className="ml-2 text-sm text-gray-700">
-                            Writing Practice
-                          </span>
-                        </div>
-                        <div className="flex items-center">
-                          <input
-                            type="checkbox"
-                            className="h-4 w-4 text-blue-500 border-gray-300 rounded"
-                          />
-                          <span className="ml-2 text-sm text-gray-700">
-                            Previous Year Papers
+                            <a href="https://www.vocabulary.com/" className="hover:underline">
+                              Vocabulary Building
+                            </a>
                           </span>
                         </div>
                         <div className="flex items-center">
@@ -927,7 +896,9 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            Interactive Quizzes
+                            <a href="https://www.youtube.com/c/TOEFLtv" className="hover:underline">
+                              Video Lectures
+                            </a>
                           </span>
                         </div>
                         <div className="flex items-center">
@@ -936,7 +907,9 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            Group Discussion Sessions
+                            <a href="https://www.ets.org/toefl/test-takers/ibt/prepare/" className="hover:underline">
+                              Writing Practice
+                            </a>
                           </span>
                         </div>
                         <div className="flex items-center">
@@ -945,7 +918,43 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            Expert Consultation
+                            <a href="https://www.ets.org/gre/revised_general/prepare/" className="hover:underline">
+                              Previous Year Papers
+                            </a>
+                          </span>
+                        </div>
+                        <div className="flex items-center">
+                          <input
+                            type="checkbox"
+                            defaultChecked
+                            className="h-4 w-4 text-blue-500 border-gray-300 rounded"
+                          />
+                          <span className="ml-2 text-sm text-gray-700">
+                            <a href="https://quizlet.com/" className="hover:underline">
+                              Interactive Quizzes
+                            </a>
+                          </span>
+                        </div>
+                        <div className="flex items-center">
+                          <input
+                            type="checkbox"
+                            className="h-4 w-4 text-blue-500 border-gray-300 rounded"
+                          />
+                          <span className="ml-2 text-sm text-gray-700">
+                            <a href="https://www.reddit.com/r/GRE/" className="hover:underline">
+                              Group Discussion Sessions
+                            </a>
+                          </span>
+                        </div>
+                        <div className="flex items-center">
+                          <input
+                            type="checkbox"
+                            className="h-4 w-4 text-blue-500 border-gray-300 rounded"
+                          />
+                          <span className="ml-2 text-sm text-gray-700">
+                            <a href="https://www.wyzant.com/" className="hover:underline">
+                              Expert Consultation
+                            </a>
                           </span>
                         </div>
                       </div>
@@ -959,7 +968,7 @@ const HigherStudies = () => {
                       <div className="flex items-center justify-between p-3 bg-white rounded shadow-sm">
                         <div>
                           <h4 className="font-medium text-gray-900">
-                            Stanford Application
+                            <a href="https://www.stanford.edu/" className="hover:underline">Stanford Application</a>
                           </h4>
                           <p className="text-sm text-gray-500">Dec 1, 2023</p>
                         </div>
@@ -973,7 +982,7 @@ const HigherStudies = () => {
                       <div className="flex items-center justify-between p-3 bg-white rounded shadow-sm">
                         <div>
                           <h4 className="font-medium text-gray-900">
-                            MIT Application
+                            <a href="https://www.mit.edu/" className="hover:underline">MIT Application</a>
                           </h4>
                           <p className="text-sm text-gray-500">Dec 15, 2023</p>
                         </div>
@@ -996,7 +1005,7 @@ const HigherStudies = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <img
-                  src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png"
+                  src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png"
                   alt="NITK Nexus Logo"
                   className="h-8 w-auto mb-4"
                 />
@@ -1010,7 +1019,7 @@ const HigherStudies = () => {
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
                     >
                       Home
@@ -1018,18 +1027,26 @@ const HigherStudies = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="#exams"
                       className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
                     >
-                      About Us
+                      Exams
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="#universities"
                       className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
                     >
-                      Contact
+                      Universities
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#resources"
+                      className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
+                    >
+                      Resources
                     </a>
                   </li>
                 </ul>
@@ -1039,26 +1056,26 @@ const HigherStudies = () => {
                 <ul className="space-y-2">
                   <li>
                     <a
-                      href="#"
+                      href="https://www.ets.org/gre"
                       className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
                     >
-                      Study Materials
+                      GRE Official
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://gate.iitk.ac.in/"
                       className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
                     >
-                      Career Guide
+                      GATE Official
                     </a>
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://www.ets.org/toefl"
                       className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
                     >
-                      FAQ
+                      TOEFL Official
                     </a>
                   </li>
                 </ul>
@@ -1067,22 +1084,22 @@ const HigherStudies = () => {
                 <h3 className="text-white font-medium mb-4">Connect With Us</h3>
                 <div className="flex space-x-6">
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/"
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    <i className="far fa-linkedin text-xl" />
+                    <i className="fab fa-linkedin text-xl" />
                   </a>
                   <a
-                    href="#"
+                    href="https://twitter.com/"
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    <i className="far fa-twitter text-xl" />
+                    <i className="fab fa-twitter text-xl" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/"
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    <i className="far fa-instagram text-xl" />
+                    <i className="fab fa-instagram text-xl" />
                   </a>
                 </div>
               </div>
