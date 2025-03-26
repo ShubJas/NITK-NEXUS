@@ -1,3 +1,136 @@
+<<<<<<< HEAD
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+
+function getDaysInMonth(year, month) {
+  return new Date(year, month + 1, 0).getDate();
+}
+
+function getStartDay(year, month) {
+  return new Date(year, month, 1).getDay();
+}
+
+const CourseTracker = () => {
+  const navigate = useNavigate();
+
+  const [currentDate, setCurrentDate] = React.useState(new Date());
+  
+
+  const today = new Date();
+
+  const isToday = (day) => {
+    return (
+      day &&
+      today.getDate() === day &&
+      today.getMonth() === currentDate.getMonth() &&
+      today.getFullYear() === currentDate.getFullYear()
+    );
+  };
+
+  const events = [
+    {
+      date: new Date(2025, 2, 14),
+      title: "EC201 Mid-Sem Exam",
+      color: "bg-red-500",
+    },
+    {
+      date: new Date(2025, 2, 16),
+      title: "CS201 Mid-Sem Exam",
+      color: "bg-green-500",
+    },
+    {
+      date: new Date(2025, 2, 19),
+      title: "MA202 Mid-Sem Exam",
+      color: "bg-yellow-500",
+    },
+    {
+      date: new Date(2025, 2, 23),
+      title: "Lab Submissions Due",
+      color: "bg-indigo-500",
+    },
+  ];
+
+  const getEventForDay = (day) => {
+    return events.find(
+      (event) =>
+        day &&
+        event.date.getDate() === day &&
+        event.date.getMonth() === currentDate.getMonth() &&
+        event.date.getFullYear() === currentDate.getFullYear()
+    );
+  };
+
+
+  const handlePrevMonth = () => {
+    const prevMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth() - 1,
+      1
+    );
+    setCurrentDate(prevMonth);
+  };
+
+  const handleNextMonth = () => {
+    const nextMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth() + 1,
+      1
+    );
+    setCurrentDate(nextMonth);
+  };
+
+  const getDaysInMonth = (date) => {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const startDay = new Date(year, month, 1).getDay();
+    const numDays = new Date(year, month + 1, 0).getDate();
+    const days = [];
+
+    for (let i = 0; i < startDay; i++) {
+      days.push(null);
+    }
+    for (let d = 1; d <= numDays; d++) {
+      days.push(d);
+    }
+    return days;
+  };
+
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const days = getDaysInMonth(currentDate);
+
+=======
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -20,6 +153,7 @@ const CourseTracker = () => {
   useEffect(() => {
     getStudentCourses();
   }, []);
+>>>>>>> 22e66c29aefc54270329768d7cfeff61c0a47413
   return (
     <div>
       <div>
@@ -355,6 +489,7 @@ const CourseTracker = () => {
               </div>
               {/* ... Your Community Forum code, modal, etc. can go here ... */}
             </div>
+
             <div
               className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16"
               style={{ order: 0 }}
@@ -412,12 +547,22 @@ const CourseTracker = () => {
               </div>
               <div className="bg-white rounded-lg shadow-lg p-6">
                 <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-xl font-semibold">February 2025</h3>
+                  <h3 className="text-xl font-semibold">
+                    {monthNames[currentDate.getMonth()]}{" "}
+                    {currentDate.getFullYear()}
+                  </h3>
+
                   <div className="flex space-x-2">
-                    <button className="p-2 hover:bg-gray-100 rounded">
+                    <button
+                      onClick={handlePrevMonth}
+                      className="p-2 hover:bg-gray-100 rounded"
+                    >
                       <i className="fas fa-chevron-left" />
                     </button>
-                    <button className="p-2 hover:bg-gray-100 rounded">
+                    <button
+                      onClick={handleNextMonth}
+                      className="p-2 hover:bg-gray-100 rounded"
+                    >
                       <i className="fas fa-chevron-right" />
                     </button>
                   </div>
@@ -432,70 +577,49 @@ const CourseTracker = () => {
                   <div className="text-gray-500">Sat</div>
                 </div>
                 <div className="grid grid-cols-7 gap-1">
-                  <div className="p-2 text-gray-400">28</div>
-                  <div className="p-2">29</div>
-                  <div className="p-2">30</div>
-                  <div className="p-2">31</div>
-                  <div className="p-2 relative group bg-green-50">1</div>
-                  <div className="p-2">2</div>
-                  <div className="p-2">3</div>
-                  <div className="p-2">4</div>
-                  <div className="p-2 relative group bg-blue-50">5</div>
-                  <div className="p-2">6</div>
-                  <div className="p-2">7</div>
-                  <div className="p-2 relative group bg-purple-50">8</div>
-                  <div className="p-2">12</div>
-                  <div className="p-2">13</div>
-                  <div className="p-2 relative group bg-red-50">
-                    <span>14</span>
-                    <div className="absolute hidden group-hover:block z-10 bg-white p-2 rounded shadow-lg -translate-x-1/2 left-1/2 min-w-[200px]">
-                      <p className="text-custom font-medium">
-                        EC201 Mid-Sem Exam
-                      </p>
+                  {days.map((day, index) => (
+                    <div
+                      key={index}
+                      className={`p-2 text-center ${
+                        day ? "" : "text-gray-400"
+                      } ${
+                        day
+                          ? "hover:bg-blue-50 cursor-pointer rounded-md group relative"
+                          : ""
+                      }`}
+                    >
+                      {day && (
+                        <>
+                          <span
+                            className={`inline-block ${
+                              isToday(day)
+                                ? "text-white bg-blue-500 rounded-full px-2 py-1 shadow-glow"
+                                : ""
+                            }`}
+                          >
+                            {day}
+                          </span>
+
+                          {getEventForDay(day) && (
+                            <>
+                              <div
+                                className={`w-2 h-2 rounded-full absolute -top-1 -right-1 ${
+                                  getEventForDay(day).color
+                                }`}
+                              />
+                              <div className="absolute hidden group-hover:block z-10 bg-white p-2 rounded shadow-lg -translate-x-1/2 left-1/2 min-w-[200px] top-full mt-2 text-sm">
+                                <p className="text-custom font-medium">
+                                  {getEventForDay(day).title}
+                                </p>
+                              </div>
+                            </>
+                          )}
+                        </>
+                      )}
                     </div>
-                    <div className="w-2 h-2 bg-red-500 rounded-full absolute -top-1 -right-1" />
-                  </div>
-                  <div className="p-2">15</div>
-                  <div className="p-2 relative group bg-green-50">
-                    <span>16</span>
-                    <div className="absolute hidden group-hover:block z-10 bg-white p-2 rounded shadow-lg -translate-x-1/2 left-1/2 min-w-[200px]">
-                      <p className="text-custom font-medium">
-                        CS201 Mid-Sem Exam
-                      </p>
-                    </div>
-                    <div className="w-2 h-2 bg-green-500 rounded-full absolute -top-1 -right-1" />
-                  </div>
-                  <div className="p-2">17</div>
-                  <div className="p-2">18</div>
-                  <div className="p-2 relative group bg-blue-50">
-                    <span>19</span>
-                    <div className="absolute hidden group-hover:block z-10 bg-white p-2 rounded shadow-lg -translate-x-1/2 left-1/2 min-w-[200px]">
-                      <p className="text-custom font-medium">
-                        MA202 Mid-Sem Exam
-                      </p>
-                    </div>
-                    <div className="w-2 h-2 bg-blue-500 rounded-full absolute -top-1 -right-1" />
-                  </div>
-                  <div className="p-2">20</div>
-                  <div className="p-2">21</div>
-                  <div className="p-2">22</div>
-                  <div className="p-2 relative group bg-indigo-50">
-                    <span>23</span>
-                    <div className="absolute hidden group-hover:block z-10 bg-white p-2 rounded shadow-lg -translate-x-1/2 left-1/2 min-w-[200px]">
-                      <p className="text-custom font-medium">
-                        Lab Submissions Due
-                      </p>
-                    </div>
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full absolute -top-1 -right-1" />
-                  </div>
-                  <div className="p-2">24</div>
-                  <div className="p-2">25</div>
-                  <div className="p-2">26</div>
-                  <div className="p-2">27</div>
-                  <div className="p-2">28</div>
-                  <div className="p-2">29</div>
-                  <div className="p-2">30</div>
+                  ))}
                 </div>
+
                 <div className="mt-4">
                   <div className="flex flex-wrap gap-4">
                     <div className="flex items-center">
@@ -503,7 +627,7 @@ const CourseTracker = () => {
                       <span className="text-sm">CS201 Events</span>
                     </div>
                     <div className="flex items-center">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full mr-2" />
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2" />
                       <span className="text-sm">MA202 Events</span>
                     </div>
                     <div className="flex items-center">
@@ -519,7 +643,7 @@ const CourseTracker = () => {
                       <span className="text-sm">Lab Sessions</span>
                     </div>
                     <div className="flex items-center font-medium">
-                      <div className="w-3 h-3 bg-custom rounded-full mr-2 shadow-glow" />
+                      <div className="w-3 h-3 bg-blue-500 rounded-full mr-2 shadow-glow" />
                       <span className="text-sm font-medium text-custom">
                         Today
                       </span>
