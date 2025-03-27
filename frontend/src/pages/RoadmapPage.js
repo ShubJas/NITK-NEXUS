@@ -23,45 +23,51 @@ const RoadmapPage = () => {
         <nav className="bg-white shadow-sm">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
-              <div className="flex">
-                <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png"
-                    alt="NITK Nexus"
-                  />
-                </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                  <a
-                    href="#"
-                    className="border-custom text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="#"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Resources
-                  </a>
-                  <a
-                    href="#"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Community
-                  </a>
-                  <a
-                    href="#"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Profile
-                  </a>
-                </div>
-              </div>
+            <div className="flex">
+  <div className="flex-shrink-0 flex items-center">
+    <img
+      className="h-8 w-auto"
+      src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png"
+      alt="NITK Nexus"
+    />
+  </div>
+  <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+    <button
+      // onClick={() => document.getElementById('home').scrollIntoView({ behavior: 'smooth', block: 'start' })}
+      className="border-custom text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium hover:text-gray-700 cursor-pointer"
+    >
+      Home
+    </button>
+    <button
+      onClick={() => document.getElementById('resources').scrollIntoView({ behavior: 'smooth', block: 'start' })}
+      className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium cursor-pointer"
+    >
+      Resources
+    </button>
+    <button
+      onClick={() => document.getElementById('analytics').scrollIntoView({ behavior: 'smooth', block: 'start' })}
+      className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium cursor-pointer"
+    >
+      Analytics
+    </button>
+    <a
+      href="#"
+      className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+    >
+      Community
+    </a>
+  </div>
+</div>
+              {/* <button className="hidden lg:flex order-3 rounded-full bg-white text-custom w-10 h-10 items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 ml-auto mr-4" onClick={() => navigate("/")} >
+                <i className="fas fa-home text-sm" />
+              </button> */}
               <div className="flex items-center">
-                <button className="!rounded-md bg-blue-500 text-white px-4 py-2 text-sm font-medium">
+              <button className="hidden lg:flex order-3 rounded-full bg-white text-custom w-10 h-10 items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 ml-auto mr-4" onClick={() => navigate("/")} >
+                <i className="fas fa-home text-sm" />
+              </button>
+                {/* <button className="!rounded-md bg-blue-500 text-white px-4 py-2 text-sm font-medium">
                   Get Started
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -77,9 +83,14 @@ const RoadmapPage = () => {
                   Your one-stop destination for comprehensive placement
                   preparation resources and guidance.
                 </p>
-                <div class="mt-8 flex justify-center">
-                        <div class="mt-3 sm:mt-0 sm:ml-3">
-                            <button class="!rounded-md w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white bg-blue-500 hover:bg-blue-500/90 md:py-4 md:text-lg md:px-10 transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none shadow-lg hover:shadow-2xl" onclick="document.getElementById('id-35').scrollIntoView({behavior: 'smooth', block: 'start'})">Start Learning <i class="fas fa-rocket ml-2 animate-bounce"></i></button>
+                <div className="mt-8 flex justify-center">
+  <div className="mt-3 sm:mt-0 sm:ml-3">
+    <button 
+      className="!rounded-md w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white bg-blue-500 hover:bg-blue-500/90 md:py-4 md:text-lg md:px-10 transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none shadow-lg hover:shadow-2xl" 
+      onClick={() => document.getElementById('core').scrollIntoView({behavior: 'smooth', block: 'start'})}
+    >
+      Start Learning <i className="fas fa-rocket ml-2 animate-bounce"></i>
+    </button>
                         </div>
                     </div>
               </div>
@@ -89,8 +100,8 @@ const RoadmapPage = () => {
             className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
             style={{ order: 1 }}
           >
-            <div className="mt-10" style={{ scrollMarginTop: 100 }}>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <div id = "core" className="mt-10" style={{ scrollMarginTop: 100 }}>
+              <h2  className="text-2xl font-bold text-gray-900 mb-6">
                 Core Subjects &amp; Learning Paths
               </h2>
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-12">
@@ -401,7 +412,7 @@ const RoadmapPage = () => {
                       </div>
                     </div>
                     <a href="https://www.educative.io/courses/grokking-the-system-design-interview">
-                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-6 py-3 border border-gray-300 text-base font-medium text-gray-700 hover:bg-blue-500 hover:text-black hover:border-custom transition-all duration-300 group-hover:shadow-md">
+                      <button className="!rounded-md mt-6 w-full bg-gray-50 px-6 py-3 border border-gray-300 text-base font-medium text-gray-700 hover:bg-blue-500 hover:text-black hover:border-custom transition-all duration-300 group-hover:shadow-md" >
                         Start Learning <i className="fas fa-arrow-right ml-2" />
                       </button>
                     </a>
@@ -660,7 +671,7 @@ const RoadmapPage = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-16 bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 rounded-lg">
+            <div id = 'resources' className="mt-16 bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 rounded-lg">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 <i className="fas fa-graduation-cap text-blue-500 mr-2" />
                 Interactive Resource Hub
@@ -920,7 +931,7 @@ const RoadmapPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-12 bg-white p-8 rounded-lg shadow-lg">
+              <div id ='analytics'  className="mt-12 bg-white p-8 rounded-lg shadow-lg">
                 <h3 className="text-xl font-bold mb-4">
                   <div className="flex items-center">
                     <i className="fas fa-chart-line text-blue-500 mr-3" />

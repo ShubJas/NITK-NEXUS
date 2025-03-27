@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-
+import { useNavigate } from "react-router-dom";
 
 const HigherStudies = () => {
+  const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState('all');
   const [showMoreCS, setShowMoreCS] = useState(false);
@@ -103,11 +104,14 @@ const HigherStudies = () => {
                   </a>
                 </div>
               </div>
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <a href="/login" className="!rounded-button bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
                   Sign In
                 </a>
-              </div>
+              </div> */}
+              <button className="hidden lg:flex order-3 rounded-full bg-white text-custom w-10 h-10 items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 ml-auto mr-4" onClick={() => navigate("/")} >
+                <i className="fas fa-home text-sm" />
+              </button>
             </div>
           </div>
         </nav>

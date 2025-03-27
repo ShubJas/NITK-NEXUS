@@ -204,17 +204,10 @@ const CourseTracker = () => {
                   </a>
                 </nav>
               </div>
-              <button className="hidden lg:flex order-3 rounded-full bg-white text-custom w-10 h-10 items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 ml-auto mr-4">
+              <button className="hidden lg:flex order-3 rounded-full bg-white text-custom w-10 h-10 items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 ml-auto mr-4" onClick={() => navigate("/")} >
                 <i className="fas fa-home text-sm" />
               </button>
-              <div className="flex items-center space-x-4">
-                <button className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                  <i className="fas fa-bell text-white" />
-                </button>
-                <div className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                  <i className="fas fa-user text-white" />
-                </div>
-              </div>
+              
             </div>
           </div>
         </header>
@@ -474,9 +467,125 @@ const CourseTracker = () => {
                   );
                 })}
               </div>
-              {/* ... Your Community Forum code, modal, etc. can go here ... */}
+              <div
+                className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
+                style={{ order: 1 }}
+              >
+                <h3 className="text-lg font-semibold mb-4 flex items-center">
+                  💬 Community Forum
+                </h3>
+                <div className="mb-4">
+                  <p className="text-gray-600 mb-2">
+                    Join the discussion with your peers:
+                  </p>
+                  <div className="flex items-center space-x-2">
+                    <div className="flex -space-x-2">
+                      <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 relative">
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full" />
+                      </div>
+                      <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 relative">
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full" />
+                      </div>
+                      <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 relative">
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-gray-400 border-2 border-white rounded-full" />
+                      </div>
+                      <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-sm font-medium text-gray-600">
+                        +5
+                      </div>
+                    </div>
+                    <span className="text-green-500 font-medium ml-2">
+                      8 active discussions
+                    </span>
+                  </div>
+                </div>
+                <button className="w-full bg-blue-500 text-white rounded-lg py-3 px-4 font-medium hover:bg-opacity-90 transition-all transform hover:scale-105 animate-pulse hover:animate-none">
+                  Enter Forum
+                </button>
+              </div>
+              <div
+                id="subjectModal"
+                className="fixed inset-0 bg-black bg-opacity-50 z-50 hidden"
+              >
+                <div className="bg-white rounded-lg max-w-4xl mx-auto mt-20 p-8 relative max-h-[80vh] overflow-y-auto">
+                  <button
+                    id="closeModal"
+                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors duration-300"
+                  >
+                    <i className="fas fa-times text-xl" />
+                  </button>
+                  <div className="flex items-center mb-8">
+                    <i className="fas fa-book-open text-4xl text-custom mr-4" />
+                    <h2 className="text-3xl font-bold text-gray-900" />
+                  </div>
+                  <div className="border-b border-gray-200 mb-6">
+                    <div className="flex space-x-6">
+                      <button className="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-custom transition-colors duration-300 active">
+                        Overview
+                      </button>
+                      <button className="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-custom transition-colors duration-300">
+                        Study Materials
+                      </button>
+                      <button className="tab-btn px-4 py-2 text-gray-600 border-b-2 border-transparent hover:text-custom transition-colors duration-300">
+                        Practice Tests
+                      </button>
+                    </div>
+                  </div>
+                  <div className="tab-content">
+                    <div className="tab-pane active">
+                      <p className="text-gray-600 mb-6" />
+                      <div className="bg-gray-100 rounded-full h-4 mb-8">
+                        <div
+                          className="bg-custom h-4 rounded-full transition-all duration-1000"
+                          style={{ width: "0%" }}
+                        />
+                      </div>
+                    </div>
+                    <div className="tab-pane hidden">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="p-4 bg-gray-50 rounded-lg hover:scale-105 transition-transform cursor-pointer">
+                          <h3 className="font-semibold mb-2">
+                            📚 Lecture Notes
+                          </h3>
+                          <p className="text-sm text-gray-600">
+                            Comprehensive chapter-wise notes
+                          </p>
+                        </div>
+                        <div className="p-4 bg-gray-50 rounded-lg hover:scale-105 transition-transform cursor-pointer">
+                          <h3 className="font-semibold mb-2">
+                            📖 Reference Books
+                          </h3>
+                          <p className="text-sm text-gray-600">
+                            Recommended textbooks and references
+                          </p>
+                        </div>
+                        <div className="p-4 bg-gray-50 rounded-lg hover:scale-105 transition-transform cursor-pointer">
+                          <h3 className="font-semibold mb-2">
+                            🎥 Video Tutorials
+                          </h3>
+                          <p className="text-sm text-gray-600">
+                            Visual learning resources
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="tab-pane hidden">
+                      <div className="space-y-4">
+                        <button className="w-full py-3 px-4 bg-custom text-white rounded-lg hover:animate-shake transition-all">
+                          Mock Test 1
+                        </button>
+                        <button className="w-full py-3 px-4 bg-custom text-white rounded-lg hover:animate-shake transition-all">
+                          Mock Test 2
+                        </button>
+                        <button className="w-full py-3 px-4 bg-custom text-white rounded-lg hover:animate-shake transition-all">
+                          Mock Test 3
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
+                
             <div
               className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16"
               style={{ order: 0 }}
