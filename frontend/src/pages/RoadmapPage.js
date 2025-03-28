@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 const RoadmapPage = () => {
   const navigate = useNavigate();
   return (
@@ -20,52 +22,7 @@ const RoadmapPage = () => {
           href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css"
           rel="stylesheet"
         />
-        <nav className="bg-white shadow-sm">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-16">
-              <div className="flex">
-                <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png"
-                    alt="NITK Nexus"
-                  />
-                </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                  <a
-                    href="#"
-                    className="border-custom text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="#"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Resources
-                  </a>
-                  <a
-                    href="#"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Community
-                  </a>
-                  <a
-                    href="#"
-                    className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                  >
-                    Profile
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <button className="!rounded-md bg-blue-500 text-white px-4 py-2 text-sm font-medium">
-                  Get Started
-                </button>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <Navbar />
         <main>
           <div className="bg-white" style={{ order: 2 }}>
             <div className="max-w-8xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -78,10 +35,16 @@ const RoadmapPage = () => {
                   preparation resources and guidance.
                 </p>
                 <div class="mt-8 flex justify-center">
-                        <div class="mt-3 sm:mt-0 sm:ml-3">
-                            <button class="!rounded-md w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white bg-blue-500 hover:bg-blue-500/90 md:py-4 md:text-lg md:px-10 transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none shadow-lg hover:shadow-2xl" onclick="document.getElementById('id-35').scrollIntoView({behavior: 'smooth', block: 'start'})">Start Learning <i class="fas fa-rocket ml-2 animate-bounce"></i></button>
-                        </div>
-                    </div>
+                  <div class="mt-3 sm:mt-0 sm:ml-3">
+                    <button
+                      class="!rounded-md w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white bg-blue-500 hover:bg-blue-500/90 md:py-4 md:text-lg md:px-10 transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none shadow-lg hover:shadow-2xl"
+                      onclick="document.getElementById('id-35').scrollIntoView({behavior: 'smooth', block: 'start'})"
+                    >
+                      Start Learning{" "}
+                      <i class="fas fa-rocket ml-2 animate-bounce"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -128,13 +91,35 @@ const RoadmapPage = () => {
                       <strong>Recommended:</strong>
                       <ul className="list-disc pl-4 mt-2">
                         <li>
-                          <a href="https://eltsindia.com/StudyMaterialFiles/ea007acc-bc55-4e17-8470-0d9e85313252quantitative-aptitude-for-competitive-examinations-by-rs-aggarwal-reprint-2017.pdf" className="text-blue-500 hover:underline">R.S. Aggarwal - Quantitative Aptitude</a>
+                          <a
+                            href="https://eltsindia.com/StudyMaterialFiles/ea007acc-bc55-4e17-8470-0d9e85313252quantitative-aptitude-for-competitive-examinations-by-rs-aggarwal-reprint-2017.pdf"
+                            className="text-blue-500 hover:underline"
+                          >
+                            R.S. Aggarwal - Quantitative Aptitude
+                          </a>
                         </li>
                         <li>
-                          <a href="https://prepinsta.com/learn-aptitude/" className="text-blue-500 hover:underline">PrepInsta</a>
+                          <a
+                            href="https://prepinsta.com/learn-aptitude/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            PrepInsta
+                          </a>
                         </li>
                         <li>
-                          <a href="https://www.indiabix.com/" className="text-blue-500 hover:underline">IndiaBix</a>, <a href="https://www.geeksforgeeks.org/aptitude-gq/" className="text-blue-500 hover:underline">GeeksforGeeks</a>
+                          <a
+                            href="https://www.indiabix.com/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            IndiaBix
+                          </a>
+                          ,{" "}
+                          <a
+                            href="https://www.geeksforgeeks.org/aptitude-gq/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            GeeksforGeeks
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -169,28 +154,93 @@ const RoadmapPage = () => {
                       </strong>
                       <ul className="list-disc pl-4 mt-2 text-sm text-gray-500">
                         <li>
-                          Programming Languages: 
-                          <a href="https://www.learn-c.org/" className="text-blue-500 hover:underline"> C</a>, 
-                          <a href="https://www.learncpp.com/" className="text-blue-500 hover:underline"> C++</a>, 
-                          <a href="https://www.codecademy.com/learn/learn-java" className="text-blue-500 hover:underline"> Java</a>, 
-                          <a href="https://www.python.org/about/gettingstarted/" className="text-blue-500 hover:underline"> Python</a>
+                          Programming Languages:
+                          <a
+                            href="https://www.learn-c.org/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            {" "}
+                            C
+                          </a>
+                          ,
+                          <a
+                            href="https://www.learncpp.com/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            {" "}
+                            C++
+                          </a>
+                          ,
+                          <a
+                            href="https://www.codecademy.com/learn/learn-java"
+                            className="text-blue-500 hover:underline"
+                          >
+                            {" "}
+                            Java
+                          </a>
+                          ,
+                          <a
+                            href="https://www.python.org/about/gettingstarted/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            {" "}
+                            Python
+                          </a>
                         </li>
                         <li>
-                          <a href="https://www.geeksforgeeks.org/" className="text-blue-500 hover:underline">GeeksforGeeks</a>, 
-                          <a href="https://leetcode.com/" className="text-blue-500 hover:underline">LeetCode</a>
+                          <a
+                            href="https://www.geeksforgeeks.org/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            GeeksforGeeks
+                          </a>
+                          ,
+                          <a
+                            href="https://leetcode.com/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            LeetCode
+                          </a>
                         </li>
                         <li>
-                          <a href="https://www.youtube.com/playlist?list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q" className="text-blue-500 hover:underline">CodeWithHarry (Java)</a>, 
-                          <a href="https://www.youtube.com/playlist?list=PLBZBJbE_rGRWeh5mIBhD-hhDwSEDxogDg" className="text-blue-500 hover:underline">CS Dojo (Python)</a>
+                          <a
+                            href="https://www.youtube.com/playlist?list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q"
+                            className="text-blue-500 hover:underline"
+                          >
+                            CodeWithHarry (Java)
+                          </a>
+                          ,
+                          <a
+                            href="https://www.youtube.com/playlist?list=PLBZBJbE_rGRWeh5mIBhD-hhDwSEDxogDg"
+                            className="text-blue-500 hover:underline"
+                          >
+                            CS Dojo (Python)
+                          </a>
                         </li>
                         <li>
-                          DSA: 
-                          <a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844" className="text-blue-500 hover:underline">CLRS Book</a>, 
-                          <a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/" className="text-blue-500 hover:underline">Striver's Sheet</a>
+                          DSA:
+                          <a
+                            href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844"
+                            className="text-blue-500 hover:underline"
+                          >
+                            CLRS Book
+                          </a>
+                          ,
+                          <a
+                            href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            Striver's Sheet
+                          </a>
                         </li>
                         <li>
-                          DBMS: 
-                          <a href="https://www.w3schools.com/sql/" className="text-blue-500 hover:underline">SQL fundamentals</a>
+                          DBMS:
+                          <a
+                            href="https://www.w3schools.com/sql/"
+                            className="text-blue-500 hover:underline"
+                          >
+                            SQL fundamentals
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -242,7 +292,12 @@ const RoadmapPage = () => {
                               </a>
                             </li>
                             <li>
-                              <a href="https://www.coursera.org/learn/business-writing" className="text-blue-500 hover:underline">Email Writing &amp; Business Communication</a>
+                              <a
+                                href="https://www.coursera.org/learn/business-writing"
+                                className="text-blue-500 hover:underline"
+                              >
+                                Email Writing &amp; Business Communication
+                              </a>
                             </li>
                           </ul>
                         </div>
@@ -269,7 +324,12 @@ const RoadmapPage = () => {
                         <div className="mt-3">
                           <ul className="list-disc pl-4 text-sm text-gray-600">
                             <li>
-                              <a href="https://www.themuse.com/advice/31-common-interview-questions-and-answers" className="text-blue-500 hover:underline">Common HR Questions &amp; Answers</a>
+                              <a
+                                href="https://www.themuse.com/advice/31-common-interview-questions-and-answers"
+                                className="text-blue-500 hover:underline"
+                              >
+                                Common HR Questions &amp; Answers
+                              </a>
                             </li>
                             <li>
                               Technical Interview Practice{" "}
@@ -290,10 +350,20 @@ const RoadmapPage = () => {
                               </a>
                             </li>
                             <li>
-                              <a href="https://zety.com/blog/resume-tips" className="text-blue-500 hover:underline">Resume Building Tips</a>
+                              <a
+                                href="https://zety.com/blog/resume-tips"
+                                className="text-blue-500 hover:underline"
+                              >
+                                Resume Building Tips
+                              </a>
                             </li>
                             <li>
-                              <a href="https://www.thebalancecareers.com/body-language-during-job-interview-2061340" className="text-blue-500 hover:underline">Body Language &amp; Interview Etiquette</a>
+                              <a
+                                href="https://www.thebalancecareers.com/body-language-during-job-interview-2061340"
+                                className="text-blue-500 hover:underline"
+                              >
+                                Body Language &amp; Interview Etiquette
+                              </a>
                             </li>
                           </ul>
                         </div>
@@ -352,7 +422,8 @@ const RoadmapPage = () => {
                     </div>
                     <a href="https://www.geeksforgeeks.org/computer-science-projects/">
                       <button className="!rounded-md mt-6 w-full bg-gray-50 px-4 py-2 border border-gray-300 text-sm font-medium text-gray-700 hover:bg-blue-500 hover:text-white hover:border-custom transition-all duration-300 group-hover:shadow-md">
-                        Access Resources <i className="fas fa-arrow-right ml-2" />
+                        Access Resources{" "}
+                        <i className="fas fa-arrow-right ml-2" />
                       </button>
                     </a>
                   </div>
@@ -699,7 +770,7 @@ const RoadmapPage = () => {
                         href="https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/"
                         className="block px-4 py-2 bg-gray-50 rounded-md hover:bg-gray-100 text-gray-700 transform hover:scale-105 transition-all"
                       >
-                                                <i className="fas fa-book-reader mr-2 text-blue-500" />
+                        <i className="fas fa-book-reader mr-2 text-blue-500" />
                         Striver's SDE Sheet
                         <span className="float-right">
                           <button className="text-sm bg-green-500 text-white px-2 py-1 rounded-md hover:bg-green-600">
@@ -750,7 +821,10 @@ const RoadmapPage = () => {
                     <ul className="space-y-2">
                       <li className="flex items-center">
                         <i className="fas fa-arrow-right text-blue-500 mr-2" />
-                        <a href="https://www.geeksforgeeks.org/dynamic-programming/" className="hover:underline">
+                        <a
+                          href="https://www.geeksforgeeks.org/dynamic-programming/"
+                          className="hover:underline"
+                        >
                           Dynamic Programming
                         </a>
                         <button className="ml-auto text-sm bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-blue-600">
@@ -759,7 +833,10 @@ const RoadmapPage = () => {
                       </li>
                       <li className="flex items-center">
                         <i className="fas fa-arrow-right text-blue-500 mr-2" />
-                        <a href="https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/" className="hover:underline">
+                        <a
+                          href="https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/"
+                          className="hover:underline"
+                        >
                           Graph Algorithms
                         </a>
                         <button className="ml-auto text-sm bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-blue-600">
@@ -775,40 +852,67 @@ const RoadmapPage = () => {
                     <h4 className="text-xl font-bold">Interactive Tutorials</h4>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    <a href="https://www.learnpython.org/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    <a
+                      href="https://www.learnpython.org/"
+                      className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all"
+                    >
                       <i className="fab fa-python text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Python</p>
                     </a>
-                    <a href="https://www.learnjavaonline.org/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    <a
+                      href="https://www.learnjavaonline.org/"
+                      className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all"
+                    >
                       <i className="fab fa-java text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Java</p>
                     </a>
-                    <a href="https://www.learn-js.org/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    <a
+                      href="https://www.learn-js.org/"
+                      className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all"
+                    >
                       <i className="fab fa-js text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">JavaScript</p>
                     </a>
-                    <a href="https://www.sql-practice.com/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    <a
+                      href="https://www.sql-practice.com/"
+                      className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all"
+                    >
                       <i className="fas fa-database text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">SQL</p>
                     </a>
-                    <a href="https://www.learn-cpp.org/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    <a
+                      href="https://www.learn-cpp.org/"
+                      className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all"
+                    >
                       <i className="fab fa-cpp text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">C++</p>
                     </a>
-                    <a href="https://doc.rust-lang.org/stable/rust-by-example/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    <a
+                      href="https://doc.rust-lang.org/stable/rust-by-example/"
+                      className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all"
+                    >
                       <i className="fab fa-rust text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Rust</p>
                     </a>
-                    <a href="https://www.hackingwithswift.com/learn" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    <a
+                      href="https://www.hackingwithswift.com/learn"
+                      className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all"
+                    >
                       <i className="fab fa-swift text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Swift</p>
                     </a>
-                    <a href="https://gobyexample.com/" className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all">
+                    <a
+                      href="https://gobyexample.com/"
+                      className="bg-gray-50 p-3 rounded-lg text-center hover:bg-gray-100 cursor-pointer transform hover:scale-105 transition-all"
+                    >
                       <i className="fab fa-golang text-2xl text-blue-500 mb-2" />
                       <p className="text-sm">Go</p>
                     </a>
                   </div>
-                  <a href="https://www.codecademy.com/catalog" className="w-full bg-blue-500 !text-white py-2 rounded-md hover:bg-blue-500/90 flex justify-center items-center">
+                  <a
+                    href="https://www.codecademy.com/catalog"
+                    className="w-full bg-blue-500 !text-white py-2 rounded-md hover:bg-blue-500/90 flex justify-center items-center"
+                  >
                     Start Learning
                     <i className="fas fa-rocket ml-2 animate-bounce" />
                   </a>
@@ -826,19 +930,28 @@ const RoadmapPage = () => {
                       <div className="space-y-2">
                         <div className="flex justify-between items-center">
                           <span>System Design Workshop</span>
-                          <a href="https://www.youtube.com/live/Un9zn1NqSHw?feature=share" className="text-blue-500 hover:underline">
+                          <a
+                            href="https://www.youtube.com/live/Un9zn1NqSHw?feature=share"
+                            className="text-blue-500 hover:underline"
+                          >
                             Join
                           </a>
                         </div>
                         <div className="flex justify-between items-center">
                           <span>Code Review Session</span>
-                          <a href="https://www.youtube.com/live/0kafYiWEVpU?feature=share" className="text-blue-500 hover:underline">
+                          <a
+                            href="https://www.youtube.com/live/0kafYiWEVpU?feature=share"
+                            className="text-blue-500 hover:underline"
+                          >
                             Join
                           </a>
                         </div>
                         <div className="flex justify-between items-center">
                           <span>Algorithm Masterclass</span>
-                          <a href="https://www.youtube.com/live/6pLL2fEUJXw?feature=share" className="text-blue-500 hover:underline">
+                          <a
+                            href="https://www.youtube.com/live/6pLL2fEUJXw?feature=share"
+                            className="text-blue-500 hover:underline"
+                          >
                             Join
                           </a>
                         </div>
@@ -865,7 +978,10 @@ const RoadmapPage = () => {
                               </button>
                             </div>
                           </div>
-                          <a href="https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/" className="w-full mt-2 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 flex justify-center">
+                          <a
+                            href="https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/"
+                            className="w-full mt-2 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 flex justify-center"
+                          >
                             Submit Answer
                           </a>
                         </div>
@@ -876,7 +992,10 @@ const RoadmapPage = () => {
                         <i className="fas fa-graduation-cap mr-2" />
                         <span>Interactive Tutorials</span>
                       </div>
-                      <a href="https://www.freecodecamp.org/learn/" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 transform hover:scale-105 transition-all flex justify-center">
+                      <a
+                        href="https://www.freecodecamp.org/learn/"
+                        className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 transform hover:scale-105 transition-all flex justify-center"
+                      >
                         Start Learning
                       </a>
                     </div>
@@ -893,25 +1012,37 @@ const RoadmapPage = () => {
                       <ul className="space-y-2">
                         <li className="flex justify-between items-center">
                           <span>Algorithm Battle</span>
-                          <a href="https://codeforces.com/contests" className="text-green-500">
+                          <a
+                            href="https://codeforces.com/contests"
+                            className="text-green-500"
+                          >
                             Active
                           </a>
                         </li>
                         <li className="flex justify-between items-center">
                           <span>Code Sprint</span>
-                          <a href="https://www.codechef.com/contests" className="text-yellow-500">
+                          <a
+                            href="https://www.codechef.com/contests"
+                            className="text-yellow-500"
+                          >
                             In 2h
                           </a>
                         </li>
                         <li className="flex justify-between items-center">
                           <span>Team Challenge</span>
-                          <a href="https://codingcompetitions.withgoogle.com/codejam" className="text-blue-500">
+                          <a
+                            href="https://codingcompetitions.withgoogle.com/codejam"
+                            className="text-blue-500"
+                          >
                             Tomorrow
                           </a>
                         </li>
                       </ul>
                     </div>
-                    <a href="https://leetcode.com/contest/" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 transform hover:scale-105 transition-all flex justify-center">
+                    <a
+                      href="https://leetcode.com/contest/"
+                      className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-500/90 transform hover:scale-105 transition-all flex justify-center"
+                    >
                       Join Contest
                     </a>
                     <div className="mt-4 text-sm text-gray-500">
@@ -991,7 +1122,10 @@ const RoadmapPage = () => {
                     </p>
                   </div>
                   <div className="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-                    <a href="https://discord.gg/learnprogramming" className="!rounded-md flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-blue-500 bg-white hover:bg-gray-50">
+                    <a
+                      href="https://discord.gg/learnprogramming"
+                      className="!rounded-md flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-blue-500 bg-white hover:bg-gray-50"
+                    >
                       Join Now
                     </a>
                   </div>
@@ -1000,95 +1134,7 @@ const RoadmapPage = () => {
             </div>
           </div>
         </main>
-        <footer className="bg-gradient-to-b from-blue-50 to-white mt-24">
-          <div className="max-w-8xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <div>
-                <h3 className="text-sm font-semibold text-gray-600 tracking-wider uppercase mb-4">
-                  Quick Links
-                </h3>
-                <ul role="list" className="mt-4 space-y-3">
-                  <li>
-                    <a
-                      href="/"
-                      className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/about"
-                      className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
-                    >
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/contact"
-                      className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-gray-600 tracking-wider uppercase mb-4">
-                  Resources
-                </h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  <li>
-                    <a
-                      href="/resources"
-                      className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
-                    >
-                      Study Materials
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/career-guide"
-                      className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
-                    >
-                      Career Guide
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/faq"
-                      className="text-base text-gray-500 hover:text-blue-500 transition-colors duration-300"
-                    >
-                      FAQ
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-gray-600 tracking-wider uppercase mb-4">
-                  Connect with Us
-                </h3>
-                <div className="flex space-x-8 mt-6">
-                  <a href="https://www.linkedin.com/" className="text-gray-400 hover:text-gray-500">
-                    <i className="fab fa-linkedin text-2xl text-gray-400 hover:text-blue-500 transition-colors duration-300" />
-                  </a>
-                  <a href="https://twitter.com/" className="text-gray-400 hover:text-gray-500">
-                    <i className="fab fa-twitter text-2xl text-gray-400 hover:text-blue-500 transition-colors duration-300" />
-                  </a>
-                  <a href="https://www.instagram.com/" className="text-gray-400 hover:text-gray-500">
-                    <i className="fab fa-instagram text-2xl text-gray-400 hover:text-blue-500 transition-colors duration-300" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="mt-12 border-t border-gray-200 pt-8 text-center">
-              <p className="text-sm text-gray-500 font-medium">
-                © 2025 NITK Nexus | Built by NITK Students for NITK Students
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );

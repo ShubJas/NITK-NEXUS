@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 const LandingPage = () => {
   const navigate = useNavigate();
   const handlePrep = () => {
@@ -181,86 +182,7 @@ const LandingPage = () => {
             </div>
           </div>
         </main>
-        <footer className="bg-white border-t mt-20">
-          <div className="max-w-8xl mx-auto px-4 py-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 border-b pb-8">
-              <div>
-                <h4 className="text-sm font-semibold text-gray-900 mb-4">
-                  About NITK Nexus
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  A student-led initiative to guide NITKians through their
-                  academic and career journeys.
-                </p>
-              </div>
-              <div className="border-l pl-8">
-                <h4 className="text-sm font-semibold text-gray-900 mb-4">
-                  Quick Links
-                </h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="#" className="text-gray-600 hover:text-custom">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-600 hover:text-custom">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-600 hover:text-custom">
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="border-l pl-8">
-                <h4 className="text-sm font-semibold text-gray-900 mb-4">
-                  Resources
-                </h4>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="#" className="text-gray-600 hover:text-custom">
-                      Study Materials
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-600 hover:text-custom">
-                      Career Guide
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="text-gray-600 hover:text-custom">
-                      FAQ
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="border-l pl-8">
-                <h4 className="text-sm font-semibold text-gray-900 mb-4">
-                  Connect With Us
-                </h4>
-                <div className="flex space-x-4">
-                  <a href="#" className="text-gray-600 hover:text-custom">
-                    <i className="fab fa-twitter" />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-custom">
-                    <i className="fab fa-linkedin" />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-custom">
-                    <i className="fab fa-instagram" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="mt-8 pt-4 text-center text-gray-600 bg-gradient-to-t from-white to-blue-50 py-6">
-              <p>
-                © 2025 NITK Nexus | Built by NITK Students for NITK Students.
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
         <div
           className="bot-button fixed bottom-8 right-8 bg-blue-500 text-white rounded-full p-4 cursor-pointer flex items-center justify-center hover:bg-blue-700 z-50"
           style={{ width: 60, height: 60 }}

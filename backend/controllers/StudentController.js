@@ -3,7 +3,7 @@ const courseModel = require("../models/CourseModel");
 
 const getStudentCourses = async (req, res) => {
   try {
-    const { rollNo } = req.params; // Fixed typo here
+    const { rollNo } = req.params;
 
     // Populate the course details from the Course collection
     const student = await studentModel.findOne({ rollNo }).populate({

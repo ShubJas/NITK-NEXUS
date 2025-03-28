@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 const HigherStudies = () => {
   return (
@@ -19,46 +20,55 @@ const HigherStudies = () => {
           href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css"
           rel="stylesheet"
         />
-        <nav className="bg-white shadow-sm fixed w-full z-50">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-16">
-              <div className="flex items-center">
+        <nav className="fixed top-0 left-0 right-0 bg-custom/30 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              <div className="flex-1 flex items-center justify-start space-x-8">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png"
                   alt="NITK Nexus Logo"
-                  className="h-8 w-auto"
+                  className="h-10 w-10 object-contain rounded-lg shadow-lg hover:scale-105 transition-transform"
                 />
-                <div className="hidden md:ml-6 md:flex md:space-x-8">
+                <span className="text-gray-900 font-bold text-xl lg:text-2xl tracking-wide hover:text-gray-700 transition-colors">
+                  NITK NEXUS
+                </span>
+                <nav className="hidden md:flex items-center space-x-12 backdrop-blur-sm">
                   <a
                     href="#"
-                    className="text-blue-500 border-b-2 border-blue-500 px-1 inline-flex items-center h-full text-sm font-medium"
+                    className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
                   >
                     Home
                   </a>
                   <a
-                    href="#exams"
-                    className="text-gray-500 hover:text-blue-500 px-1 inline-flex items-center h-full text-sm font-medium"
+                    href="#"
+                    className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
                   >
                     Exams
                   </a>
                   <a
-                    href="#universities"
-                    className="text-gray-500 hover:text-blue-500 px-1 inline-flex items-center h-full text-sm font-medium"
+                    href="#"
+                    className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
                   >
                     Universities
                   </a>
                   <a
-                    href="#resources"
-                    className="text-gray-500 hover:text-blue-500 px-1 inline-flex items-center h-full text-sm font-medium"
+                    href="#"
+                    className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
                   >
                     Resources
                   </a>
-                </div>
+                </nav>
               </div>
-              <div className="flex items-center">
-                <a href="/login" className="!rounded-button bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700">
-                  Sign In
-                </a>
+              <button className="hidden lg:flex order-3 rounded-full bg-white text-custom w-10 h-10 items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 ml-auto mr-4">
+                <i className="fas fa-home text-sm" />
+              </button>
+              <div className="flex items-center space-x-4">
+                <button className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                  <i className="fas fa-bell text-white" />
+                </button>
+                <div className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                  <i className="fas fa-user text-white" />
+                </div>
               </div>
             </div>
           </div>
@@ -94,13 +104,19 @@ const HigherStudies = () => {
                     </div>
                     <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-6 justify-center items-center">
                       <div className="relative group">
-                        <a href="#exams" className="!rounded-button w-64 flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <a
+                          href="#exams"
+                          className="!rounded-button w-64 flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        >
                           <i className="fas fa-rocket mr-2" /> Start Your
                           Journey
                         </a>
                       </div>
                       <div className="relative group">
-                        <a href="#resources" className="!rounded-button w-64 flex items-center justify-center px-8 py-4 border-2 border-blue-500 text-lg font-medium text-blue-500 bg-white hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm">
+                        <a
+                          href="#resources"
+                          className="!rounded-button w-64 flex items-center justify-center px-8 py-4 border-2 border-blue-500 text-lg font-medium text-blue-500 bg-white hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm"
+                        >
                           <i className="fas fa-book-reader mr-2" /> Explore
                           Resources
                         </a>
@@ -193,8 +209,8 @@ const HigherStudies = () => {
                         href="https://www.youtube.com/watch?v=Ex-3Vlb9IrE&ab_channel=BharatinGermany%21"
                         className="flex items-center text-sm text-blue-500 hover:text-blue-700"
                       >
-                        <i className="fas fa-file-pdf mr-2" /> GRE
-                        3-Month Study Plan
+                        <i className="fas fa-file-pdf mr-2" /> GRE 3-Month Study
+                        Plan
                       </a>
                       <a
                         href="https://www.youtube.com/watch?v=E_GSkiaMnx4&list=PL0BE1A07536688372&ab_channel=MagooshTestPrepforGRE"
@@ -235,7 +251,10 @@ const HigherStudies = () => {
                         </div>
                       </div>
                     </div>
-                    <a href="https://www.ets.org/gre" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
+                    <a
+                      href="https://www.ets.org/gre"
+                      className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center"
+                    >
                       Learn More
                     </a>
                   </div>
@@ -312,7 +331,10 @@ const HigherStudies = () => {
                         </div>
                       </div>
                     </div>
-                    <a href="https://gate.iitk.ac.in/" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
+                    <a
+                      href="https://gate.iitk.ac.in/"
+                      className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center"
+                    >
                       Learn More
                     </a>
                   </div>
@@ -389,7 +411,10 @@ const HigherStudies = () => {
                         </div>
                       </div>
                     </div>
-                    <a href="https://www.ets.org/toefl" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
+                    <a
+                      href="https://www.ets.org/toefl"
+                      className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center"
+                    >
                       Learn More
                     </a>
                   </div>
@@ -509,7 +534,10 @@ const HigherStudies = () => {
                       <option>Business</option>
                       <option>Sciences</option>
                     </select>
-                    <a href="https://www.topuniversities.com/university-rankings" className="!rounded-button w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
+                    <a
+                      href="https://www.topuniversities.com/university-rankings"
+                      className="!rounded-button w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center"
+                    >
                       Search Universities
                     </a>
                   </div>
@@ -532,7 +560,10 @@ const HigherStudies = () => {
                         <p className="text-sm text-gray-500">
                           Dec 15, 2023 • 2:00 PM
                         </p>
-                        <a href="https://www.eventbrite.com/" className="mt-2 text-blue-500 hover:text-blue-700 text-sm">
+                        <a
+                          href="https://www.eventbrite.com/"
+                          className="mt-2 text-blue-500 hover:text-blue-700 text-sm"
+                        >
                           Register Now
                         </a>
                       </div>
@@ -541,7 +572,10 @@ const HigherStudies = () => {
                         <p className="text-sm text-gray-500">
                           Dec 18, 2023 • 3:30 PM
                         </p>
-                        <a href="https://www.eventbrite.com/" className="mt-2 text-blue-500 hover:text-blue-700 text-sm">
+                        <a
+                          href="https://www.eventbrite.com/"
+                          className="mt-2 text-blue-500 hover:text-blue-700 text-sm"
+                        >
                           Register Now
                         </a>
                       </div>
@@ -563,7 +597,10 @@ const HigherStudies = () => {
                           <p className="text-sm text-gray-500">
                             Stanford University '22
                           </p>
-                          <a href="https://www.linkedin.com/" className="text-blue-500 hover:text-blue-700 text-sm">
+                          <a
+                            href="https://www.linkedin.com/"
+                            className="text-blue-500 hover:text-blue-700 text-sm"
+                          >
                             Connect
                           </a>
                         </div>
@@ -576,7 +613,10 @@ const HigherStudies = () => {
                         <div>
                           <h4 className="font-medium">John Smith</h4>
                           <p className="text-sm text-gray-500">MIT '21</p>
-                          <a href="https://www.linkedin.com/" className="text-blue-500 hover:text-blue-700 text-sm">
+                          <a
+                            href="https://www.linkedin.com/"
+                            className="text-blue-500 hover:text-blue-700 text-sm"
+                          >
                             Connect
                           </a>
                         </div>
@@ -594,15 +634,30 @@ const HigherStudies = () => {
                         <ul className="mt-2 space-y-2">
                           <li className="flex items-center">
                             <i className="fas fa-university text-blue-500 mr-2" />
-                            <a href="https://www.cmu.edu/" className="hover:underline">Carnegie Mellon University</a>
+                            <a
+                              href="https://www.cmu.edu/"
+                              className="hover:underline"
+                            >
+                              Carnegie Mellon University
+                            </a>
                           </li>
                           <li className="flex items-center">
                             <i className="fas fa-book text-blue-500 mr-2" />
-                            <a href="https://www.magoosh.com/gre/" className="hover:underline">Advanced GRE Quant Course</a>
+                            <a
+                              href="https://www.magoosh.com/gre/"
+                              className="hover:underline"
+                            >
+                              Advanced GRE Quant Course
+                            </a>
                           </li>
                           <li className="flex items-center">
                             <i className="fas fa-file-alt text-blue-500 mr-2" />
-                            <a href="https://www.ets.org/gre/" className="hover:underline">SOP Template: CS Major</a>
+                            <a
+                              href="https://www.ets.org/gre/"
+                              className="hover:underline"
+                            >
+                              SOP Template: CS Major
+                            </a>
                           </li>
                         </ul>
                       </div>
@@ -678,7 +733,10 @@ const HigherStudies = () => {
                 </div>
               </div>
             </section>
-            <div id="resources" className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              id="resources"
+              className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
+            >
               <div className="lg:text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900">
                   Study Resources
@@ -699,7 +757,10 @@ const HigherStudies = () => {
                     <p className="mt-2 text-sm text-gray-500">
                       Comprehensive guides for all major exams
                     </p>
-                    <a href="https://www.ets.org/gre/revised_general/prepare/" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
+                    <a
+                      href="https://www.ets.org/gre/revised_general/prepare/"
+                      className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center"
+                    >
                       Access Guides
                     </a>
                   </div>
@@ -715,7 +776,10 @@ const HigherStudies = () => {
                     <p className="mt-2 text-sm text-gray-500">
                       Curated video content from experts
                     </p>
-                    <a href="https://www.youtube.com/c/TOEFLtv" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
+                    <a
+                      href="https://www.youtube.com/c/TOEFLtv"
+                      className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center"
+                    >
                       Watch Videos
                     </a>
                   </div>
@@ -731,7 +795,10 @@ const HigherStudies = () => {
                     <p className="mt-2 text-sm text-gray-500">
                       Mock tests and practice questions
                     </p>
-                    <a href="https://www.ets.org/gre/revised_general/prepare/" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
+                    <a
+                      href="https://www.ets.org/gre/revised_general/prepare/"
+                      className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center"
+                    >
                       Start Practice
                     </a>
                   </div>
@@ -747,7 +814,10 @@ const HigherStudies = () => {
                     <p className="mt-2 text-sm text-gray-500">
                       Join peer study groups
                     </p>
-                    <a href="https://www.reddit.com/r/GRE/" className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center">
+                    <a
+                      href="https://www.reddit.com/r/GRE/"
+                      className="!rounded-button mt-4 w-full bg-blue-500 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 flex justify-center"
+                    >
                       Join Groups
                     </a>
                   </div>
@@ -785,7 +855,7 @@ const HigherStudies = () => {
                             </div>
                             <div className="w-full bg-gray-200 rounded-full h-2">
                               <div
-                                                                className="bg-green-500 h-2 rounded-full"
+                                className="bg-green-500 h-2 rounded-full"
                                 style={{ width: "100%" }}
                               />
                             </div>
@@ -851,7 +921,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://www.ets.org/gre/revised_general/prepare/" className="hover:underline">
+                            <a
+                              href="https://www.ets.org/gre/revised_general/prepare/"
+                              className="hover:underline"
+                            >
                               Complete Topic Reviews
                             </a>
                           </span>
@@ -862,7 +935,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://www.ets.org/gre/revised_general/prepare/practice_tests/" className="hover:underline">
+                            <a
+                              href="https://www.ets.org/gre/revised_general/prepare/practice_tests/"
+                              className="hover:underline"
+                            >
                               Practice Tests
                             </a>
                           </span>
@@ -873,7 +949,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://www.ets.org/gre/revised_general/prepare/practice_tests/" className="hover:underline">
+                            <a
+                              href="https://www.ets.org/gre/revised_general/prepare/practice_tests/"
+                              className="hover:underline"
+                            >
                               Mock Exams
                             </a>
                           </span>
@@ -884,7 +963,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://www.vocabulary.com/" className="hover:underline">
+                            <a
+                              href="https://www.vocabulary.com/"
+                              className="hover:underline"
+                            >
                               Vocabulary Building
                             </a>
                           </span>
@@ -896,7 +978,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://www.youtube.com/c/TOEFLtv" className="hover:underline">
+                            <a
+                              href="https://www.youtube.com/c/TOEFLtv"
+                              className="hover:underline"
+                            >
                               Video Lectures
                             </a>
                           </span>
@@ -907,7 +992,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://www.ets.org/toefl/test-takers/ibt/prepare/" className="hover:underline">
+                            <a
+                              href="https://www.ets.org/toefl/test-takers/ibt/prepare/"
+                              className="hover:underline"
+                            >
                               Writing Practice
                             </a>
                           </span>
@@ -918,7 +1006,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://www.ets.org/gre/revised_general/prepare/" className="hover:underline">
+                            <a
+                              href="https://www.ets.org/gre/revised_general/prepare/"
+                              className="hover:underline"
+                            >
                               Previous Year Papers
                             </a>
                           </span>
@@ -930,7 +1021,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://quizlet.com/" className="hover:underline">
+                            <a
+                              href="https://quizlet.com/"
+                              className="hover:underline"
+                            >
                               Interactive Quizzes
                             </a>
                           </span>
@@ -941,7 +1035,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://www.reddit.com/r/GRE/" className="hover:underline">
+                            <a
+                              href="https://www.reddit.com/r/GRE/"
+                              className="hover:underline"
+                            >
                               Group Discussion Sessions
                             </a>
                           </span>
@@ -952,7 +1049,10 @@ const HigherStudies = () => {
                             className="h-4 w-4 text-blue-500 border-gray-300 rounded"
                           />
                           <span className="ml-2 text-sm text-gray-700">
-                            <a href="https://www.wyzant.com/" className="hover:underline">
+                            <a
+                              href="https://www.wyzant.com/"
+                              className="hover:underline"
+                            >
                               Expert Consultation
                             </a>
                           </span>
@@ -968,7 +1068,12 @@ const HigherStudies = () => {
                       <div className="flex items-center justify-between p-3 bg-white rounded shadow-sm">
                         <div>
                           <h4 className="font-medium text-gray-900">
-                            <a href="https://www.stanford.edu/" className="hover:underline">Stanford Application</a>
+                            <a
+                              href="https://www.stanford.edu/"
+                              className="hover:underline"
+                            >
+                              Stanford Application
+                            </a>
                           </h4>
                           <p className="text-sm text-gray-500">Dec 1, 2023</p>
                         </div>
@@ -982,7 +1087,12 @@ const HigherStudies = () => {
                       <div className="flex items-center justify-between p-3 bg-white rounded shadow-sm">
                         <div>
                           <h4 className="font-medium text-gray-900">
-                            <a href="https://www.mit.edu/" className="hover:underline">MIT Application</a>
+                            <a
+                              href="https://www.mit.edu/"
+                              className="hover:underline"
+                            >
+                              MIT Application
+                            </a>
                           </h4>
                           <p className="text-sm text-gray-500">Dec 15, 2023</p>
                         </div>
@@ -1000,117 +1110,7 @@ const HigherStudies = () => {
             </div>
           </section>
         </main>
-        <footer className="bg-gradient-to-b from-blue-900 to-blue-800">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png"
-                  alt="NITK Nexus Logo"
-                  className="h-8 w-auto mb-4"
-                />
-                <p className="text-gray-400 text-sm">
-                  Guiding students towards academic excellence and higher
-                  education success.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-white font-medium mb-4">Quick Links</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#exams"
-                      className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
-                    >
-                      Exams
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#universities"
-                      className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
-                    >
-                      Universities
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#resources"
-                      className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
-                    >
-                      Resources
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-white font-medium mb-4">Resources</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="https://www.ets.org/gre"
-                      className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
-                    >
-                      GRE Official
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://gate.iitk.ac.in/"
-                      className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
-                    >
-                      GATE Official
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.ets.org/toefl"
-                      className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
-                    >
-                      TOEFL Official
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-white font-medium mb-4">Connect With Us</h3>
-                <div className="flex space-x-6">
-                  <a
-                    href="https://www.linkedin.com/"
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
-                  >
-                    <i className="fab fa-linkedin text-xl" />
-                  </a>
-                  <a
-                    href="https://twitter.com/"
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
-                  >
-                    <i className="fab fa-twitter text-xl" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/"
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
-                  >
-                    <i className="fab fa-instagram text-xl" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="mt-8 pt-8 border-t border-gray-700 opacity-90">
-              <p className="text-center text-gray-400 text-sm">
-                © 2025 NITK Nexus | Built by NITK Students for NITK Students
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );

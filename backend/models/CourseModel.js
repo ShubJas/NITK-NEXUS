@@ -36,12 +36,9 @@ const CourseSchema = new mongoose.Schema(
       final: { type: Number, default: 40 },
     },
     instructor: {
-      name: String,
-      title: String,
-      email: String,
-      phone: String,
-      officeHours: String,
-      imageUrl: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Professor", // References the Professor model
+      required: true,
     },
     weeklySchedule: [
       {
@@ -81,4 +78,5 @@ const CourseSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Course", CourseSchema);
+const Course = mongoose.model("Course", CourseSchema);
+module.exports = Course;

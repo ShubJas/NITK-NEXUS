@@ -1,13 +1,15 @@
 const courseModel = require("../models/CourseModel");
-
+const ProfessorModel = require("../models/ProfessorModel");
 const getCourseByCode = async (req, res) => {
   try {
     const { courseCode } = req.params;
 
-    const course = await courseModel.findOne({ courseCode });
+    const course = await courseModel
+      .findOne({ courseCode })
+      .populate("instructor");
 
     if (!course) {
-      return res.staus(404).json({
+      return res.status(404).json({
         success: false,
         message: "Course not found",
       });
@@ -29,7 +31,7 @@ const getCourseByCode = async (req, res) => {
 
 const getAllCourses = async (req, res) => {
   try {
-    const courses = await courseModel.find({});
+    const courses = await courseModel.find({}).populate("instructor");
     return res.status(200).json({
       success: true,
       message: "Courses fetched successfully",

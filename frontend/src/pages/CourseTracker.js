@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 const months = [
   "January",
   "February",
@@ -129,7 +131,7 @@ const CourseTracker = () => {
 
   const getStudentCourses = async () => {
     try {
-      const rollNo = "ABC123";
+      const rollNo = "STU102";
       const { data } = await axios.get(
         `http://localhost:8000/api/v1/students/${rollNo}/courses`
       );
@@ -165,59 +167,7 @@ const CourseTracker = () => {
               ".animate-shake{animation:shake 0.82s cubic-bezier(.36,.07,.19,.97) both}@keyframes shake{10%,90%{transform:translate3d(-1px,0,0)}20%,80%{transform:translate3d(2px,0,0)}30%,50%,70%{transform:translate3d(-4px,0,0)}40%,60%{transform:translate3d(4px,0,0)}}.shadow-glow { filter: drop-shadow(0 0 3px rgba(0, 123, 255, 0.5)); }",
           }}
         />
-        <header className="fixed top-0 left-0 right-0 bg-custom/30 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-              <div className="flex-1 flex items-center justify-start space-x-8">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png"
-                  alt="NITK Nexus Logo"
-                  className="h-10 w-10 object-contain rounded-lg shadow-lg hover:scale-105 transition-transform"
-                />
-                <span className="text-gray-900 font-bold text-xl lg:text-2xl tracking-wide hover:text-gray-700 transition-colors">
-                  NITK NEXUS
-                </span>
-                <nav className="hidden md:flex items-center space-x-12 backdrop-blur-sm">
-                  <a
-                    href="#"
-                    className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
-                  >
-                    Dashboard
-                  </a>
-                  <a
-                    href="#"
-                    className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
-                  >
-                    Courses
-                  </a>
-                  <a
-                    href="#"
-                    className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
-                  >
-                    Resources
-                  </a>
-                  <a
-                    href="#"
-                    className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
-                  >
-                    Community
-                  </a>
-                </nav>
-              </div>
-              <button className="hidden lg:flex order-3 rounded-full bg-white text-custom w-10 h-10 items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 ml-auto mr-4">
-                <i className="fas fa-home text-sm" />
-              </button>
-              <div className="flex items-center space-x-4">
-                <button className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                  <i className="fas fa-bell text-white" />
-                </button>
-                <div className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                  <i className="fas fa-user text-white" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Navbar />
         <main className="pt-28 pb-12">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -641,91 +591,7 @@ const CourseTracker = () => {
             </div>
           </div>
         </main>
-        <footer className="bg-gradient-to-b from-custom/10 to-white py-12">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="mb-8 md:mb-0">
-                <h3 className="text-lg font-semibold mb-4">About NITK Nexus</h3>
-                <p className="text-gray-400 text-sm">
-                  Your comprehensive academic tracking platform for a successful
-                  educational journey.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-4 text-gray-800">
-                  Quick Links
-                </h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <a href="#" className="hover:text-custom transition-colors">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-custom transition-colors">
-                      About Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-custom transition-colors">
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-4 text-gray-800">
-                  Resources
-                </h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>
-                    <a href="#" className="hover:text-custom transition-colors">
-                      Study Materials
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-custom transition-colors">
-                      Career Guide
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-custom transition-colors">
-                      FAQ
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-4 text-gray-800">
-                  Connect with Us
-                </h3>
-                <div className="flex space-x-6">
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-custom transition-colors"
-                  >
-                    <i className="fab fa-linkedin text-xl" />
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-custom transition-colors"
-                  >
-                    <i className="fab fa-twitter text-xl" />
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-custom transition-colors"
-                  >
-                    <i className="fab fa-instagram text-xl" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="mt-8 pt-8 border-t border-gray-200 text-center text-gray-600 text-sm">
-              © 2025 NITK Nexus | Built by NITK Students for NITK Students
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
