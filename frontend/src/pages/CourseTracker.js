@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar_ct";
 import Footer from "../components/Footer";
 const months = [
   "January",
@@ -167,9 +167,10 @@ const CourseTracker = () => {
               ".animate-shake{animation:shake 0.82s cubic-bezier(.36,.07,.19,.97) both}@keyframes shake{10%,90%{transform:translate3d(-1px,0,0)}20%,80%{transform:translate3d(2px,0,0)}30%,50%,70%{transform:translate3d(-4px,0,0)}40%,60%{transform:translate3d(4px,0,0)}}.shadow-glow { filter: drop-shadow(0 0 3px rgba(0, 123, 255, 0.5)); }",
           }}
         />
-        <Navbar />
+        <div id ='dashboard'></div>
+        < Navbar />
         <main className="pt-28 pb-12">
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div  className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 📚 Explore Your Semester Roadmap
@@ -358,7 +359,7 @@ const CourseTracker = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16">
+            <div id ='courses' className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16">
               <h2 className="text-2xl font-semibold mb-6">
                 Current Semester Subjects
               </h2>
@@ -425,6 +426,7 @@ const CourseTracker = () => {
                 })}
               </div>
               <div
+                id = 'community'
                 className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
                 style={{ order: 1 }}
               >
@@ -544,6 +546,7 @@ const CourseTracker = () => {
             </div>
 
             <div
+              id ='calendar'
               className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16"
               style={{ order: 0 }}
             >
