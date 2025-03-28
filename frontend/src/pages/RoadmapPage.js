@@ -52,7 +52,7 @@ const RoadmapPage = () => {
             className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
             style={{ order: 1 }}
           >
-            <div className="mt-10" style={{ scrollMarginTop: 100 }}>
+            <div id="core" className="mt-10" style={{ scrollMarginTop: 100 }}>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Core Subjects &amp; Learning Paths
               </h2>
@@ -731,7 +731,10 @@ const RoadmapPage = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-16 bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 rounded-lg">
+            <div
+              id="resources"
+              className="mt-16 bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 rounded-lg"
+            >
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 <i className="fas fa-graduation-cap text-blue-500 mr-2" />
                 Interactive Resource Hub
@@ -1051,7 +1054,10 @@ const RoadmapPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-12 bg-white p-8 rounded-lg shadow-lg">
+              <div
+                id="analytics"
+                className="mt-12 bg-white p-8 rounded-lg shadow-lg"
+              >
                 <h3 className="text-xl font-bold mb-4">
                   <div className="flex items-center">
                     <i className="fas fa-chart-line text-blue-500 mr-3" />

@@ -1,0 +1,222 @@
+[
+    {
+      "name": "Massachusetts Institute of Technology",
+      "shortName": "MIT",
+      "location": "Cambridge, MA, USA",
+      "region": "north-america",
+      "worldRanking": 1,
+      "rating": 4.9,
+      "logo": "https://logo.clearbit.com/mit.edu",
+      "website": "https://web.mit.edu",
+      "programs": ["engineering", "computer-science", "physics", "mathematics", "architecture"]
+    },
+    {
+      "name": "Stanford University",
+      "shortName": "Stanford",
+      "location": "Stanford, CA, USA",
+      "region": "north-america",
+      "worldRanking": 2,
+      "rating": 4.8,
+      "logo": "https://logo.clearbit.com/stanford.edu",
+      "website": "https://www.stanford.edu",
+      "programs": ["computer-science", "business", "law", "medicine", "engineering"]
+    },
+    {
+      "name": "Harvard University",
+      "shortName": "Harvard",
+      "location": "Cambridge, MA, USA",
+      "region": "north-america",
+      "worldRanking": 3,
+      "rating": 4.8,
+      "logo": "https://logo.clearbit.com/harvard.edu",
+      "website": "https://www.harvard.edu",
+      "programs": ["law", "medicine", "business", "political-science", "economics"]
+    },
+    {
+      "name": "University of Oxford",
+      "shortName": "Oxford",
+      "location": "Oxford, UK",
+      "region": "europe",
+      "worldRanking": 4,
+      "rating": 4.7,
+      "logo": "https://logo.clearbit.com/ox.ac.uk",
+      "website": "https://www.ox.ac.uk",
+      "programs": ["humanities", "law", "medicine", "social-sciences", "natural-sciences"]
+    },
+    {
+      "name": "California Institute of Technology",
+      "shortName": "Caltech",
+      "location": "Pasadena, CA, USA",
+      "region": "north-america",
+      "worldRanking": 5,
+      "rating": 4.7,
+      "logo": "https://logo.clearbit.com/caltech.edu",
+      "website": "https://www.caltech.edu",
+      "programs": ["physics", "engineering", "chemistry", "biology", "astronomy"]
+    },
+    {
+      "name": "ETH Zurich",
+      "shortName": "ETH",
+      "location": "Zurich, Switzerland",
+      "region": "europe",
+      "worldRanking": 6,
+      "rating": 4.6,
+      "logo": "https://logo.clearbit.com/ethz.ch",
+      "website": "https://www.ethz.ch",
+      "programs": ["engineering", "computer-science", "architecture", "physics", "mathematics"]
+    },
+    {
+      "name": "University of Cambridge",
+      "shortName": "Cambridge",
+      "location": "Cambridge, UK",
+      "region": "europe",
+      "worldRanking": 7,
+      "rating": 4.6,
+      "logo": "https://logo.clearbit.com/cam.ac.uk",
+      "website": "https://www.cam.ac.uk",
+      "programs": ["natural-sciences", "engineering", "medicine", "humanities", "economics"]
+    },
+    {
+      "name": "Imperial College London",
+      "shortName": "Imperial",
+      "location": "London, UK",
+      "region": "europe",
+      "worldRanking": 8,
+      "rating": 4.5,
+      "logo": "https://logo.clearbit.com/imperial.ac.uk",
+      "website": "https://www.imperial.ac.uk",
+      "programs": ["engineering", "medicine", "business", "natural-sciences", "computing"]
+    },
+    {
+      "name": "University of Chicago",
+      "shortName": "UChicago",
+      "location": "Chicago, IL, USA",
+      "region": "north-america",
+      "worldRanking": 9,
+      "rating": 4.5,
+      "logo": "https://logo.clearbit.com/uchicago.edu",
+      "website": "https://www.uchicago.edu",
+      "programs": ["economics", "business", "law", "social-sciences", "physics"]
+    },
+    {
+      "name": "University College London",
+      "shortName": "UCL",
+      "location": "London, UK",
+      "region": "europe",
+      "worldRanking": 10,
+      "rating": 4.4,
+      "logo": "https://logo.clearbit.com/ucl.ac.uk",
+      "website": "https://www.ucl.ac.uk",
+      "programs": ["medicine", "architecture", "education", "engineering", "social-sciences"]
+    },
+    {
+      "name": "National University of Singapore",
+      "shortName": "NUS",
+      "location": "Singapore",
+      "region": "asia",
+      "worldRanking": 11,
+      "rating": 4.4,
+      "logo": "https://logo.clearbit.com/nus.edu.sg",
+      "website": "https://www.nus.edu.sg",
+      "programs": ["engineering", "business", "computer-science", "law", "medicine"]
+    },
+    {
+      "name": "Princeton University",
+      "shortName": "Princeton",
+      "location": "Princeton, NJ, USA",
+      "region": "north-america",
+      "worldRanking": 12,
+      "rating": 4.4,
+      "logo": "https://logo.clearbit.com/princeton.edu",
+      "website": "https://www.princeton.edu",
+      "programs": ["mathematics", "physics", "economics", "history", "engineering"]
+    },
+    {
+      "name": "Nanyang Technological University",
+      "shortName": "NTU",
+      "location": "Singapore",
+      "region": "asia",
+      "worldRanking": 13,
+      "rating": 4.3,
+      "logo": "https://logo.clearbit.com/ntu.edu.sg",
+      "website": "https://www.ntu.edu.sg",
+      "programs": ["engineering", "business", "computer-science", "medicine", "arts"]
+    },
+    {
+      "name": "University of Pennsylvania",
+      "shortName": "UPenn",
+      "location": "Philadelphia, PA, USA",
+      "region": "north-america",
+      "worldRanking": 14,
+      "rating": 4.3,
+      "logo": "https://logo.clearbit.com/upenn.edu",
+      "website": "https://www.upenn.edu",
+      "programs": ["business", "law", "medicine", "engineering", "social-sciences"]
+    },
+    {
+      "name": "Tsinghua University",
+      "shortName": "Tsinghua",
+      "location": "Beijing, China",
+      "region": "asia",
+      "worldRanking": 15,
+      "rating": 4.3,
+      "logo": "https://logo.clearbit.com/tsinghua.edu.cn",
+      "website": "https://www.tsinghua.edu.cn",
+      "programs": ["engineering", "computer-science", "economics", "architecture", "natural-sciences"]
+    },
+    {
+      "name": "Yale University",
+      "shortName": "Yale",
+      "location": "New Haven, CT, USA",
+      "region": "north-america",
+      "worldRanking": 16,
+      "rating": 4.2,
+      "logo": "https://logo.clearbit.com/yale.edu",
+      "website": "https://www.yale.edu",
+      "programs": ["law", "medicine", "business", "arts", "social-sciences"]
+    },
+    {
+      "name": "Cornell University",
+      "shortName": "Cornell",
+      "location": "Ithaca, NY, USA",
+      "region": "north-america",
+      "worldRanking": 17,
+      "rating": 4.2,
+      "logo": "https://logo.clearbit.com/cornell.edu",
+      "website": "https://www.cornell.edu",
+      "programs": ["engineering", "business", "agriculture", "architecture", "medicine"]
+    },
+    {
+      "name": "University of Toronto",
+      "shortName": "UofT",
+      "location": "Toronto, Canada",
+      "region": "north-america",
+      "worldRanking": 18,
+      "rating": 4.2,
+      "logo": "https://logo.clearbit.com/utoronto.ca",
+      "website": "https://www.utoronto.ca",
+      "programs": ["medicine", "engineering", "business", "computer-science", "social-sciences"]
+    },
+    {
+      "name": "Columbia University",
+      "shortName": "Columbia",
+      "location": "New York, NY, USA",
+      "region": "north-america",
+      "worldRanking": 19,
+      "rating": 4.1,
+      "logo": "https://logo.clearbit.com/columbia.edu",
+      "website": "https://www.columbia.edu",
+      "programs": ["business", "law", "journalism", "engineering", "arts"]
+    },
+    {
+      "name": "University of Tokyo",
+      "shortName": "UTokyo",
+      "location": "Tokyo, Japan",
+      "region": "asia",
+      "worldRanking": 20,
+      "rating": 4.1,
+      "logo": "https://logo.clearbit.com/u-tokyo.ac.jp",
+      "website": "https://www.u-tokyo.ac.jp",
+      "programs": ["engineering", "natural-sciences", "medicine", "economics", "arts"]
+    }
+  ]

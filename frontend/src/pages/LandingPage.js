@@ -94,7 +94,7 @@ const LandingPage = () => {
               achievers.
             </p>
             <div className="mt-8 flex justify-center gap-4">
-              <button class="px-8 py-3 bg-blue-500 text-white font-semibold rounded-button hover:bg-blue-700 transition-all transform hover:scale-105">
+              <button class="px-8 py-3 bg-blue-500 text-white font-semibold rounded-button hover:bg-blue-700 transition-all transform hover:scale-105"  onClick={() => navigate("/roadmap")} >
                 Explore Roadmaps
               </button>
               <button class="px-8 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-button hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105">
