@@ -1,11 +1,15 @@
+// src/pages/LandingPage.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+
 const LandingPage = () => {
   const navigate = useNavigate();
+  
   const handlePrep = () => {
     navigate("/roadmap");
   };
+
   return (
     <div>
       <div>
@@ -23,12 +27,6 @@ const LandingPage = () => {
         <link
           href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css"
           rel="stylesheet"
-        />
-        <style
-          dangerouslySetInnerHTML={{
-            __html:
-              ".bot-button { transition: all 0.3s ease-in-out; box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); animation: pulse 2s infinite; } @keyframes pulse { 0% { box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); } 50% { box-shadow: 0 0 25px rgba(0, 123, 255, 0.5); } 100% { box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); } } .bot-button:hover { width: auto; padding-right: 2rem; } .bot-button:hover .bot-text { opacity: 1; width: auto; }",
-          }}
         />
         <style
           dangerouslySetInnerHTML={{
@@ -74,6 +72,12 @@ const LandingPage = () => {
                 >
                   Community Forum
                 </a>
+                <button
+                  onClick={() => navigate("/login")}
+                  className="px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300"
+                >
+                  Login
+                </button>
               </div>
             </div>
           </nav>
@@ -94,11 +98,17 @@ const LandingPage = () => {
               achievers.
             </p>
             <div className="mt-8 flex justify-center gap-4">
-              <button class="px-8 py-3 bg-blue-500 text-white font-semibold rounded-button hover:bg-blue-700 transition-all transform hover:scale-105"  onClick={() => navigate("/roadmap")} >
+              <button 
+                className="px-8 py-3 bg-blue-500 text-white font-semibold rounded-button hover:bg-blue-700 transition-all transform hover:scale-105"  
+                onClick={() => navigate("/roadmap")}
+              >
                 Explore Roadmaps
               </button>
-              <button class="px-8 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-button hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105">
-                Join the Community
+              <button 
+                className="px-8 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-button hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105"
+                onClick={() => navigate("/login")}
+              >
+                Login to Get Started
               </button>
             </div>
           </section>
@@ -185,15 +195,6 @@ const LandingPage = () => {
         <Footer />
         <div
           className="bot-button fixed bottom-8 right-8 bg-blue-500 text-white rounded-full p-4 cursor-pointer flex items-center justify-center hover:bg-blue-700 z-50"
-          style={{ width: 60, height: 60 }}
-        >
-          <i className="fas fa-robot text-xl" />
-          <span className="bot-text ml-2 opacity-0 whitespace-nowrap w-0 overflow-hidden transition-all duration-300">
-            Ask NITK Bot: Get Study &amp; Placement Guidance
-          </span>
-        </div>
-        <div
-          className="bot-button fixed bottom-8 right-8 bg-blue-500 text-blue-400 rounded-full p-4 cursor-pointer flex items-center justify-center hover:bg-blue-700 z-50"
           style={{ width: 60, height: 60 }}
         >
           <i className="fas fa-robot text-xl" />
