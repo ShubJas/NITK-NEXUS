@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const studentRoutes = require("./routes/studentRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const uniRoutes = require("./routes/uniRoutes");
+const authRoutes = require("./routes/authRoutes");
 const connectDb = require("./config/db");
 dotenv.config();
 const PORT = process.env.PORT || 8000;
@@ -22,6 +23,7 @@ app.use(
 );
 
 //Routes
+app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/universities", uniRoutes);
@@ -33,10 +35,10 @@ app.get("/", (req, res) => {
 // Error handling middleware (Add this new middleware)
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ 
+  res.status(500).json({
     success: false,
-    message: 'Internal Server Error',
-    error: process.env.NODE_ENV === 'development' ? err.message : undefined
+    message: "Internal Server Error",
+    error: process.env.NODE_ENV === "development" ? err.message : undefined,
   });
 });
 
@@ -44,7 +46,7 @@ app.use((err, req, res, next) => {
 app.use((req, res) => {
   res.status(404).json({
     success: false,
-    message: 'Endpoint not found'
+    message: "Endpoint not found",
   });
 });
 
