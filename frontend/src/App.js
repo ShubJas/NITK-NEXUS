@@ -6,6 +6,8 @@ import RoadmapPage from "./pages/RoadmapPage";
 import HigherStudies from "./pages/HigherStudies";
 import CourseTracker from "./pages/CourseTracker";
 import CoursePage from "./pages/CoursePage";
+import Login from "./pages/Login";
+
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Route path="/roadmap" element={<RoadmapPage />}></Route>
         <Route path="/course-tracker" element={<CourseTracker />}></Route>
         <Route path="/higher-studies" element={<HigherStudies />}></Route>
+        <Route path="/login" element={<Login  />}></Route>
+\
       </Routes>
     </Router>
   );

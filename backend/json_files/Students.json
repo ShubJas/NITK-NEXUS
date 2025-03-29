@@ -1,0 +1,94 @@
+[
+  {
+    "_id": { "$oid": "610000000000000000000101" },
+    "name": "Ethan Wright",
+    "rollNo": "STU101",
+    "year": "2nd",
+    "branch": "CSE",
+    "email": "ethan.wright@example.com",
+    "password": "password123",
+    "courses": [
+      {
+        "course": { "$oid": "610000000000000000000011" },
+        "progress": 60,
+        "grade": "B",
+        "enrolledAt": { "$date": "2025-09-15T00:00:00Z" }
+      }
+    ],
+    "totalCredits": 3,
+    "cgpa": 7.0,
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "610000000000000000000102" },
+    "name": "Fiona Adams",
+    "rollNo": "STU102",
+    "year": "3rd",
+    "branch": "ECE",
+    "email": "fiona.adams@example.com",
+    "password": "password123",
+    "courses": [
+      {
+        "course": { "$oid": "610000000000000000000012" },
+        "progress": 75,
+        "grade": "A-",
+        "enrolledAt": { "$date": "2026-02-01T00:00:00Z" }
+      },
+      {
+        "course": { "$oid": "610000000000000000000013" },
+        "progress": 50,
+        "grade": "B+",
+        "enrolledAt": { "$date": "2025-10-05T00:00:00Z" }
+      }
+    ],
+    "totalCredits": 7,
+    "cgpa": 8.0,
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "610000000000000000000103" },
+    "name": "George Baker",
+    "rollNo": "STU103",
+    "year": "1st",
+    "branch": "ME",
+    "email": "george.baker@example.com",
+    "password": "password123",
+    "courses": [
+      {
+        "course": { "$oid": "610000000000000000000014" },
+        "progress": 40,
+        "grade": null,
+        "enrolledAt": { "$date": "2026-03-10T00:00:00Z" }
+      }
+    ],
+    "totalCredits": 3,
+    "cgpa": 6.5,
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "610000000000000000000104" },
+    "name": "Hannah Clark",
+    "rollNo": "STU104",
+    "year": "4th",
+    "branch": "CE",
+    "email": "hannah.clark@example.com",
+    "password": "password123",
+    "courses": [
+      {
+        "course": { "$oid": "610000000000000000000015" },
+        "progress": 85,
+        "grade": "A",
+        "enrolledAt": { "$date": "2025-11-01T00:00:00Z" }
+      },
+      {
+        "course": { "$oid": "610000000000000000000016" },
+        "progress": 70,
+        "grade": "B+",
+        "enrolledAt": { "$date": "2026-01-15T00:00:00Z" }
+      }
+    ],
+    "totalCredits": 7,
+    "cgpa": 8.5,
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  }
+]

@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="fixed top-0 left-0 right-0 bg-custom/30 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
@@ -16,33 +19,36 @@ const Navbar = () => {
                 NITK NEXUS
               </span>
               <nav className="hidden md:flex items-center space-x-12 backdrop-blur-sm">
-                <a
-                  href="#"
-                  className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
+                <button
+                  onClick={() => document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80 bg-transparent border-none cursor-pointer"
                 >
                   Dashboard
-                </a>
-                <a
-                  href="#"
-                  className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
-                >
-                  Courses
-                </a>
-                <a
-                  href="#"
-                  className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
+                </button>
+                <button
+                  onClick={() => document.getElementById('resources').scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80 bg-transparent border-none cursor-pointer"
                 >
                   Resources
-                </a>
-                <a
-                  href="#"
-                  className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80"
+                </button>
+                <button
+                  onClick={() => document.getElementById('analytics').scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80 bg-transparent border-none cursor-pointer"
+                >
+                  Analytics
+                </button>
+                <button
+                  // onClick={() => document.getElementById('Learning Paths').scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="text-custom font-medium transition-colors flex-1 text-center hover:opacity-80 bg-transparent border-none cursor-pointer"
                 >
                   Community
-                </a>
+                </button>
               </nav>
             </div>
-            <button className="hidden lg:flex order-3 rounded-full bg-white text-custom w-10 h-10 items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 ml-auto mr-4">
+            <button 
+              className="hidden lg:flex order-3 rounded-full bg-white text-custom w-10 h-10 items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 ml-auto mr-4"  
+              onClick={() => navigate("/")}
+            >
               <i className="fas fa-home text-sm" />
             </button>
             <div className="flex items-center space-x-4">

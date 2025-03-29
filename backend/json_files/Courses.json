@@ -1,0 +1,428 @@
+[
+  {
+    "_id": { "$oid": "610000000000000000000011" },
+    "courseCode": "CS201",
+    "title": "Data Structures",
+    "description": "Introduction to data structures and algorithms.",
+    "semester": "Fall",
+    "department": "CSE",
+    "prerequisites": ["CS101"],
+    "learningOutcomes": ["Understanding of linked lists", "Trees and Graphs"],
+    "textbooks": [
+      {
+        "title": "Data Structures and Algorithms",
+        "author": "Mark Allen Weiss",
+        "link": "http://example.com/dsa"
+      }
+    ],
+    "creditHours": 3,
+    "schedule": "Mon & Wed 09:00-10:30",
+    "location": "Room 201",
+    "midtermExam": {
+      "date": { "$date": "2025-10-10T00:00:00Z" },
+      "time": "09:00 AM",
+      "venue": "Exam Hall X"
+    },
+    "finalExam": {
+      "date": { "$date": "2025-12-15T00:00:00Z" },
+      "time": "01:00 PM",
+      "venue": "Exam Hall Y"
+    },
+    "assessment": {
+      "assignments": 35,
+      "midterm": 25,
+      "final": 40
+    },
+    "instructor": { "$oid": "610000000000000000000001" },
+    "weeklySchedule": [
+      {
+        "weekNumber": 1,
+        "title": "Introduction",
+        "status": "Completed",
+        "topics": ["Arrays", "Linked Lists"],
+        "resources": [
+          {
+            "type": "video",
+            "title": "Introduction Video",
+            "link": "http://example.com/intro"
+          }
+        ]
+      }
+    ],
+    "assignments": [
+      {
+        "number": 1,
+        "title": "Assignment on Arrays",
+        "description": "Practice arrays problems.",
+        "dueDate": { "$date": "2025-09-25T00:00:00Z" },
+        "status": "Submitted",
+        "grade": 88
+      }
+    ],
+    "resources": [
+      {
+        "type": "pdf",
+        "title": "Syllabus",
+        "link": "http://example.com/syllabus",
+        "thumbnail": "http://example.com/thumb",
+        "duration": "N/A"
+      }
+    ],
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "610000000000000000000012" },
+    "courseCode": "CS202",
+    "title": "Algorithms",
+    "description": "Study of algorithm design and analysis.",
+    "semester": "Spring",
+    "department": "CSE",
+    "prerequisites": ["CS201"],
+    "learningOutcomes": ["Sorting algorithms", "Graph algorithms"],
+    "textbooks": [
+      {
+        "title": "Introduction to Algorithms",
+        "author": "Cormen et al.",
+        "link": "http://example.com/algorithms"
+      }
+    ],
+    "creditHours": 3,
+    "schedule": "Tue & Thu 11:00-12:30",
+    "location": "Room 202",
+    "midtermExam": {
+      "date": { "$date": "2026-03-05T00:00:00Z" },
+      "time": "11:00 AM",
+      "venue": "Exam Hall Z"
+    },
+    "finalExam": {
+      "date": { "$date": "2026-05-10T00:00:00Z" },
+      "time": "02:00 PM",
+      "venue": "Exam Hall W"
+    },
+    "assessment": {
+      "assignments": 30,
+      "midterm": 30,
+      "final": 40
+    },
+    "instructor": { "$oid": "610000000000000000000001" },
+    "weeklySchedule": [
+      {
+        "weekNumber": 1,
+        "title": "Algorithm Basics",
+        "status": "Completed",
+        "topics": ["Complexity Analysis"],
+        "resources": [
+          {
+            "type": "pdf",
+            "title": "Lecture Notes",
+            "link": "http://example.com/notes-algo"
+          }
+        ]
+      }
+    ],
+    "assignments": [
+      {
+        "number": 1,
+        "title": "Sorting Algorithms Assignment",
+        "description": "Implement sorting algorithms.",
+        "dueDate": { "$date": "2026-02-01T00:00:00Z" },
+        "status": "Pending",
+        "grade": null
+      }
+    ],
+    "resources": [
+      {
+        "type": "video",
+        "title": "Algorithm Lecture",
+        "link": "http://example.com/lecture",
+        "thumbnail": "http://example.com/lecturethumb",
+        "duration": "45 mins"
+      }
+    ],
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "610000000000000000000013" },
+    "courseCode": "ECE202",
+    "title": "Circuit Analysis",
+    "description": "Fundamentals of analyzing electrical circuits.",
+    "semester": "Fall",
+    "department": "ECE",
+    "prerequisites": ["ECE101"],
+    "learningOutcomes": ["Circuit analysis", "Ohm's Law"],
+    "textbooks": [
+      {
+        "title": "Fundamentals of Electric Circuits",
+        "author": "Alexander & Sadiku",
+        "link": "http://example.com/circuits"
+      }
+    ],
+    "creditHours": 4,
+    "schedule": "Mon, Wed & Fri 10:00-11:00",
+    "location": "Room 303",
+    "midtermExam": {
+      "date": { "$date": "2025-10-20T00:00:00Z" },
+      "time": "10:00 AM",
+      "venue": "Exam Hall A"
+    },
+    "finalExam": {
+      "date": { "$date": "2025-12-05T00:00:00Z" },
+      "time": "12:00 PM",
+      "venue": "Exam Hall B"
+    },
+    "assessment": {
+      "assignments": 25,
+      "midterm": 35,
+      "final": 40
+    },
+    "instructor": { "$oid": "610000000000000000000002" },
+    "weeklySchedule": [
+      {
+        "weekNumber": 1,
+        "title": "Introduction to Circuits",
+        "status": "Completed",
+        "topics": ["Resistors", "Capacitors"],
+        "resources": [
+          {
+            "type": "video",
+            "title": "Circuit Intro",
+            "link": "http://example.com/circuitintro"
+          }
+        ]
+      }
+    ],
+    "assignments": [
+      {
+        "number": 1,
+        "title": "Circuit Problem Set",
+        "description": "Solve circuit problems.",
+        "dueDate": { "$date": "2025-09-20T00:00:00Z" },
+        "status": "Submitted",
+        "grade": 92
+      }
+    ],
+    "resources": [
+      {
+        "type": "pdf",
+        "title": "Circuit Syllabus",
+        "link": "http://example.com/circuit-syllabus",
+        "thumbnail": "http://example.com/circuitthumb",
+        "duration": "N/A"
+      }
+    ],
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "610000000000000000000014" },
+    "courseCode": "ME302",
+    "title": "Fluid Mechanics",
+    "description": "Study of fluid flow and its applications.",
+    "semester": "Spring",
+    "department": "ME",
+    "prerequisites": ["ME301"],
+    "learningOutcomes": ["Fluid dynamics", "Pressure distribution"],
+    "textbooks": [
+      {
+        "title": "Fluid Mechanics",
+        "author": "Frank M. White",
+        "link": "http://example.com/fluid"
+      }
+    ],
+    "creditHours": 3,
+    "schedule": "Tue & Thu 14:00-15:30",
+    "location": "Room 404",
+    "midtermExam": {
+      "date": { "$date": "2026-03-10T00:00:00Z" },
+      "time": "02:00 PM",
+      "venue": "Exam Hall C"
+    },
+    "finalExam": {
+      "date": { "$date": "2026-05-15T00:00:00Z" },
+      "time": "03:00 PM",
+      "venue": "Exam Hall D"
+    },
+    "assessment": {
+      "assignments": 30,
+      "midterm": 30,
+      "final": 40
+    },
+    "instructor": { "$oid": "610000000000000000000003" },
+    "weeklySchedule": [
+      {
+        "weekNumber": 1,
+        "title": "Fluid Introduction",
+        "status": "Completed",
+        "topics": ["Continuity Equation"],
+        "resources": [
+          {
+            "type": "article",
+            "title": "Fluid Basics",
+            "link": "http://example.com/fluidbasics"
+          }
+        ]
+      }
+    ],
+    "assignments": [
+      {
+        "number": 1,
+        "title": "Fluid Dynamics Assignment",
+        "description": "Calculate flow rates.",
+        "dueDate": { "$date": "2026-02-15T00:00:00Z" },
+        "status": "Submitted",
+        "grade": 85
+      }
+    ],
+    "resources": [
+      {
+        "type": "pdf",
+        "title": "Fluid Mechanics Syllabus",
+        "link": "http://example.com/fluid-syllabus",
+        "thumbnail": "http://example.com/fluidthumb",
+        "duration": "N/A"
+      }
+    ],
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "610000000000000000000015" },
+    "courseCode": "EEE301",
+    "title": "Power Systems",
+    "description": "Overview of power generation and distribution.",
+    "semester": "Fall",
+    "department": "EEE",
+    "prerequisites": ["EEE201"],
+    "learningOutcomes": ["Understanding power grids", "Electrical distribution"],
+    "textbooks": [
+      {
+        "title": "Electric Power Systems",
+        "author": "C.L. Wadhwa",
+        "link": "http://example.com/powersystems"
+      }
+    ],
+    "creditHours": 4,
+    "schedule": "Wed & Fri 15:00-16:30",
+    "location": "Room 505",
+    "midtermExam": {
+      "date": { "$date": "2025-11-05T00:00:00Z" },
+      "time": "15:00 PM",
+      "venue": "Exam Hall E"
+    },
+    "finalExam": {
+      "date": { "$date": "2025-12-10T00:00:00Z" },
+      "time": "16:00 PM",
+      "venue": "Exam Hall F"
+    },
+    "assessment": {
+      "assignments": 30,
+      "midterm": 30,
+      "final": 40
+    },
+    "instructor": { "$oid": "610000000000000000000002" },
+    "weeklySchedule": [
+      {
+        "weekNumber": 1,
+        "title": "Power Systems Intro",
+        "status": "Completed",
+        "topics": ["Generation", "Transmission"],
+        "resources": [
+          {
+            "type": "video",
+            "title": "Power Systems Overview",
+            "link": "http://example.com/poweroverview"
+          }
+        ]
+      }
+    ],
+    "assignments": [
+      {
+        "number": 1,
+        "title": "Power Analysis",
+        "description": "Analyze a power grid.",
+        "dueDate": { "$date": "2025-10-25T00:00:00Z" },
+        "status": "Pending",
+        "grade": null
+      }
+    ],
+    "resources": [
+      {
+        "type": "pdf",
+        "title": "Power Systems Syllabus",
+        "link": "http://example.com/power-syllabus",
+        "thumbnail": "http://example.com/powerthumb",
+        "duration": "N/A"
+      }
+    ],
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  },
+  {
+    "_id": { "$oid": "610000000000000000000016" },
+    "courseCode": "CE101",
+    "title": "Statics",
+    "description": "Introduction to statics and structural analysis.",
+    "semester": "Spring",
+    "department": "CE",
+    "prerequisites": [],
+    "learningOutcomes": ["Understanding of forces", "Equilibrium"],
+    "textbooks": [
+      {
+        "title": "Statics and Mechanics of Materials",
+        "author": "R.C. Hibbeler",
+        "link": "http://example.com/statics"
+      }
+    ],
+    "creditHours": 3,
+    "schedule": "Mon, Wed & Fri 13:00-14:00",
+    "location": "Room 606",
+    "midtermExam": {
+      "date": { "$date": "2026-03-20T00:00:00Z" },
+      "time": "13:00 PM",
+      "venue": "Exam Hall G"
+    },
+    "finalExam": {
+      "date": { "$date": "2026-05-25T00:00:00Z" },
+      "time": "14:00 PM",
+      "venue": "Exam Hall H"
+    },
+    "assessment": {
+      "assignments": 25,
+      "midterm": 35,
+      "final": 40
+    },
+    "instructor": { "$oid": "610000000000000000000004" },
+    "weeklySchedule": [
+      {
+        "weekNumber": 1,
+        "title": "Statics Overview",
+        "status": "Completed",
+        "topics": ["Forces", "Moments"],
+        "resources": [
+          {
+            "type": "article",
+            "title": "Statics Basics",
+            "link": "http://example.com/statics-basics"
+          }
+        ]
+      }
+    ],
+    "assignments": [
+      {
+        "number": 1,
+        "title": "Statics Problem Set",
+        "description": "Solve equilibrium problems.",
+        "dueDate": { "$date": "2026-02-10T00:00:00Z" },
+        "status": "Submitted",
+        "grade": 95
+      }
+    ],
+    "resources": [
+      {
+        "type": "pdf",
+        "title": "Statics Syllabus",
+        "link": "http://example.com/statics-syllabus",
+        "thumbnail": "http://example.com/staticsthumb",
+        "duration": "N/A"
+      }
+    ],
+    "createdAt": { "$date": "2025-01-01T00:00:00Z" }
+  }
+]

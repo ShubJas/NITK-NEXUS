@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar_hs";
 import Footer from "../components/Footer";
 
 const HigherStudies = () => {
@@ -195,7 +196,7 @@ const HigherStudies = () => {
           href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css"
           rel="stylesheet"
         />
-        <nav className="fixed top-0 left-0 right-0 bg-custom/30 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
+        {/* <nav className="fixed top-0 left-0 right-0 bg-custom/30 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex-1 flex items-center justify-start space-x-8">
@@ -254,8 +255,9 @@ const HigherStudies = () => {
                 <i className="fas fa-home text-sm" />
               </button>
             </div>
-          </div>
-        </nav>
+          </div> */}
+        <div id="dashboard"></div>
+        <Navbar />
         <main className="pt-16">
           <section className="relative bg-white overflow-hidden">
             <div className="max-w-8xl mx-auto">

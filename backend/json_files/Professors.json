@@ -1,0 +1,40 @@
+[
+  {
+    "_id": { "$oid": "610000000000000000000001" },
+    "name": "Alice Martin",
+    "customId": "PROF101",
+    "description": "Expert in Software Engineering",
+    "courses": [
+      { "$oid": "610000000000000000000011" },
+      { "$oid": "610000000000000000000012" }
+    ]
+  },
+  {
+    "_id": { "$oid": "610000000000000000000002" },
+    "name": "Brian Lee",
+    "customId": "PROF102",
+    "description": "Specialist in Electronics Engineering",
+    "courses": [
+      { "$oid": "610000000000000000000013" },
+      { "$oid": "610000000000000000000015" }
+    ]
+  },
+  {
+    "_id": { "$oid": "610000000000000000000003" },
+    "name": "Catherine Wu",
+    "customId": "PROF103",
+    "description": "Expert in Mechanical Systems",
+    "courses": [
+      { "$oid": "610000000000000000000014" }
+    ]
+  },
+  {
+    "_id": { "$oid": "610000000000000000000004" },
+    "name": "Daniel Kim",
+    "customId": "PROF104",
+    "description": "Civil Engineering Specialist",
+    "courses": [
+      { "$oid": "610000000000000000000016" }
+    ]
+  }
+]
