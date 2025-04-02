@@ -31,6 +31,7 @@ function getStartDay(year, month) {
 const CourseTracker = () => {
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
+  const [token, setToken] = useState("");
 
   const [currentDate, setCurrentDate] = React.useState(new Date());
 
@@ -134,9 +135,7 @@ const CourseTracker = () => {
       const rollNo = "211IT012";
 
       // Retrieve the auth token from localStorage
-      //const token = localStorage.getItem("token");
-      const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTc5ZmRhMGVmOWVmODc2ZjMyOWE4MCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoiam9obi5kb2VAZXhhbXBsZS5jb20iLCJyb2xsTm8iOiJDUzEwMSIsImlhdCI6MTc0MzIzNDQ4MCwiZXhwIjoxNzQzODM5MjgwfQ.A6XI9-GIBMMh1RyL38zghFVd_9NZ7yfsQKW0GYsbPuA";
+      const token = localStorage.getItem("token");
       if (!token) {
         console.log("No authentication token found. Please log in.");
         return;

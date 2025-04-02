@@ -260,7 +260,7 @@ const Login = () => {
       );
       console.log(response);
       if (response && response.data.success) {
-        localStorage.setItem("key", response.data.token);
+        localStorage.setItem("token", response.data.token);
         navigate("/");
       } else alert("Login failed");
     } catch (error) {

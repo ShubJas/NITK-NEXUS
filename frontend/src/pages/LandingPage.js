@@ -1,14 +1,20 @@
 // src/pages/LandingPage.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 
 const LandingPage = () => {
+  const [token, setToken] = useState("");
   const navigate = useNavigate();
-  
+
   const handlePrep = () => {
     navigate("/roadmap");
   };
+
+  useEffect(() => {
+    const t = localStorage.getItem("token");
+    setToken(t);
+  }, []);
 
   return (
     <div>
@@ -72,12 +78,25 @@ const LandingPage = () => {
                 >
                   Community Forum
                 </a>
-                <button
-                  onClick={() => navigate("/login")}
-                  className="px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300"
-                >
-                  Login
-                </button>
+                {token ? (
+                  <a
+                    href="#"
+                    onClick={() => {
+                      navigate("./login");
+                      localStorage.removeItem("token");
+                    }}
+                    className="px-6 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300"
+                  >
+                    Sign out
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => navigate("/login")}
+                    className="px-6 py-2 rounded-full bg-blue-500 text-blue hover:bg-blue-600 transition-all duration-300"
+                  >
+                    Login
+                  </button>
+                )}
               </div>
             </div>
           </nav>
@@ -98,13 +117,13 @@ const LandingPage = () => {
               achievers.
             </p>
             <div className="mt-8 flex justify-center gap-4">
-              <button 
-                className="px-8 py-3 bg-blue-500 text-white font-semibold rounded-button hover:bg-blue-700 transition-all transform hover:scale-105"  
+              <button
+                className="px-8 py-3 bg-blue-500 text-white font-semibold rounded-button hover:bg-blue-700 transition-all transform hover:scale-105"
                 onClick={() => navigate("/roadmap")}
               >
                 Explore Roadmaps
               </button>
-              <button 
+              <button
                 className="px-8 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-button hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105"
                 onClick={() => navigate("/login")}
               >
