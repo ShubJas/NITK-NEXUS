@@ -92,9 +92,11 @@ const registerController = async (req, res) => {
 
 const loginController = async (req, res) => {
   try {
-    const { email, password } = req.body;
-    // Find student by email
-    const student = await Student.findOne({ email: email }).select("+password");
+    const { rollNo, password } = req.body;
+
+    const student = await Student.findOne({ rollNo: rollNo }).select(
+      "+password"
+    );
     if (!student) {
       return res.status(404).send({
         success: false,

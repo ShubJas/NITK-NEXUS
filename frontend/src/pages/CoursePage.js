@@ -73,8 +73,19 @@ const CoursePage = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
+        const token =
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTc5ZmRhMGVmOWVmODc2ZjMyOWE4MCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoiam9obi5kb2VAZXhhbXBsZS5jb20iLCJyb2xsTm8iOiJDUzEwMSIsImlhdCI6MTc0MzIzNDQ4MCwiZXhwIjoxNzQzODM5MjgwfQ.A6XI9-GIBMMh1RyL38zghFVd_9NZ7yfsQKW0GYsbPuA";
+        if (!token) {
+          console.log("No authentication token found. Please log in.");
+          return;
+        }
         const response = await axios.get(
-          `http://localhost:8000/api/v1/courses/code/${courseCode}`
+          `http://localhost:8000/api/v1/courses/code/${courseCode}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`, // Attach token to request
+            },
+          }
         );
         setCourse(response.data.course);
       } catch (err) {

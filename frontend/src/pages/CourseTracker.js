@@ -131,15 +131,33 @@ const CourseTracker = () => {
 
   const getStudentCourses = async () => {
     try {
-      const rollNo = "STU102";
+      const rollNo = "211IT012";
+
+      // Retrieve the auth token from localStorage
+      //const token = localStorage.getItem("token");
+      const token =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTc5ZmRhMGVmOWVmODc2ZjMyOWE4MCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoiam9obi5kb2VAZXhhbXBsZS5jb20iLCJyb2xsTm8iOiJDUzEwMSIsImlhdCI6MTc0MzIzNDQ4MCwiZXhwIjoxNzQzODM5MjgwfQ.A6XI9-GIBMMh1RyL38zghFVd_9NZ7yfsQKW0GYsbPuA";
+      if (!token) {
+        console.log("No authentication token found. Please log in.");
+        return;
+      }
+
+      // Send request with Authorization header
       const { data } = await axios.get(
-        `http://localhost:8000/api/v1/students/${rollNo}/courses`
+        `http://localhost:8000/api/v1/students/${rollNo}/courses`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Attach token to request
+          },
+        }
       );
+
       setCourses(data?.data.courses);
     } catch (err) {
       console.log("Error fetching Courses: ", err.message);
     }
   };
+
   useEffect(() => {
     getStudentCourses();
   }, []);
@@ -167,10 +185,10 @@ const CourseTracker = () => {
               ".animate-shake{animation:shake 0.82s cubic-bezier(.36,.07,.19,.97) both}@keyframes shake{10%,90%{transform:translate3d(-1px,0,0)}20%,80%{transform:translate3d(2px,0,0)}30%,50%,70%{transform:translate3d(-4px,0,0)}40%,60%{transform:translate3d(4px,0,0)}}.shadow-glow { filter: drop-shadow(0 0 3px rgba(0, 123, 255, 0.5)); }",
           }}
         />
-        <div id ='dashboard'></div>
-        < Navbar />
+        <div id="dashboard"></div>
+        <Navbar />
         <main className="pt-28 pb-12">
-          <div  className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 📚 Explore Your Semester Roadmap
@@ -359,7 +377,10 @@ const CourseTracker = () => {
                 </div>
               </div>
             </div>
-            <div id ='courses' className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16">
+            <div
+              id="courses"
+              className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16"
+            >
               <h2 className="text-2xl font-semibold mb-6">
                 Current Semester Subjects
               </h2>
@@ -371,11 +392,12 @@ const CourseTracker = () => {
                     circumference -
                     circumference * (course.courseProgress / 100);
 
-                  console.log(course);
                   return (
                     <div
                       key={index}
-                      onClick={() => navigate(`/courses/${course.courseCode}`)}
+                      onClick={() =>
+                        navigate(`/courses/code/${course.courseCode}`)
+                      }
                       className="border border-gray-200 rounded-lg p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.8)]
                          bg-gradient-to-br from-green-50 to-gray-50 hover:scale-105 
                          transition-all duration-300 cursor-pointer"
@@ -426,7 +448,7 @@ const CourseTracker = () => {
                 })}
               </div>
               <div
-                id = 'community'
+                id="community"
                 className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
                 style={{ order: 1 }}
               >
@@ -546,7 +568,7 @@ const CourseTracker = () => {
             </div>
 
             <div
-              id ='calendar'
+              id="calendar"
               className="bg-gray-50 rounded-lg shadow-sm p-8 mb-16"
               style={{ order: 0 }}
             >
