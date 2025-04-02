@@ -123,12 +123,14 @@ const LandingPage = () => {
               >
                 Explore Roadmaps
               </button>
-              <button
-                className="px-8 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-button hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105"
-                onClick={() => navigate("/login")}
-              >
-                Login to Get Started
-              </button>
+              {!token && (
+                <button
+                  className="px-8 py-3 border-2 border-blue-500 text-blue-500 font-semibold rounded-button hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105"
+                  onClick={() => navigate("/login")}
+                >
+                  Login to Get Started
+                </button>
+              )}
             </div>
           </section>
           <div className="grid md:grid-cols-3 gap-16 max-w-6xl mx-auto">
