@@ -1,34 +1,26 @@
 const courseModel = require("../models/CourseModel");
 const ProfessorModel = require("../models/ProfessorModel");
-const getCourseByCode = async (req, res) => {
-  try {
-    const { courseCode } = req.params;
-
-    const course = await courseModel
-      .findOne({ courseCode })
-      .populate("instructor");
-
-    if (!course) {
-      return res.status(404).json({
-        success: false,
-        message: "Course not found",
-      });
-    }
-
-    return res.status(200).json({
-      success: true,
-      message: "Course fetched successfully",
-      course: course,
+const getCourseByCode = asyncHandler(async (req, res) => {
+  const course = await Course.findOne({ courseCode: req.params.courseCode })
+    .populate({
+      path: "instructor",
+      select: "name email imageUrl title officeHours phone",
+    })
+    .populate({
+      path: "assignments",
+      select: "title dueDate status",
     });
-  } catch (err) {
-    console.error("Error fetching course:", err.message);
-    return res.status(500).json({
-      success: false,
-      message: "Server Error",
-    });
+
+  if (!course) {
+    res.status(404);
+    throw new Error("Course not found");
   }
-};
 
+  res.json({
+    success: true,
+    data: course,
+  });
+});
 const getAllCourses = async (req, res) => {
   try {
     const courses = await courseModel.find({}).populate("instructor");
