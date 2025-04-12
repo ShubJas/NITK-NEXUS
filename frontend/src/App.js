@@ -7,6 +7,9 @@ import HigherStudies from "./pages/HigherStudies";
 import CourseTracker from "./pages/CourseTracker";
 import CoursePage from "./pages/CoursePage";
 import Login from "./pages/Login";
+import PlacementPage from "./pages/PlacementPage";
+
+
 
 const App = () => {
   return (
@@ -20,7 +23,9 @@ const App = () => {
         <Route path="/roadmap" element={<RoadmapPage />}></Route>
         <Route path="/course-tracker" element={<CourseTracker />}></Route>
         <Route path="/higher-studies" element={<HigherStudies />}></Route>
-        <Route path="/login" element={<Login />}></Route>\
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/placement-recommendation" element={<PlacementPage />} ></Route>
+
       </Routes>
     </Router>
   );

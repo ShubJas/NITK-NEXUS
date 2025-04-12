@@ -25,7 +25,10 @@ const RoadmapPage = () => {
         <Navbar />
         <main>
           <div className="bg-white" style={{ order: 2 }}>
-            <div id ='dashboard'className="max-w-8xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div
+              id="dashboard"
+              className="max-w-8xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8"
+            >
               <div className="text-center">
                 <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
                   Placement Preparation Hub
@@ -34,19 +37,37 @@ const RoadmapPage = () => {
                   Your one-stop destination for comprehensive placement
                   preparation resources and guidance.
                 </p>
-                <div class="mt-8 flex justify-center">
-                  <div class="mt-3 sm:mt-0 sm:ml-3">
-                  <button 
-  onClick={() => document.getElementById('LP').scrollIntoView({behavior: 'smooth', block: 'start'})}
-  className="!rounded-md w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white bg-blue-500 hover:bg-blue-500/90 md:py-4 md:text-lg md:px-10 transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none shadow-lg hover:shadow-2xl"
->
-  Start Learning <i className="fas fa-rocket ml-2 animate-bounce"></i>
-</button>
+                <div className="mt-8 flex justify-center flex-col sm:flex-row sm:space-x-4 items-center">
+                  <div className="mt-3 sm:mt-0">
+                    <button
+                      onClick={() =>
+                        document
+                          .getElementById("LP")
+                          .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          })
+                      }
+                      className="!rounded-md w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium text-white bg-blue-500 hover:bg-blue-500/90 md:py-4 md:text-lg md:px-10 transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none shadow-lg hover:shadow-2xl"
+                    >
+                      Start Learning{" "}
+                      <i className="fas fa-rocket ml-2 animate-bounce"></i>
+                    </button>
+                  </div>
+                  <div className="mt-4 sm:mt-0">
+                    <button
+                      onClick={() => navigate("/placement-recommendation")}
+                      className="!rounded-md w-full flex items-center justify-center px-8 py-3 border border-blue-500 text-base font-medium text-blue-500 bg-white hover:bg-blue-100 md:py-4 md:text-lg md:px-10 transform hover:scale-105 transition-all duration-300 shadow-md"
+                    >
+                      Go to Recommendation{" "}
+                      <i className="fas fa-arrow-right ml-2"></i>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <div
             className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8"
             style={{ order: 1 }}
@@ -848,7 +869,10 @@ const RoadmapPage = () => {
                     </ul>
                   </div>
                 </div>
-                <div id='resources' className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div
+                  id="resources"
+                  className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                >
                   <div className="flex items-center mb-4">
                     <i className="fas fa-laptop-code text-blue-500 text-2xl mr-3" />
                     <h4 className="text-xl font-bold">Interactive Tutorials</h4>
