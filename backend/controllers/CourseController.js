@@ -1,3 +1,4 @@
+const asyncHandler = require('express-async-handler');
 const courseModel = require("../models/CourseModel");
 const ProfessorModel = require("../models/ProfessorModel");
 const getCourseByCode = asyncHandler(async (req, res) => {
