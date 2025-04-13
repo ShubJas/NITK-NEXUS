@@ -5,6 +5,7 @@ const studentRoutes = require("./routes/studentRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 const uniRoutes = require("./routes/uniRoutes");
 const authRoutes = require("./routes/authRoutes");
+const recommendationRoutes = require("./routes/recommendationRoutes");
 const connectDb = require("./config/db");
 dotenv.config();
 const PORT = process.env.PORT || 8000;
@@ -27,6 +28,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/students", studentRoutes);
 app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/universities", uniRoutes);
+app.use("/api/v1/recommendations", recommendationRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello World");

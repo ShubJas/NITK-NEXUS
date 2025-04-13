@@ -261,6 +261,7 @@ const Login = () => {
       console.log(response);
       if (response && response.data.success) {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("rollNo", rollNo);
         navigate("/");
       } else alert("Login failed");
     } catch (error) {

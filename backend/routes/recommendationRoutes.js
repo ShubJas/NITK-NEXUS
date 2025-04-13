@@ -1,9 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const recommendationController = require('../controllers/recommendationController');
-const authMiddleware = require('../middleware/auth');
+const recommendationController = require("../controllers/recommendationController");
+const authMiddleware = require("../middlewares/authMiddleware");
 
-router.post('/recommendations', authMiddleware, recommendationController.generateStudyRecommendation);
-router.get('/recommendations', authMiddleware, recommendationController.getRecommendation);
+router.post(
+  "/generate/:rollNo",
+  authMiddleware.requireSignIn,
+  recommendationController.generateStudyRecommendation
+);
+router.get(
+  "/get/:rollNo",
+  authMiddleware.requireSignIn,
+  recommendationController.getRecommendation
+);
 
 module.exports = router;
