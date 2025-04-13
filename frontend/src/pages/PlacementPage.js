@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import QuizComponent from '../components/PlacementRecommendation/QuizComponent';
-import RecommendationResult from '../components/PlacementRecommendation/RecommendationResult';
-import LoadingScreen from '../components/PlacementRecommendation/LoadingScreen';
-import { generateRecommendation, getRecommendation } from '../services/recommendationService';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import QuizComponent from "../components/PlacementRecommendation/QuizComponent";
+import RecommendationResult from "../components/PlacementRecommendation/RecommendationResult";
+import LoadingScreen from "../components/PlacementRecommendation/LoadingScreen";
+import {
+  generateRecommendation,
+  getRecommendation,
+} from "../services/recommendationService";
+import axios from "axios";
 
 const PlacementPage = () => {
   const [currentSubjects, setCurrentSubjects] = useState([]);
   const [recommendation, setRecommendation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [hasExistingRecommendation, setHasExistingRecommendation] = useState(false);
+  const [hasExistingRecommendation, setHasExistingRecommendation] =
+    useState(false);
 
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const rollNo = "STU101"; // You can dynamically replace this if needed
+        const rollNo = localStorage.getItem("rollNo"); // You can dynamically replace this if needed
         const token = localStorage.getItem("token");
 
         if (!token) {
@@ -39,9 +43,11 @@ const PlacementPage = () => {
           setRecommendation(recResponse);
           setHasExistingRecommendation(true);
         }
-
       } catch (error) {
-        console.error("Error fetching courses or recommendation:", error.message);
+        console.error(
+          "Error fetching courses or recommendation:",
+          error.message
+        );
       }
     };
 
@@ -75,7 +81,8 @@ const PlacementPage = () => {
             Placement Preparation Assistant
           </h1>
           <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-            Get personalized study recommendations based on your academic profile and career interests
+            Get personalized study recommendations based on your academic
+            profile and career interests
           </p>
         </div>
 
@@ -92,7 +99,10 @@ const PlacementPage = () => {
             <RecommendationResult recommendation={recommendation} />
           </div>
         ) : (
-          <QuizComponent onSubmit={handleQuizSubmit} currentSubjects={currentSubjects} />
+          <QuizComponent
+            onSubmit={handleQuizSubmit}
+            currentSubjects={currentSubjects}
+          />
         )}
       </div>
     </div>

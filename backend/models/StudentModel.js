@@ -84,6 +84,32 @@ const studentSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  placementRecommendation: {
+    type: {
+      careerPath: String,
+      careerPathDescription: String,
+      learningPath: [
+        {
+          topic: String,
+          description: String,
+          resources: [
+            {
+              name: String,
+              url: String,
+            },
+          ],
+        },
+      ],
+      timeline: [
+        {
+          week: String,
+          tasks: String,
+        },
+      ],
+      additionalTips: [String],
+    },
+    default: null,
+  },
 });
 
 const Student = mongoose.model("Student", studentSchema);
