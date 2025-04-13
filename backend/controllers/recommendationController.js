@@ -6,12 +6,12 @@ const generateStudyRecommendation = async (req, res) => {
   try {
     const { quizAnswers } = req.body;
     const { rollNo } = req.params;
-    
+
     // Fetch student with proper population
     const student = await Student.findOne({ rollNo })
       .populate({
         path: "courses.course",
-        model: "Course" // Explicitly specify the model
+        model: "Course", // Explicitly specify the model
       })
       .exec();
 
@@ -20,7 +20,7 @@ const generateStudyRecommendation = async (req, res) => {
     }
 
     // Extract course names
-    const currentSubjects = student.courses.map(course => 
+    const currentSubjects = student.courses.map((course) =>
       course.course ? course.course.title : "Unknown Course"
     );
 
@@ -37,9 +37,9 @@ const generateStudyRecommendation = async (req, res) => {
     res.json(recommendation);
   } catch (error) {
     console.error("Error generating recommendation:", error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: "Failed to generate recommendation",
-      details: error.message 
+      details: error.message,
     });
   }
 };
@@ -59,9 +59,9 @@ const getRecommendation = async (req, res) => {
 
     res.json(student.placementRecommendation);
   } catch (error) {
-    res.status(500).json({ 
+    res.status(500).json({
       error: "Failed to fetch recommendation",
-      details: error.message 
+      details: error.message,
     });
   }
 };
