@@ -14,7 +14,7 @@ const PlacementPage = () => {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const rollNo = "211IT012"; // You can dynamically replace this if needed
+        const rollNo = "STU101"; // You can dynamically replace this if needed
         const token = localStorage.getItem("token");
 
         if (!token) {
