@@ -4,14 +4,12 @@ const studentSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "Student name is required"],
-    trim: true,
     maxlength: [50, "Name cannot exceed 50 characters"],
   },
   rollNo: {
     type: String,
     required: [true, "Roll number is required"],
     unique: true,
-    trim: true,
     uppercase: true,
   },
   year: {
