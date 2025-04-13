@@ -132,7 +132,8 @@ const CourseTracker = () => {
 
   const getStudentCourses = async () => {
     try {
-      const rollNo = "211IT012";
+      const rollNo = localStorage.getItem("rollNo"); // You can dynamically replace this if needed
+      // const rollNo = "211IT087";
 
       // Retrieve the auth token from localStorage
       const token = localStorage.getItem("token");

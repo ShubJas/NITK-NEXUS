@@ -19,6 +19,7 @@ const PlacementPage = () => {
     const fetchSubjects = async () => {
       try {
         const rollNo = localStorage.getItem("rollNo"); // You can dynamically replace this if needed
+        // const rollNo =  "211IT012";
         const token = localStorage.getItem("token");
 
         if (!token) {

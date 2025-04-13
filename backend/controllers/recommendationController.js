@@ -1,21 +1,28 @@
 const { generateRecommendation } = require("../services/llmService");
 const Student = require("../models/StudentModel");
+const Course = require("../models/CourseModel"); // Add this import
 
 const generateStudyRecommendation = async (req, res) => {
   try {
     const { quizAnswers } = req.body;
     const { rollNo } = req.params;
-    console.log("Quiz Answers:", quizAnswers);
-    console.log("Student rollNo:", rollNo);
-    // Fetch student data
-    const student = await Student.findOne({ rollNo }).populate(
-      "currentSubjects"
-    );
+    
+    // Fetch student with proper population
+    const student = await Student.findOne({ rollNo })
+      .populate({
+        path: "courses.course",
+        model: "Course" // Explicitly specify the model
+      })
+      .exec();
+
     if (!student) {
       return res.status(404).json({ error: "Student not found" });
     }
 
-    const currentSubjects = student.currentSubjects.map((sub) => sub.name);
+    // Extract course names
+    const currentSubjects = student.courses.map(course => 
+      course.course ? course.course.title : "Unknown Course"
+    );
 
     // Generate recommendation
     const recommendation = await generateRecommendation({
@@ -23,15 +30,17 @@ const generateStudyRecommendation = async (req, res) => {
       quizAnswers,
     });
 
-    // Save recommendation to student profile
+    // Save recommendation
     student.placementRecommendation = recommendation;
     await student.save();
 
     res.json(recommendation);
-    return res;
   } catch (error) {
     console.error("Error generating recommendation:", error);
-    res.status(500).json({ error: "Failed to generate recommendation" });
+    res.status(500).json({ 
+      error: "Failed to generate recommendation",
+      details: error.message 
+    });
   }
 };
 
@@ -40,13 +49,20 @@ const getRecommendation = async (req, res) => {
     const { rollNo } = req.params;
     const student = await Student.findOne({ rollNo });
 
-    if (!student || !student.placementRecommendation) {
+    if (!student) {
+      return res.status(404).json({ error: "Student not found" });
+    }
+
+    if (!student.placementRecommendation) {
       return res.status(404).json({ error: "No recommendation found" });
     }
 
     res.json(student.placementRecommendation);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch recommendation" });
+    res.status(500).json({ 
+      error: "Failed to fetch recommendation",
+      details: error.message 
+    });
   }
 };
 
