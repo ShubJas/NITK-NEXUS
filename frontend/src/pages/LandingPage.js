@@ -2,9 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import ChatBot from "../components/ChatBot";
 
 const LandingPage = () => {
   const [token, setToken] = useState("");
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const toggleChat = () => setIsChatOpen(!isChatOpen);
   const navigate = useNavigate();
 
   const handlePrep = () => {
@@ -214,14 +218,23 @@ const LandingPage = () => {
           </div>
         </main>
         <Footer />
-        <div
-          className="bot-button fixed bottom-8 right-8 bg-blue-500 text-white rounded-full p-4 cursor-pointer flex items-center justify-center hover:bg-blue-700 z-50"
-          style={{ width: 60, height: 60 }}
-        >
-          <i className="fas fa-robot text-xl" />
-          <span className="bot-text ml-2 opacity-0 whitespace-nowrap w-0 overflow-hidden transition-all duration-300">
-            Ask NITK Bot: Get Study &amp; Placement Guidance
-          </span>
+        <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end">
+          {isChatOpen && (
+            <div className="mb-4">
+              <ChatBot closeChat={toggleChat} />
+            </div>
+          )}
+
+          {/* Chatbot Icon Button */}
+          <div
+            className="bg-blue-500 text-white rounded-full p-4 cursor-pointer flex items-center justify-center hover:bg-blue-700 transition-all duration-300 w-16 h-16"
+            onClick={toggleChat}
+          >
+            <i className="fas fa-robot text-xl"></i>
+            <span className="ml-2 opacity-0 whitespace-nowrap overflow-hidden transition-all duration-300">
+              Ask NITK Bot
+            </span>
+          </div>
         </div>
       </div>
     </div>
