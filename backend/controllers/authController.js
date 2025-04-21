@@ -1,5 +1,4 @@
 const User = require("../models/StudentModel");
-const { hashPassword, comparePassword } = require("../helpers/authHelper");
 const JWT = require("jsonwebtoken");
 const Student = require("../models/StudentModel");
 const Course = require("../models/CourseModel");
