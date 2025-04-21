@@ -437,7 +437,8 @@ const Login = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              The Future of Academic Excellence
+              An Intelligent Integrated Platform for Studies and Career
+              Development
             </motion.p>
           </motion.div>
 
