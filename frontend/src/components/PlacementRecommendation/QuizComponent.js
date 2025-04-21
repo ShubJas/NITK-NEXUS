@@ -133,6 +133,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
       };
 
       // Call the API to generate recommendations
+      console.log(quizData);
       const recommendation = await generateRecommendation(quizData);
 
       const results = {
@@ -144,6 +145,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
       await onSubmit(results);
       setQuizResults(results);
       setShowResults(true);
+      console.log("Recommendation generated successfully:", recommendation);
     } catch (err) {
       console.error("Error generating recommendation:", err);
       setError("Failed to generate recommendations. Please try again.");
