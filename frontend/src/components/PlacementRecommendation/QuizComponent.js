@@ -1,7 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { FaArrowRight, FaCheck, FaArrowLeft, FaGraduationCap, FaChartLine, FaLightbulb, FaClock, FaBookReader } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import {
+  FaArrowRight,
+  FaCheck,
+  FaArrowLeft,
+  FaGraduationCap,
+  FaChartLine,
+  FaLightbulb,
+  FaClock,
+  FaBookReader,
+} from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const QuizComponent = ({ onSubmit, currentSubjects }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -13,7 +22,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
 
   const questions = [
     {
-      id: 'interest',
+      id: "interest",
       question: "Which of these areas sparks your curiosity the most?",
       icon: <FaLightbulb className="text-yellow-500" />,
       options: [
@@ -29,12 +38,12 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
         "Psychology & Human Behavior",
         "Arts & Humanities",
         "Social Impact & NGOs",
-        "Research & Development"
+        "Research & Development",
       ],
-      type: "single"
+      type: "single",
     },
     {
-      id: 'strengths',
+      id: "strengths",
       question: "What are your superpowers? (Select up to 3)",
       icon: <FaGraduationCap className="text-blue-500" />,
       options: [
@@ -49,13 +58,13 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
         "Design Thinking",
         "Critical Thinking",
         "Persuasion",
-        "Strategic Planning"
+        "Strategic Planning",
       ],
       type: "multiple",
-      max: 3
+      max: 3,
     },
     {
-      id: 'preferred_work',
+      id: "preferred_work",
       question: "Where do you thrive?",
       icon: <FaChartLine className="text-green-500" />,
       options: [
@@ -64,12 +73,12 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
         "Research lab",
         "Remote/flexible",
         "Building my own venture",
-        "Collaborative teams"
+        "Collaborative teams",
       ],
-      type: "single"
+      type: "single",
     },
     {
-      id: 'time_commitment',
+      id: "time_commitment",
       question: "Weekly placement prep time?",
       icon: <FaClock className="text-purple-500" />,
       options: [
@@ -77,37 +86,37 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
         "5-10 hours",
         "10-15 hours",
         "15-20 hours",
-        "More than 20 hours"
+        "More than 20 hours",
       ],
-      type: "single"
+      type: "single",
     },
     {
-      id: 'learning_style',
+      id: "learning_style",
       question: "How do you learn best?",
       icon: <FaBookReader className="text-red-500" />,
       options: [
         "Visual (videos, diagrams)",
         "Auditory (lectures, discussions)",
         "Reading/Writing (books, articles)",
-        "Kinesthetic (hands-on practice)"
+        "Kinesthetic (hands-on practice)",
       ],
-      type: "single"
-    }
+      type: "single",
+    },
   ];
 
   const handleAnswer = (questionId, answer) => {
-    setAnswers(prev => ({ ...prev, [questionId]: answer }));
+    setAnswers((prev) => ({ ...prev, [questionId]: answer }));
   };
 
   const handleNext = () => {
     if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(prev => prev + 1);
+      setCurrentQuestion((prev) => prev + 1);
     }
   };
 
   const handlePrevious = () => {
     if (currentQuestion > 0) {
-      setCurrentQuestion(prev => prev - 1);
+      setCurrentQuestion((prev) => prev - 1);
     }
   };
 
@@ -116,7 +125,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
     const results = {
       currentSubjects,
       quizAnswers: answers,
-      recommendation: generateRecommendation(answers)
+      recommendation: generateRecommendation(answers),
     };
     await onSubmit(results);
     setQuizResults(results);
@@ -126,29 +135,57 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
 
   const generateRecommendation = (answers) => {
     // This would be more sophisticated in a real implementation
-    const interest = answers.interest || '';
+    const interest = answers.interest || "";
     const strengths = answers.strengths || [];
-    
+
     if (interest.includes("Software") || interest.includes("Programming")) {
       return {
         path: "Software Development Track",
-        courses: ["CS201 - Data Structures", "CS301 - Algorithms", "CS401 - Database Systems"],
-        resources: ["LeetCode Premium", "Design Patterns Course", "System Design Primer"],
-        companies: ["Microsoft", "Google", "Amazon", "Flipkart", "Zomato"]
+        courses: [
+          "CS201 - Data Structures",
+          "CS301 - Algorithms",
+          "CS401 - Database Systems",
+        ],
+        resources: [
+          "LeetCode Premium",
+          "Design Patterns Course",
+          "System Design Primer",
+        ],
+        companies: ["Microsoft", "Google", "Amazon", "Flipkart", "Zomato"],
       };
     } else if (interest.includes("Data Science")) {
       return {
         path: "Data Science Track",
-        courses: ["MA202 - Statistics", "CS601 - Machine Learning", "CS701 - AI"],
-        resources: ["Kaggle Competitions", "Fast.ai Course", "Python for Data Analysis"],
-        companies: ["Analytics Vidhya", "Fractal", "ZS Associates", "American Express"]
+        courses: [
+          "MA202 - Statistics",
+          "CS601 - Machine Learning",
+          "CS701 - AI",
+        ],
+        resources: [
+          "Kaggle Competitions",
+          "Fast.ai Course",
+          "Python for Data Analysis",
+        ],
+        companies: [
+          "Analytics Vidhya",
+          "Fractal",
+          "ZS Associates",
+          "American Express",
+        ],
       };
     } else {
       return {
         path: "General Placement Prep",
-        courses: ["HS101 - Professional Communication", "CS101 - Programming Basics"],
-        resources: ["Crack the Coding Interview", "GeeksforGeeks", "InterviewBit"],
-        companies: ["TCS", "Infosys", "Wipro", "Accenture"]
+        courses: [
+          "HS101 - Professional Communication",
+          "CS101 - Programming Basics",
+        ],
+        resources: [
+          "Crack the Coding Interview",
+          "GeeksforGeeks",
+          "InterviewBit",
+        ],
+        companies: ["TCS", "Infosys", "Wipro", "Accenture"],
       };
     }
   };
@@ -157,14 +194,18 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
 
   if (showResults && quizResults) {
     return (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl shadow-xl"
       >
         <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold text-indigo-800 mb-2">🎯 Your Personalized Roadmap</h2>
-          <p className="text-lg text-gray-600">Based on your quiz responses, here's our recommendation</p>
+          <h2 className="text-4xl font-bold text-indigo-800 mb-2">
+            🎯 Your Personalized Roadmap
+          </h2>
+          <p className="text-lg text-gray-600">
+            Based on your quiz responses, here's our recommendation
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-10">
@@ -173,10 +214,14 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
               <FaChartLine className="mr-3" /> Career Path
             </h3>
             <div className="bg-blue-50 p-4 rounded-lg mb-4">
-              <h4 className="font-bold text-blue-800 text-lg">{quizResults.recommendation.path}</h4>
+              <h4 className="font-bold text-blue-800 text-lg">
+                {quizResults.recommendation.path}
+              </h4>
             </div>
             <div>
-              <h4 className="font-semibold text-gray-700 mb-2">Suggested Courses:</h4>
+              <h4 className="font-semibold text-gray-700 mb-2">
+                Suggested Courses:
+              </h4>
               <ul className="space-y-2">
                 {quizResults.recommendation.courses.map((course, i) => (
                   <li key={i} className="flex items-center">
@@ -192,7 +237,9 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
               <FaGraduationCap className="mr-3" /> Resources
             </h3>
             <div className="mb-4">
-              <h4 className="font-semibold text-gray-700 mb-2">Study Materials:</h4>
+              <h4 className="font-semibold text-gray-700 mb-2">
+                Study Materials:
+              </h4>
               <ul className="space-y-2">
                 {quizResults.recommendation.resources.map((resource, i) => (
                   <li key={i} className="flex items-center">
@@ -202,10 +249,15 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-gray-700 mb-2">Target Companies:</h4>
+              <h4 className="font-semibold text-gray-700 mb-2">
+                Target Companies:
+              </h4>
               <div className="flex flex-wrap gap-2">
                 {quizResults.recommendation.companies.map((company, i) => (
-                  <span key={i} className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+                  <span
+                    key={i}
+                    className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm"
+                  >
                     {company}
                   </span>
                 ))}
@@ -215,8 +267,8 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
         </div>
 
         <div className="text-center">
-          <button 
-            onClick={() => navigate('/dashboard')}
+          <button
+            onClick={() => navigate("/dashboard")}
             className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:shadow-lg transition-all font-semibold"
           >
             Go to Your Dashboard
@@ -236,7 +288,9 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
         <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2">
           NITK Nexus Placement Quiz
         </h2>
-        <p className="text-gray-600">Help us create your personalized placement roadmap</p>
+        <p className="text-gray-600">
+          Help us create your personalized placement roadmap
+        </p>
       </div>
 
       <div className="mb-6">
@@ -280,10 +334,12 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
                   whileTap={{ scale: 0.98 }}
                   className={`p-4 border rounded-xl cursor-pointer transition-all duration-200 font-medium ${
                     answers[questions[currentQuestion].id] === option
-                      ? 'border-blue-500 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 shadow-md'
-                      : 'border-gray-200 bg-white hover:bg-gray-50'
+                      ? "border-blue-500 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 shadow-md"
+                      : "border-gray-200 bg-white hover:bg-gray-50"
                   }`}
-                  onClick={() => handleAnswer(questions[currentQuestion].id, option)}
+                  onClick={() =>
+                    handleAnswer(questions[currentQuestion].id, option)
+                  }
                 >
                   {option}
                 </motion.div>
@@ -292,30 +348,43 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {questions[currentQuestion].options.map((option, idx) => {
-                const isSelected = answers[questions[currentQuestion].id]?.includes(option);
+                const isSelected =
+                  answers[questions[currentQuestion].id]?.includes(option);
                 return (
                   <motion.div
                     key={idx}
                     whileHover={{ scale: 1.02 }}
                     className={`p-4 border rounded-xl cursor-pointer flex items-center transition-all duration-200 ${
-                      isSelected 
-                        ? 'border-blue-500 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 shadow-md'
-                        : 'border-gray-200 bg-white hover:bg-gray-50'
+                      isSelected
+                        ? "border-blue-500 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 shadow-md"
+                        : "border-gray-200 bg-white hover:bg-gray-50"
                     }`}
                     onClick={() => {
-                      const currentAnswers = answers[questions[currentQuestion].id] || [];
+                      const currentAnswers =
+                        answers[questions[currentQuestion].id] || [];
                       if (isSelected) {
-                        handleAnswer(questions[currentQuestion].id, currentAnswers.filter(a => a !== option));
+                        handleAnswer(
+                          questions[currentQuestion].id,
+                          currentAnswers.filter((a) => a !== option)
+                        );
                       } else {
-                        if (currentAnswers.length < (questions[currentQuestion].max || Infinity)) {
-                          handleAnswer(questions[currentQuestion].id, [...currentAnswers, option]);
+                        if (
+                          currentAnswers.length <
+                          (questions[currentQuestion].max || Infinity)
+                        ) {
+                          handleAnswer(questions[currentQuestion].id, [
+                            ...currentAnswers,
+                            option,
+                          ]);
                         }
                       }
                     }}
                   >
                     <div
                       className={`w-5 h-5 mr-3 border rounded flex items-center justify-center transition-all ${
-                        isSelected ? 'bg-blue-500 border-blue-500 text-white' : 'border-gray-300'
+                        isSelected
+                          ? "bg-blue-500 border-blue-500 text-white"
+                          : "border-gray-300"
                       }`}
                     >
                       {isSelected && <FaCheck size={12} />}
@@ -340,7 +409,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
             <FaArrowLeft className="mr-2" /> Previous
           </motion.button>
         )}
-        
+
         {currentQuestion < questions.length - 1 ? (
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -359,7 +428,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
             onClick={handleSubmit}
             disabled={isSubmitting || !answers[questions[currentQuestion].id]}
           >
-            {isSubmitting ? 'Generating Your Roadmap...' : 'Get My Results'}
+            {isSubmitting ? "Generating Your Roadmap..." : "Get My Results"}
           </motion.button>
         )}
       </div>
