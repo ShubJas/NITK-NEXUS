@@ -10,7 +10,7 @@ const generateStudyRecommendation = async (req, res) => {
     // Fetch student with proper population
     const student = await Student.findOne({ rollNo })
       .populate({
-        path: "courses.course",
+        path: "courses.course",r
         model: "Course", // Explicitly specify the model
       })
       .exec();

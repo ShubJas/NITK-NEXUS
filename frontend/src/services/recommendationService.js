@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = "http://localhost:8000/api/v1/recommendations";
+const API_BASE = `${process.env.REACT_APP_API_URL}/api/v1/recommendations`;
 
 export const generateRecommendation = async (quizData) => {
   try {
@@ -13,8 +13,8 @@ export const generateRecommendation = async (quizData) => {
       {
         headers: {
           Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json"
-        }
+          "Content-Type": "application/json",
+        },
       }
     );
     return response.data;
@@ -28,15 +28,12 @@ export const getRecommendation = async () => {
   try {
     const token = localStorage.getItem("token");
     const rollNo = localStorage.getItem("rollNo");
-    
-    const response = await axios.get(
-      `${API_BASE}/get/${rollNo}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    );
+
+    const response = await axios.get(`${API_BASE}/get/${rollNo}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error fetching recommendation:", error);
