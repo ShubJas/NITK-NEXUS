@@ -298,7 +298,7 @@ const Login = () => {
     try {
       const data = { rollNo, password };
       const response = await axios.post(
-        "http://localhost:8000/api/v1/auth/login",
+        `${process.env.REACT_APP_API_URL}/api/v1/auth/login`,
         data
       );
       console.log(response);
@@ -347,7 +347,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/auth/register",
+        `${process.env.REACT_APP_API_URL}/api/v1/auth/register`,
         payload
       );
 

@@ -28,7 +28,7 @@ const PlacementPage = () => {
         }
 
         const { data } = await axios.get(
-          `http://localhost:8000/api/v1/students/${rollNo}/courses`,
+          `${process.env.REACT_APP_API_URL}/api/v1/students/${rollNo}/courses`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

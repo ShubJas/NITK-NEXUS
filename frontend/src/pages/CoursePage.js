@@ -79,7 +79,7 @@ const CoursePage = () => {
           return;
         }
         const response = await axios.get(
-          `http://localhost:8000/api/v1/courses/code/${courseCode}`,
+          `${process.env.REACT_APP_API_URL}/api/v1/courses/code/${courseCode}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Attach token to request

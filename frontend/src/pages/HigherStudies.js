@@ -27,7 +27,7 @@ const HigherStudies = () => {
     const fetchUniversities = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/universities"
+          `${process.env.REACT_APP_API_URL}/api/v1/universities`
         );
         setUniversities(response.data.data); // Note the .data.data for our API structure
         setFilteredUniversities(response.data.data);
@@ -54,7 +54,9 @@ const HigherStudies = () => {
       if (sortBy) params.append("sortBy", sortBy);
 
       const response = await axios.get(
-        `http://localhost:8000/api/v1/universities/search?${params.toString()}`
+        `${
+          process.env.REACT_APP_API_URL
+        }/api/v1/universities/search?${params.toString()}`
       );
       setFilteredUniversities(response.data.data);
     } catch (err) {
@@ -84,7 +86,7 @@ const HigherStudies = () => {
     const fetchUniversities = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/universities"
+          `${process.env.REACT_APP_API_URL}/api/v1/universities`
         );
         setUniversities(response.data.data); // Note the .data.data for our API structure
         setFilteredUniversities(response.data.data);
