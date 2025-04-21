@@ -19,49 +19,49 @@ const COURSES = {
     _id: "660000000000000000000012", // Changed from 661...112 to 660...012
     name: "Introduction to Programming",
     credits: 4,
-    department: "Computer Science",
+    department: "Information Technology",
   },
   CS201: {
     _id: "660000000000000000000013", // Changed from 661...113 to 660...013
     name: "Data Structures",
     credits: 4,
-    department: "Computer Science",
+    department: "Information Technology",
   },
   CS301: {
     _id: "660000000000000000000014",
     name: "Algorithms",
     credits: 4,
-    department: "Computer Science",
+    department: "Information Technology",
   },
   CS401: {
     _id: "660000000000000000000015",
     name: "Database Systems",
     credits: 3,
-    department: "Computer Science",
+    department: "Information Technology",
   },
   CS501: {
     _id: "660000000000000000000016",
     name: "Operating Systems",
     credits: 4,
-    department: "Computer Science",
+    department: "Information Technology",
   },
   CS601: {
     _id: "660000000000000000000017",
     name: "Machine Learning",
     credits: 3,
-    department: "Computer Science",
+    department: "Information Technology",
   },
   CS701: {
     _id: "660000000000000000000018",
     name: "Artificial Intelligence",
     credits: 3,
-    department: "Computer Science",
+    department: "Information Technology",
   },
   CS801: {
     _id: "660000000000000000000019",
     name: "Cloud Computing",
     credits: 3,
-    department: "Computer Science",
+    department: "Information Technology",
   },
   EE101: {
     _id: "660000000000000000000020",
@@ -108,7 +108,7 @@ const COURSES = {
 };
 
 const DEPARTMENTS = [
-  "Computer Science",
+  "Information Technology",
   "Electrical",
   "Mechanical",
   "Civil",
