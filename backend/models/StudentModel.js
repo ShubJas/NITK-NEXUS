@@ -1,12 +1,6 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Student name is required"],
-    trim: true,
-    maxlength: [50, "Name cannot exceed 50 characters"],
-  },
   rollNo: {
     type: String,
     required: [true, "Roll number is required"],
@@ -14,16 +8,13 @@ const studentSchema = new mongoose.Schema({
     trim: true,
     uppercase: true,
   },
-  year: {
+  semester: {
     type: String,
     required: true,
-    enum: ["1st", "2nd", "3rd", "4th"],
-    default: "1st",
   },
-  branch: {
+  department: {
     type: String,
     required: true,
-    enum: ["CSE", "ECE", "EEE", "ME", "CE"],
     uppercase: true,
   },
   email: {
@@ -52,6 +43,11 @@ const studentSchema = new mongoose.Schema({
         ref: "Course",
         required: true,
       },
+      courseCode: { type: String, required: true },
+      title: { type: String, required: true },
+      creditHours: { type: Number, required: true },
+      department: { type: String, required: true },
+
       progress: {
         type: Number,
         default: 0,
@@ -73,12 +69,6 @@ const studentSchema = new mongoose.Schema({
     type: Number,
     default: 0,
     min: 0,
-  },
-  cgpa: {
-    type: Number,
-    min: 0,
-    max: 10,
-    default: 0,
   },
   createdAt: {
     type: Date,

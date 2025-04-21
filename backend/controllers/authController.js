@@ -2,90 +2,103 @@ const User = require("../models/StudentModel");
 const { hashPassword, comparePassword } = require("../helpers/authHelper");
 const JWT = require("jsonwebtoken");
 const Student = require("../models/StudentModel");
+const Course = require("../models/CourseModel");
+const mongoose = require("mongoose");
 
 const registerController = async (req, res) => {
   const {
-    name,
     email,
     password,
     rollNo,
-    year,
-    branch,
+    semester,
+    department,
     totalCredits,
-    cgpa,
     courses,
   } = req.body;
+
   try {
-    // Check for required fields (courses is optional)
-    if (
-      !name ||
-      !email ||
-      !password ||
-      !rollNo ||
-      !branch ||
-      totalCredits == null ||
-      cgpa == null
-    ) {
+    // 1. Basic validation
+    if (!email || !password || !rollNo || !department || totalCredits == null) {
       return res.status(400).send({
         success: false,
         message: "All fields are required",
       });
     }
 
-    // Check if a student with the same email already exists
-    const existingStudent = await Student.findOne({ email });
-    if (existingStudent) {
+    // 2. Duplicate-check
+    if (await Student.findOne({ rollNo })) {
       return res.status(409).send({
         success: false,
         message: "Student already exists",
       });
     }
 
-    // Hash the password before storing
-    const hashedPassword = await hashPassword(password);
-
-    // Validate and prepare the courses data if provided.
-    // Here we assume courses is an array of objects.
-    // You can add further validations as necessary.
+    // 3. Validate courses if provided
     let coursesData = [];
-    if (courses && Array.isArray(courses)) {
-      coursesData = courses.map((courseObj) => {
-        // Ensure each course object has the required course field.
-        if (!courseObj.course) {
-          throw new Error("Each course must have a course reference");
-        }
+    if (Array.isArray(courses) && courses.length > 0) {
+      // Verify all courses exist in the database
+      const courseIds = courses.map(
+        (c) => new mongoose.Types.ObjectId(c.course)
+      ); // Fixed: using 'new' keyword
+      const existingCourses = await Course.find({
+        _id: { $in: courseIds },
+      }).lean();
+
+      if (existingCourses.length !== courses.length) {
+        return res.status(400).send({
+          success: false,
+          message: "One or more courses not found",
+        });
+      }
+
+      // Create a map for quick lookup
+      const courseMap = {};
+      existingCourses.forEach((course) => {
+        courseMap[course._id.toString()] = course;
+      });
+
+      // Map to the format expected by the Student schema
+      coursesData = courses.map((course) => {
+        const dbCourse = courseMap[course.course];
         return {
-          course: courseObj.course,
-          progress: courseObj.progress || 0,
-          grade: courseObj.grade || null,
-          enrolledAt: courseObj.enrolledAt || Date.now(),
+          course: new mongoose.Types.ObjectId(course.course), // Fixed: using 'new' keyword
+          courseCode: dbCourse.courseCode || course.courseCode,
+          title: dbCourse.title || course.title,
+          creditHours: dbCourse.creditHours || course.creditHours,
+          department: dbCourse.department || course.department,
+          progress: course.progress || 0,
+          grade: course.grade || null,
+          enrolledAt: course.enrolledAt || new Date(),
         };
       });
     }
 
-    // Create a new student with the provided data
+    // 4. Create the student with hashed password
+    // const hashedPassword = await hashPassword(password);
     const newStudent = await Student.create({
-      name,
       email,
-      password: hashedPassword,
+      password,
       rollNo,
-      year,
-      branch,
+      semester,
+      department,
       totalCredits,
-      cgpa,
       courses: coursesData,
     });
+
+    // Don't send password back in response
+    const studentResponse = newStudent.toObject();
+    delete studentResponse.password;
 
     return res.status(201).send({
       success: true,
       message: "Student created successfully",
-      data: newStudent,
+      data: studentResponse,
     });
   } catch (err) {
-    console.error("Error creating student: ", err.message);
+    console.error("Error creating student:", err);
     return res.status(500).send({
       success: false,
-      message: "Error creating student",
+      message: err.message || "Error creating student",
     });
   }
 };

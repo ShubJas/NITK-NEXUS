@@ -16,52 +16,95 @@ import axios from "axios";
 // Enhanced course data with departments and credits
 const COURSES = {
   CS101: {
+    _id: "660000000000000000000012", // Changed from 661...112 to 660...012
     name: "Introduction to Programming",
     credits: 4,
     department: "Computer Science",
   },
   CS201: {
+    _id: "660000000000000000000013", // Changed from 661...113 to 660...013
     name: "Data Structures",
     credits: 4,
     department: "Computer Science",
   },
-  CS301: { name: "Algorithms", credits: 4, department: "Computer Science" },
+  CS301: {
+    _id: "660000000000000000000014",
+    name: "Algorithms",
+    credits: 4,
+    department: "Computer Science",
+  },
   CS401: {
+    _id: "660000000000000000000015",
     name: "Database Systems",
     credits: 3,
     department: "Computer Science",
   },
   CS501: {
+    _id: "660000000000000000000016",
     name: "Operating Systems",
     credits: 4,
     department: "Computer Science",
   },
   CS601: {
+    _id: "660000000000000000000017",
     name: "Machine Learning",
     credits: 3,
     department: "Computer Science",
   },
   CS701: {
+    _id: "660000000000000000000018",
     name: "Artificial Intelligence",
     credits: 3,
     department: "Computer Science",
   },
   CS801: {
+    _id: "660000000000000000000019",
     name: "Cloud Computing",
     credits: 3,
     department: "Computer Science",
   },
-  EE101: { name: "Basic Electronics", credits: 4, department: "Electrical" },
-  EE201: { name: "Digital Systems", credits: 4, department: "Electrical" },
+  EE101: {
+    _id: "660000000000000000000020",
+    name: "Basic Electronics",
+    credits: 4,
+    department: "Electrical",
+  },
+  EE201: {
+    _id: "660000000000000000000021",
+    name: "Digital Systems",
+    credits: 4,
+    department: "Electrical",
+  },
   ME101: {
+    _id: "660000000000000000000022",
     name: "Engineering Mechanics",
     credits: 4,
     department: "Mechanical",
   },
-  CE101: { name: "Engineering Drawing", credits: 3, department: "Civil" },
-  MA101: { name: "Calculus", credits: 4, department: "Mathematics" },
-  PH101: { name: "Physics", credits: 4, department: "Physics" },
-  CH101: { name: "Chemistry", credits: 4, department: "Chemistry" },
+  CE101: {
+    _id: "660000000000000000000023",
+    name: "Engineering Drawing",
+    credits: 3,
+    department: "Civil",
+  },
+  MA101: {
+    _id: "660000000000000000000024",
+    name: "Calculus",
+    credits: 4,
+    department: "Mathematics",
+  },
+  PH101: {
+    _id: "660000000000000000000025",
+    name: "Physics",
+    credits: 4,
+    department: "Physics",
+  },
+  CH101: {
+    _id: "660000000000000000000026",
+    name: "Chemistry",
+    credits: 4,
+    department: "Chemistry",
+  },
 };
 
 const DEPARTMENTS = [
@@ -211,7 +254,7 @@ const Login = () => {
   const validateLogin = () => {
     const newErrors = {};
     if (!rollNo.match(/[0-9]{2}[A-Za-z]{2}[0-9]{3}/)) {
-      newErrors.rollNo = "Format: YYBranchXXX (e.g. 21CS100)";
+      newErrors.rollNo = "Format: YYdepartment XXX (e.g. 21CS100)";
     }
     if (password.length < 8) {
       newErrors.password = "Password must be at least 8 characters";
@@ -226,7 +269,7 @@ const Login = () => {
       newErrors.email = "Please use your NITK email address";
     }
     if (!rollNo.match(/[0-9]{2}[A-Za-z]{2}[0-9]{3}/)) {
-      newErrors.rollNo = "Format: YYBranchXXX (e.g. 21CS100)";
+      newErrors.rollNo = "Format: YYdepartment XXX (e.g. 21CS100)";
     }
     if (password.length < 8) {
       newErrors.password = "Password must be at least 8 characters";
@@ -276,11 +319,71 @@ const Login = () => {
     if (!validateSignup()) return;
 
     setIsLoading(true);
+
+    // Prepare courses data with ObjectId references
+    const coursesPayload = selectedCourses.map((code) => {
+      const course = COURSES[code];
+      return {
+        course: course._id, // This should be the ObjectId from your COURSES data
+        courseCode: code,
+        title: course.name,
+        creditHours: course.credits,
+        department: course.department,
+        progress: 0,
+        grade: null,
+        enrolledAt: new Date().toISOString(),
+      };
+    });
+
+    const payload = {
+      email,
+      password,
+      rollNo,
+      semester,
+      department,
+      totalCredits: coursesPayload.reduce((sum, c) => sum + c.creditHours, 0),
+      courses: coursesPayload,
+    };
+
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      navigate("/dashboard");
+      const response = await axios.post(
+        "http://localhost:8000/api/v1/auth/register",
+        payload
+      );
+
+      if (response.status === 201 && response.data.success) {
+        window.alert("Signup successful! You can now log in.");
+        setIsLoginView(true); // Switch to login view
+        // Reset form fields
+        setEmail("");
+        setrollNo("");
+        setPassword("");
+        setConfirmPassword("");
+        setSemester("");
+        setDepartment("");
+        setSelectedCourses([]);
+      } else {
+        alert(response.data.message || "Signup failed. Please try again.");
+      }
     } catch (error) {
-      console.error("Signup error:", error);
+      if (axios.isAxiosError(error) && error.response) {
+        const { status, data } = error.response;
+        if (status === 409) {
+          alert(
+            data.message || "A student with that roll number already exists."
+          );
+        } else if (status === 400) {
+          alert(data.message || "Please fill in all required fields.");
+        } else {
+          console.error("Signup error:", data);
+          alert(
+            data.message || "An unexpected error occurred. Please try again."
+          );
+        }
+      } else {
+        console.error("Network or other error:", error);
+        alert("Network error. Please check your connection and try again.");
+      }
     } finally {
       setIsLoading(false);
     }
