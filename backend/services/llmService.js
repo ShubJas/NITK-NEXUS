@@ -51,8 +51,8 @@ Ensure the output is valid JSON without any markdown formatting.
     const raw = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
     const cleanResponse = raw
       .trim()
-      .replace(/^json\s*/, "")
-      .replace(/$/, "");
+      .replace(/^```json\s*/, "")
+      .replace(/```$/, "");
 
     return JSON.parse(cleanResponse);
   } catch (error) {
