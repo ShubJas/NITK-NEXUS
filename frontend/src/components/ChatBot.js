@@ -44,7 +44,7 @@ const ChatBot = ({ closeChat }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/v1/chat/message",
+        `${process.env.REACT_APP_API_URL}/api/v1/chat/message`,
         { message: input }
       );
 
