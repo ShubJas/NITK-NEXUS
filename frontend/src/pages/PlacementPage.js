@@ -5,7 +5,7 @@ import LoadingScreen from "../components/PlacementRecommendation/LoadingScreen";
 import {
   generateRecommendation,
   getRecommendation,
-} from "../services/recommendationService";
+} from "../components/PlacementRecommendation/recommendationService";
 import axios from "axios";
 
 const PlacementPage = () => {

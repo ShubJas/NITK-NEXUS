@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { generateRecommendation } from "./recommendationService"; // Adjust the import path as needed
 
 const QuizComponent = ({ onSubmit, currentSubjects }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -18,6 +19,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [quizResults, setQuizResults] = useState(null);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const questions = [
@@ -122,19 +124,44 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    const results = {
-      currentSubjects,
-      quizAnswers: answers,
-      recommendation: generateRecommendation(answers),
-    };
-    await onSubmit(results);
-    setQuizResults(results);
-    setIsSubmitting(false);
-    setShowResults(true);
+    setError(null);
+
+    try {
+      const quizData = {
+        currentSubjects,
+        quizAnswers: answers,
+      };
+
+      // Call the API to generate recommendations
+      const recommendation = await generateRecommendation(quizData);
+
+      const results = {
+        currentSubjects,
+        quizAnswers: answers,
+        recommendation: recommendation,
+      };
+
+      await onSubmit(results);
+      setQuizResults(results);
+      setShowResults(true);
+    } catch (err) {
+      console.error("Error generating recommendation:", err);
+      setError("Failed to generate recommendations. Please try again.");
+      // Fallback to local recommendation if API fails
+      const results = {
+        currentSubjects,
+        quizAnswers: answers,
+        recommendation: generateLocalRecommendation(answers),
+      };
+      setQuizResults(results);
+      setShowResults(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const generateRecommendation = (answers) => {
-    // This would be more sophisticated in a real implementation
+  // Fallback recommendation generator if API fails
+  const generateLocalRecommendation = (answers) => {
     const interest = answers.interest || "";
     const strengths = answers.strengths || [];
 
@@ -199,6 +226,13 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
         animate={{ opacity: 1 }}
         className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl shadow-xl"
       >
+        {error && (
+          <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6">
+            <p>{error}</p>
+            <p className="text-sm mt-1">Showing fallback recommendations.</p>
+          </div>
+        )}
+
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-indigo-800 mb-2">
             🎯 Your Personalized Roadmap
@@ -223,7 +257,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
                 Suggested Courses:
               </h4>
               <ul className="space-y-2">
-                {quizResults.recommendation.courses.map((course, i) => (
+                {quizResults.recommendation.courses?.map((course, i) => (
                   <li key={i} className="flex items-center">
                     <FaCheck className="text-green-500 mr-2" /> {course}
                   </li>
@@ -241,7 +275,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
                 Study Materials:
               </h4>
               <ul className="space-y-2">
-                {quizResults.recommendation.resources.map((resource, i) => (
+                {quizResults.recommendation.resources?.map((resource, i) => (
                   <li key={i} className="flex items-center">
                     <FaBookReader className="text-blue-500 mr-2" /> {resource}
                   </li>
@@ -253,7 +287,7 @@ const QuizComponent = ({ onSubmit, currentSubjects }) => {
                 Target Companies:
               </h4>
               <div className="flex flex-wrap gap-2">
-                {quizResults.recommendation.companies.map((company, i) => (
+                {quizResults.recommendation.companies?.map((company, i) => (
                   <span
                     key={i}
                     className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm"
