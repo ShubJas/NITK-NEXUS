@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
-import { FaBook, FaCalendarAlt, FaChartLine, FaLightbulb, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import React, { useState } from "react";
+import {
+  FaBook,
+  FaCalendarAlt,
+  FaChartLine,
+  FaLightbulb,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
 
 const RecommendationResult = ({ recommendation }) => {
   const [expandedSections, setExpandedSections] = useState({
@@ -20,12 +27,14 @@ const RecommendationResult = ({ recommendation }) => {
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Your Personalized Placement Preparation Plan</h2>
-      
+      <h2 className="text-2xl font-bold text-gray-800 mb-6">
+        Your Personalized Placement Preparation Plan
+      </h2>
+
       <div className="mb-8">
         <div
           className="flex items-center justify-between cursor-pointer"
-          onClick={() => toggleSection('careerPath')}
+          onClick={() => toggleSection("careerPath")}
         >
           <h3 className="text-lg font-semibold flex items-center">
             <FaChartLine className="mr-2 text-blue-500" />
@@ -36,15 +45,17 @@ const RecommendationResult = ({ recommendation }) => {
         {expandedSections.careerPath && (
           <div className="bg-blue-50 p-4 rounded-lg mt-4">
             <p className="font-medium">{recommendation.careerPath}</p>
-            <p className="text-gray-600 mt-2">{recommendation.careerPathDescription}</p>
+            <p className="text-gray-600 mt-2">
+              {recommendation.careerPathDescription}
+            </p>
           </div>
         )}
       </div>
-      
+
       <div className="mb-8">
         <div
           className="flex items-center justify-between cursor-pointer"
-          onClick={() => toggleSection('learningPath')}
+          onClick={() => toggleSection("learningPath")}
         >
           <h3 className="text-lg font-semibold flex items-center">
             <FaBook className="mr-2 text-blue-500" />
@@ -60,11 +71,18 @@ const RecommendationResult = ({ recommendation }) => {
                 <p className="text-gray-600 text-sm">{item.description}</p>
                 {item.resources && (
                   <div className="mt-2">
-                    <p className="text-sm font-medium text-gray-700">Resources:</p>
+                    <p className="text-sm font-medium text-gray-700">
+                      Resources:
+                    </p>
                     <ul className="list-disc list-inside text-sm text-gray-600">
                       {item.resources.map((resource, i) => (
                         <li key={i}>
-                          <a href={resource.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                          <a
+                            href={resource.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
                             {resource.name}
                           </a>
                         </li>
@@ -77,11 +95,11 @@ const RecommendationResult = ({ recommendation }) => {
           </div>
         )}
       </div>
-      
+
       <div className="mb-8">
         <div
           className="flex items-center justify-between cursor-pointer"
-          onClick={() => toggleSection('timeline')}
+          onClick={() => toggleSection("timeline")}
         >
           <h3 className="text-lg font-semibold flex items-center">
             <FaCalendarAlt className="mr-2 text-blue-500" />
@@ -107,22 +125,28 @@ const RecommendationResult = ({ recommendation }) => {
           </div>
         )}
       </div>
-      
+
       <div>
         <div
           className="flex items-center justify-between cursor-pointer"
-          onClick={() => toggleSection('additionalTips')}
+          onClick={() => toggleSection("additionalTips")}
         >
           <h3 className="text-lg font-semibold flex items-center">
             <FaLightbulb className="mr-2 text-blue-500" />
             Additional Tips
           </h3>
-          {expandedSections.additionalTips ? <FaChevronUp /> : <FaChevronDown />}
+          {expandedSections.additionalTips ? (
+            <FaChevronUp />
+          ) : (
+            <FaChevronDown />
+          )}
         </div>
         {expandedSections.additionalTips && (
           <ul className="list-disc list-inside bg-yellow-50 p-4 rounded-lg space-y-2 mt-4">
             {recommendation.additionalTips.map((tip, index) => (
-              <li key={index} className="text-gray-700">{tip}</li>
+              <li key={index} className="text-gray-700">
+                {tip}
+              </li>
             ))}
           </ul>
         )}
