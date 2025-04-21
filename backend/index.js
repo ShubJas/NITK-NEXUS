@@ -16,11 +16,17 @@ const app = express();
 connectDb();
 
 //middleware
+
 app.use(express.json());
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://nitk-nexus-frontend.onrender.com",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:3000", // Replace with your frontend origin
-    credentials: true, // Enable credentials if needed
+    origin: allowedOrigins,
+    credentials: true,
   })
 );
 
