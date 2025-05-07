@@ -1,5 +1,4 @@
-# NITK NEXUS : An Intelligent Integrated Platform for
-Studies and Career Development
+# NITK NEXUS : An Intelligent Integrated Platform for Studies and Career Development
 
 NITK Nexus: An Intelligent Integrated Platform for Studies and Career
 Development is a comprehensive web-based application developed to support aca-
