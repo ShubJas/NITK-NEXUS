@@ -1,6 +1,12 @@
-# NITK Nexus - Placement Preparation Platform
+# NITK NEXUS : An Intelligent Integrated Platform for
+Studies and Career Development
 
-NITK Nexus is an interactive and personalized placement preparation platform designed to help students streamline their preparation journey. The platform leverages advanced technologies, including AI-driven recommendations, to provide tailored career paths, study plans, and resources.
+NITK Nexus: An Intelligent Integrated Platform for Studies and Career
+Development is a comprehensive web-based application developed to support aca-
+demic progression and professional preparation for NITK students. The platform in-
+tegrates four major modules— Regular Course Track, Subject-Specific Course
+Tracker,Community Forum and Placement and Higher Studies Roadmaps—to
+centralize key academic and career resources into a single digital ecosystem.
 
 ## Features
 
